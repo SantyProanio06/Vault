@@ -1,0 +1,144 @@
+% Created 2026-06-06 Sat 16:27
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Santiago Javier Proaño Yépez}
+\date{\textit{<2026-06-06 Sat>}}
+\title{Capacitores}
+\hypersetup{
+ pdfauthor={Santiago Javier Proaño Yépez},
+ pdftitle={Capacitores},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.3 (Org mode 9.6.15)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Capacitores}
+\label{sec:orgba1941e}
+
+Los capacitores almacenan energía eléctrica.
+
+\section{Capacitores en serie}
+\label{sec:orgd667b6d}
+
+Tienen un comportamiento análogo al de las resistencias en paralelo.
+
+\section{El voltaje total es la suma de los voltajes individuales.}
+\label{sec:orgf1ed71e}
+\section{La corriente es igual en todos los elementos.}
+\label{sec:org4ec41a2}
+\section{La carga es igual en todos los capacitores.}
+\label{sec:org907fb4e}
+
+[
+\begin{align}
+C_t &= \frac{1}{\sum_{i=1}^{n}\frac{1}{C_i}} \
+Q_t &= Q_1 = Q_2 = \dots \
+Q_n &= C_nV_n
+\end{align}
+]
+
+[
+\begin{align}
+V_t &= \sum_{i=1}^{n}V_i \
+V_n &= \frac{C_t}{C_n}V_t
+\end{align}
+]
+
+[
+I\textsubscript{t} = I\textsubscript{1} = I\textsubscript{2} = \dots{}
+]
+
+\section{Capacitores en paralelo}
+\label{sec:org77a2aa7}
+
+Tienen un comportamiento análogo al de las resistencias en serie.
+
+\section{El voltaje es igual en todos los capacitores.}
+\label{sec:orgfb239f5}
+\section{La corriente total es la suma de las corrientes individuales.}
+\label{sec:org01db1ed}
+
+[
+\begin{align}
+C_t &= \sum_{i=1}^{n}C_i \
+Q_t &= \sum_{i=1}^{n}Q_i
+\end{align}
+]
+
+[
+\begin{align}
+V_t &= V_1 = V_2 = \dots \
+I_t &= \sum_{i=1}^{n}I_i
+\end{align}
+]
+
+\section{Carga y descarga}
+\label{sec:org31babf9}
+
+Al cerrar el interruptor, la corriente es máxima. Para evitar daños al capacitor se coloca una resistencia en serie.
+
+Durante la carga:
+
+\section{La corriente disminuye progresivamente.}
+\label{sec:orgb70d2fc}
+\section{El voltaje del capacitor aumenta.}
+\label{sec:org72feab6}
+\section{Al finalizar la carga:}
+\label{sec:orgb16f001}
+
+[
+I = 0
+]
+
+[
+V\textsubscript{C} = V\textsubscript{F}
+]
+
+Durante la descarga:
+
+\section{La corriente alcanza inicialmente su valor máximo.}
+\label{sec:org97e7265}
+\section{El voltaje disminuye hasta llegar a cero.}
+\label{sec:org804e5fe}
+
+\subsection{Tiempo de carga y descarga}
+\label{sec:orgea44460}
+
+La constante de tiempo se calcula mediante:
+
+[
+T = RC
+]
+
+Un capacitor se carga o descarga aproximadamente un 63\% durante cada constante de tiempo.
+
+\subsection{Voltaje y corriente en cualquier instante}
+\label{sec:org6a1c679}
+
+[
+\begin{align}
+V(t) &= V_F + (V_0 - V_F)e^{-t/T} \
+I(t) &= I_F + (I_0 - I_F)e^{-t/T}
+\end{align}
+]
+
+\section{Conceptos relacionados}
+\label{sec:orgcfd69cc}
+
+\href{Ley_de_Ohm.org}{Ley\textsubscript{de}\textsubscript{Ohm}}
+\end{document}

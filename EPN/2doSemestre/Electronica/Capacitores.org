@@ -1,0 +1,116 @@
+:PROPERTIES:
+:ID:       685ded19-82fc-4b4f-aa88-1090404d0532
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Capacitores
+#+filetags: :clases:electronica:
+#+date: <2026-06-06 Sat>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiago.proano01@epn.edu.ec
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+* Capacitores
+
+Los capacitores almacenan energía eléctrica.
+
+* Capacitores en serie
+
+Tienen un comportamiento análogo al de las resistencias en paralelo.
+
+* El voltaje total es la suma de los voltajes individuales.
+* La corriente es igual en todos los elementos.
+* La carga es igual en todos los capacitores.
+
+[
+\begin{align}
+C_t &= \frac{1}{\sum_{i=1}^{n}\frac{1}{C_i}} \
+Q_t &= Q_1 = Q_2 = \dots \
+Q_n &= C_nV_n
+\end{align}
+]
+
+[
+\begin{align}
+V_t &= \sum_{i=1}^{n}V_i \
+V_n &= \frac{C_t}{C_n}V_t
+\end{align}
+]
+
+[
+I_t = I_1 = I_2 = \dots
+]
+
+* Capacitores en paralelo
+
+Tienen un comportamiento análogo al de las resistencias en serie.
+
+* El voltaje es igual en todos los capacitores.
+* La corriente total es la suma de las corrientes individuales.
+
+[
+\begin{align}
+C_t &= \sum_{i=1}^{n}C_i \
+Q_t &= \sum_{i=1}^{n}Q_i
+\end{align}
+]
+
+[
+\begin{align}
+V_t &= V_1 = V_2 = \dots \
+I_t &= \sum_{i=1}^{n}I_i
+\end{align}
+]
+
+* Carga y descarga
+
+Al cerrar el interruptor, la corriente es máxima. Para evitar daños al capacitor se coloca una resistencia en serie.
+
+Durante la carga:
+
+* La corriente disminuye progresivamente.
+* El voltaje del capacitor aumenta.
+* Al finalizar la carga:
+
+[
+I = 0
+]
+
+[
+V_C = V_F
+]
+
+Durante la descarga:
+
+* La corriente alcanza inicialmente su valor máximo.
+* El voltaje disminuye hasta llegar a cero.
+
+** Tiempo de carga y descarga
+
+La constante de tiempo se calcula mediante:
+
+[
+T = RC
+]
+
+Un capacitor se carga o descarga aproximadamente un 63% durante cada constante de tiempo.
+
+** Voltaje y corriente en cualquier instante
+
+[
+\begin{align}
+V(t) &= V_F + (V_0 - V_F)e^{-t/T} \
+I(t) &= I_F + (I_0 - I_F)e^{-t/T}
+\end{align}
+]
+
+* Conceptos relacionados
+
+[[id:2247a3be-0603-453a-8da6-06d97a2e900e][Ley_de_Ohm]]
+

@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       df895c95-dccf-482f-964a-0fa111cd0c0f
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: MENU_Electrónica
+#+filetags: :clases:menu:electronica:
+#+date: <2026-06-06 Sat>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiago.proano01@epn.edu.ec
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+
+[[id:685ded19-82fc-4b4f-aa88-1090404d0532][Capacitores]]
+
+
+[[id:9d488134-eba1-4f00-9341-f075e0b7e561][Voltaje_en_corriente_alterna]]
+
+
+[[id:2247a3be-0603-453a-8da6-06d97a2e900e][Ley_de_Ohm]]
+
+
+

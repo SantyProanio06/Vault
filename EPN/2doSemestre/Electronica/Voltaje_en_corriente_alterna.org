@@ -1,0 +1,56 @@
+:PROPERTIES:
+:ID:       9d488134-eba1-4f00-9341-f075e0b7e561
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Voltaje_en_corriente_alterna
+#+filetags: :clases:electronica:
+#+date: <2026-06-06 Sat>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiago.proano01@epn.edu.ec
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+* Voltaje en corriente alterna
+
+Hay varias formas de representar el voltaje en una corriente sinusoidal.
+
+** Voltaje instantáneo
+
+Es el voltaje en cualquier momento.
+
+[
+\begin{align}
+V_{t1} &= V_1 \
+V_{t2} &= V_2
+\end{align}
+]
+
+** Voltaje pico
+
+Es el voltaje más alto de una función.
+
+** Voltaje pico a pico
+
+Es la suma del pico positivo y el pico negativo.
+
+[
+V_{pp}=V_{pinf}+V_{psup}=2V_p
+]
+
+** Voltaje RMS (Root Mean Square)
+
+[
+V_{RMS}=\frac{V_p}{\sqrt{2}}
+]
+
+** Voltaje promedio
+
+[
+V_{prom}=\frac{2}{\pi}V_p
+]

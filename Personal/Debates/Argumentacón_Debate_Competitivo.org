@@ -1,0 +1,110 @@
+:PROPERTIES:
+:ID:       2f57c335-05c3-428e-8057-0ae2b87c5cb6
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Argumentación Debate Competitivo
+#+filetags: :debate:personal: 
+#+date: <2026-06-09 Tue>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiago.proano01@epn.edu.ec
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+
+[[https://youtu.be/3gLqaw0phUA?si=TkTlNA8Pw1KpGrKV][Video: Argumentacion debate competitivo]]
+
+* Argumentos Comparativos
+En el modo de debate PIB se muestran argumentos comparativos, en si los
+argumentos tienen premisas y una conclusión, el objetivo pero, no es
+hacer un súper argumento sino, persuadir al juez de que nuestro
+argumento es mejor que el del oponente, como? haciéndolo fácil de
+comparar, los argumentos se tienen que mover en dos ejes
+* Ejes de probabilidad y relevancia
+** Probabilidad
+Es que tan probable es que suceda dicho argumento, para lograr esto el
+argumento no debe tener fallas lógicas, es decir, que las premisas no
+contradigan a la conclusión, además dichas premisas deben de tener una
+justificación.
+
+Normalmente en la vida diaria no solemos justificar las premisas en
+los debates tenemos que decir el por que de dicha premisa.
+
+Por último, en este eje de probabilidad se le explica al juez como
+funciona el mundo, el objetivo de esto es dibujar una imagen en la
+mente de los jueces. 
+** Relevancia
+Demuestra por que el argumento es importante para la discusión, para
+lograrlo se debe ver la moción y argumentar en relación a esta. Para
+ganar un argumento de esta medio probable y medio relevante, pues es
+muy difícil tener el 100% de los pues así se hace un argumento
+irrefutable.
+* AREL
+Es una estructura para los argumentos, no es necesario seguir este
+orden, por ejemplo se puede hacer el razonamiento y la evidencia al
+mismo tiempo. 
+** A, Afirmación
+Responde el Porque defender u oponerse a la moción?
+Es el punto de partida del argumento.
+** R, Razonamiento
+Responde al Porque es verdad la afirmación?
+Es en esta parte del argumento se puede mover por el eje de
+probabilidad, eliminando las fallas lógicas.
+** E, Evidencia
+Aquí se ilustra el razonamiento, puede ser a partir de un ejemplo,
+pero el objetivo es crear una imagen mental en la cabeza de los jueces. 
+** L, Lazo o link (impacto)
+Responde al Porque es importante el argumento o por que es mejor que
+el de los demás. Es aquí donde se desplaza por el eje de relevancia. 
+* Categorías de impacto
+La parte del link o impacto puede caer en una de estas 3 categorias
+1. Principios
+   Se basa en presentar un argumento con carga moral o
+   deontológica([[id:72f8cfd3-d184-401c-a08b-0b03e71964b7][Deontología)]], su relevancia radica en que deben
+   respetarse los valores y derechos éticos.    
+2. Consecuencias
+   Miden el impacto del argumento en base a los resultados prácticos,
+   cae en 5 posibles zonas.
+   1. Cantidad.- El número de personas afectadas o beneficiadas.
+   2. Intensidad de afectación.- Gravedad de daño o beneficio en un
+      grupo incluso si es pequeño.
+   3. Probabilidad.- Chances de que ocurra dicho evento.
+   4. Grupos de especial protección.-La prioridad que merecen sujetos
+      vulnerables ya sean niños, tercera edad, minorías históricamente
+      discriminadas.
+   5. Irreversibilidad.- Daños permanentes o efectos a muy largo
+      plazo.
+3. Meta-impactos
+   Nivel mas avanzado, se relaciona con el debate en su totalidad
+   priorizando por que tu argumento es mejor que el de los oponentes.
+* Errores comunes a evitar
+- No basta con enunciar el impacto, se necesita explicar el proceso
+  lógico con bloques de análisis, es decir, como se llego al
+  resultado.
+  
+- Usar lenguaje demasiado técnico o abstracto hace que el juez no
+  entienda tanto pues no lo logra visualizar de forma clara.
+  
+- No amontones idea tras idea sin que tenga una conexión lógica o
+  desarrolladas como argumentos completos
+  
+- No anticipar las refutaciones de la contra parte, se debe hacer un
+  argumento aprueba de balas, para esto se considera los posibles
+  ataques.
+  
+- Repetir la misma idea con distintas palabras no demuestra nada, hay
+  que ilustrarla con distintas perspectivas.
+  
+- Las premisas se contradicen entre si al argumentar y refutar,
+  intentar, no asumir escenarios opuestos según te convenga.
+
+
+   
+
+
+

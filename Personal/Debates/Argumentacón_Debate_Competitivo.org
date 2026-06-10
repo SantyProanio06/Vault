@@ -20,6 +20,9 @@
 [[https://youtu.be/3gLqaw0phUA?si=TkTlNA8Pw1KpGrKV][Video: Argumentacion debate competitivo]]
 
 * Argumentos Comparativos
+:PROPERTIES:
+:ID:       06b26cf0-0eb5-497c-be24-4b139b7e4617
+:END:
 En el modo de debate PIB se muestran argumentos comparativos, en si los
 argumentos tienen premisas y una conclusión, el objetivo pero, no es
 hacer un súper argumento sino, persuadir al juez de que nuestro

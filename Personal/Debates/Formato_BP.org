@@ -1,0 +1,76 @@
+:PROPERTIES:
+:ID:       c01094a3-7802-408c-8351-fbc09596e0fe
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Formato BP
+#+filetags: :debate:personal:procesar:
+#+date: <2026-06-09 Tue>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiago.proano01@epn.edu.ec
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+
+[[https://youtu.be/W6YJWXjc2-0?si=jG-pbFB4_5yKhSLc][Video Formato BP]]
+
+* Reglas básicas
+Bueno lo que ya sabemos de alta o baja de gobierno y oposición, se
+pude decir "panel" a los jueces, los puntos solo se pueden obtener del
+equipo contrario no del alta o baja del mismo lado.
+
+A través de un
+punto de información (pregunta), si decimos "panel
+como este se dice que es el punto mas importante, si demostramos que es
+falso" o viceversa "ganamos", esto es el punto de un [[id:06b26cf0-0eb5-497c-be24-4b139b7e4617][Argumento
+Comparativo]].
+
+Ojo no se puede hacer punto a la cámara alta o baja del mismo equipo. 
+
+Se valora la lógica y el análisis, hay que probar con lógica y
+analizando TODO lo
+que se diga, no importa por ejemplo la retorica.
+
+
+* Orden
+Se debate primero las cámaras altas y luego las bajas. 
+
+* Roles
+
+** Cámara alta de gobierno
+- El primer ministro.- Define los términos de la moción, por ejemplo
+  si se habla de una ley, este man define dicha ley. Luego argumenta y
+  por ultimo caracteriza el contexto y como funcionan los actores, por
+  ejemplo si la moción dice "EC es estados unidos" este PM va a decir:
+  ya veras tu esta casa va a ser estados unidos en el contexto x, etc. 
+
+  //No se valoran los argumentos de autoridad
+
+  /*
+  La carga de la prueba.- Actualmente cada uno define que quiere
+  probar, si se demuestra que lo que se quiere probar es importante.
+  Esto se lo ve de forma mini en los argumentos.
+  */
+
+- El vice primer ministro.- Reconstruir los argumentos del PM es decir
+  si me refutan el argumento que dijo PM, yo puedo como reconstruir
+  las bases de este o crear otro argumento en base al principal; Refutar
+  los de AO, como es la ultima intervención de la AG, toca dejar claro
+  que lo que dijeron esos otros esta mal y seguir el hilo de
+  [[id:06b26cf0-0eb5-497c-be24-4b139b7e4617][Argumentos Comparativos]]; Presentar nuevos argumentos y/o profundizar
+  en los existentes, tip enfocarse en reconstruir o profundizar;
+  Establecer la comparativa, literal es hacer lo de [[id:06b26cf0-0eb5-497c-be24-4b139b7e4617][Argumentos Comparativos]]. 
+  
+
+  
+** Cámara alta de oposición
+- Líder de oposición.- Refuta los argumentos, ojo siempre busca ser
+  comparativo en el mismo sentido que los [[id:06b26cf0-0eb5-497c-be24-4b139b7e4617][Argumentos Comparativos]] ,
+  luego presenta y desarrolla sus argumentos, además
+  este puede criticar y cambiar las caracterizaciones de gobierno en
+  caso de ser necesario.   

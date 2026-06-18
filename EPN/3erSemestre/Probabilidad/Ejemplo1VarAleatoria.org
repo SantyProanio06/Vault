@@ -1,0 +1,79 @@
+:PROPERTIES:
+:ID:       3d6d1e50-860e-4035-9a3e-78cf88b15dc5
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Ejemplo 1 Variable Aleatoria
+#+filetags: :clases:probabilidad:ejemplo:
+#+date: <2026-06-17 Wed>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+* Enunciado
+*Se lanza una moneda 3 veces, por tanto
+$X :$ "Número de caras en los 3 lanzamientos" es decir se busca el
+conjunto de todos los valores posibles que puede tomar $X$.*
+
+=El objetivo es encontrar el rango de X=
+
+*Pasos para resolver*
+1. Entender el experimento =Cual es el exp?=
+   Lanzar la moneda 3 veces
+2. Entender el $\Omega$
+   \[
+   \Omega = {(c,s,s), (c,c,s) .... }
+   \]
+*Como funciona X*
+Ejemplo:
+\[
+X[(c,c,c)] = 3
+\]
+\[
+X[(c,s,c)] = 2
+\]
+
+Entonces con estos casos se logra sacar todo el rango
+*Sacar el rango*
+\[
+X =
+\begin{cases}
+0 \\
+1 \\
+2 \\
+3
+\end{cases}
+\]
+
+
+Por lo tanto $P(X = 0) \text{es de} P(s,s,s)$
+Como $\Omega$ es discreta y la probabilidad es equi-probable aplica
+[[id:8f187abe-9b18-4330-8b33-db01dcaf73c5][Equi probables]]
+\[
+P(s,s,s) = \frac{1}{2x2x2} = \frac{1}{8}
+\]
+\[
+P(X = 1) = P(\frac{(c,s,s)U(s,c,s)U(s,s,c)}{|\Omega|}) = \frac{3}{8}
+\]
+\[
+P(X = 2) = P(\frac{(c,c,s)U(c,s,c)U(s,c,c)}{|\Omega|}) = \frac{3}{8}
+\]
+\[
+P(X = 3) = P(\frac{(c,c,c)}{|\Omega|}) = \frac{1}{8}
+\]
+\[
+\sum P(X) = 1
+\]
+
+
+
+
+
+
+

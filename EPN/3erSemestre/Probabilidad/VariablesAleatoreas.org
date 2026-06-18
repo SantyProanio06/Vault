@@ -1,0 +1,127 @@
+:PROPERTIES:
+:ID:       d78eb371-2fbd-4b03-869c-d03e1590d726
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Variables Aleatorias
+#+filetags: :clases:probabilidad:
+#+date: <2026-06-17 Wed>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+* Variable Aleatoria
+Es una función con dominio en el espacio muestral y rango como
+subconjunto de reales finito o infinito.
+\[
+X: S / \Omega \to \mathbb{R} 
+\]
+\[
+w \mapsto X(w)
+\]
+donde $w$ es un elemento elemental.
+
+[[id:3d6d1e50-860e-4035-9a3e-78cf88b15dc5][Ejemplo 1 Variable Aleatoria]]
+
+** Tipo de variables aleatorias
+
+*** Discretas (v.a.d)
+$X$ es discreta si su recorrido es finito o infinito numerable.
+
+*Observación.- * Si $X$ tiene un recorrido ${x_1, x_2, ..., x_n}$
+entonces:
+\[
+P(X = x_1) + P(X = x_2) + ... + P(X = x_n) = 1
+\]
+\[
+P(x_1) + P(x_2) + ... + P(x_n) = 1
+\]
+
+**** Función de probabilidad $f$
+Es una función $f: \mathbb{R} \to \mathbb{R}$ tal que:
+\[
+f(x) = P(X = x)
+\]
+Como viene de los reales en los reales en la función se tienen que
+denotar todos los reales.
+Viene de [[id:3d6d1e50-860e-4035-9a3e-78cf88b15dc5][Ejemplo 1 Variable Aleatoria]].
+\[
+f(x) =
+\begin{cases}
+\frac{1}{8} & \text{si } x = 0 \\
+\frac{3}{8} & \text{si } x = 1 \\
+\frac{3}{8} & \text{si } x = 2 \\
+\frac{1}{8} & \text{si } x = 3 \\
+0 & \text{para otros valores de } X
+\end{cases}
+\]
+
+Esta es la distribución teórica de probabilidad.
+
+***** Gráfica de la función de probabilidad
+
+**** Función de distribución $F$
+Esta función $F : \mathbb{R} \to \mathbb{R}$ tal que
+\[
+F(X) = P(X \leq x) = \sum_{t = x} P(X = t)
+\]
+
+\[
+F(2) = P(X \leq 2) = P(0) + P(1) + P(2) = \frac{1}{8} + \frac{3}{8} +
+\frac{3}{8} = \frac{7}{8}
+\]
+
+\[
+F(-5) = P(X \leq -5) = 0
+\]
+
+\[
+F(x) =
+\begin{cases}
+0 & \text{si } X < 0 \\
+\frac{1}{8} & \text{si } 0 \leq X < 1 \\
+\frac{4}{8} & \text{si } 1 \leq X < 2 \\
+\frac{7}{8} & \text{si } 2 \leq X < 3 \\
+1 & \text{si } X > 3
+\end{cases}
+\]
+
+***** Gráfica de la función de distribución
+
+*Observación.-* Si $X$ es una v.a.d entonces:
+
+1. Si conocemos $f$ podemos conocer $F$ usando la definición:
+
+\[
+F(x) = P(X \leq x)
+\]
+
+2. Si se conoce $F$ se puede determinar $f$ usando
+
+\[
+f(x) = P(X = x) =
+\begin{cases}
+F(x_i) - F(x_i-1) & \text{si } x = x_i \in Img(X) \\
+0 & \text{otro valor}
+\end{cases} 
+\]
+
+*Ejemplo*
+\[
+f(2) 2 \in Img(X) \text{si por lo tanto} = F(2) - F(1) =
+\frac{7}{8} - \frac{4}{8} = \frac{3}{8}
+\]
+
+**** Propiedades
+1. $F$ es creciente si $\lim_{x \to -\infty} F(x) = 0 \text{y }
+   \lim_{x \to +\infty} F(x) = 1$
+2. $P(a < X \leq b) = F(b) - F(a)$
+3. $P(a \leq X \leq b) = F(b) - F(a) + P(X = a)$
+
+   

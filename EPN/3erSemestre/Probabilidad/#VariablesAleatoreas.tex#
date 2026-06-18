@@ -1,0 +1,161 @@
+% Created 2026-06-17 Wed 21:07
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\makeatletter
+\newcommand{\citeprocitem}[2]{\hyper@linkstart{cite}{citeproc_bib_item_#1}#2\hyper@linkend}
+\makeatother
+\author{Santiago Javier Proaño Yépez}
+\date{\textit{<2026-06-17 Wed>}}
+\title{Variables Aleatoreas}
+\hypersetup{
+ pdfauthor={Santiago Javier Proaño Yépez},
+ pdftitle={Variables Aleatoreas},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.3 (Org mode 9.6.15)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+:ID:       d78eb371-2fbd-4b03-869c-d03e1590d726
+\section{Variable Aleatoria}
+\label{sec:orgdc8e902}
+Es una función con dominio en el espacio muestral y rango como
+subconjunto de reales finito o infinito.
+\[
+X: S / \Omega \to \mathbb{R} 
+\]
+\[
+w \mapsto X(w)
+\]
+donde \(w\) es un elemento elemental.
+
+\href{Ejemplo1VarAleatoria.org}{Ejemplo 1 Variable Aleatoria}
+
+\subsection{Tipo de variables aleatorias}
+\label{sec:org2f60734}
+
+\subsubsection{Discretas (v.a.d)}
+\label{sec:org43ecb11}
+\(X\) es discreta si su recorrido es finito o infinito numerable.
+
+*Observación.- * Si \(X\) tiene un recorrido \({x_1, x_2, ..., x_n}\)
+entonces:
+\[
+P(X = x_1) + P(X = x_2) + ... + P(X = x_n) = 1
+\]
+\[
+P(x_1) + P(x_2) + ... + P(x_n) = 1
+\]
+
+\begin{enumerate}
+\item Función de probabilidad \(f\)
+\label{sec:org18b1524}
+Es una función \(f: \mathbb{R} \to \mathbb{R}\) tal que:
+\[
+f(x) = P(X = x)
+\]
+Como viene de los reales en los reales en la función se tienen que
+denotar todos los reales.
+Viene de \href{Ejemplo1VarAleatoria.org}{Ejemplo 1 Variable Aleatoria}.
+$\backslash$[
+f(x) =
+\begin{cases}
+\frac{1}{8} & \text{si } x = 0 \\
+\frac{3}{8} & \text{si } x = 1 \\
+\frac{3}{8} & \text{si } x = 2 \\
+\frac{1}{8} & \text{si } x = 3 \\
+0 & \text{para otros valores de } X
+\end{cases}
+$\backslash$]
+
+Esta es la distribución teórica de probabilidad.
+
+\begin{enumerate}
+\item Gráfica de la función de probabilidad
+\label{sec:orged8102f}
+\end{enumerate}
+
+\item Función de distribución \(F\)
+\label{sec:orgc4468d5}
+Esta función \(F : \mathbb{R} \to \mathbb{R}\) tal que
+\[
+F(X) = P(X \leq x) = \sum_{t = x} P(X = t)
+\]
+
+\[
+F(2) = P(X \leq 2) = P(0) + P(1) + P(2) = \frac{1}{8} + \frac{3}{8} +
+\frac{3}{8} = \frac{7}{8}
+\]
+
+\[
+F(-5) = P(X \leq -5) = 0
+\]
+
+$\backslash$[
+F(x) =
+\begin{cases}
+0 & \text{si } X < 0 \\
+\frac{1}{8} & \text{si } 0 \leq X < 1 \\
+\frac{4}{8} & \text{si } 1 \leq X < 2 \\
+\frac{7}{8} & \text{si } 2 \leq X < 3 \\
+1 & \text{si } X > 3
+\end{cases}
+$\backslash$]
+
+\begin{enumerate}
+\item Gráfica de la función de distribución
+\label{sec:org91f3f20}
+
+\textbf{Observación.-} Si \(X\) es una v.a.d entonces:
+
+\begin{enumerate}
+\item Si conocemos \(f\) podemos conocer \(F\) usando la definición:
+\end{enumerate}
+
+\[
+F(x) = P(X \leq x)
+\]
+
+\begin{enumerate}
+\item Si se conoce \(F\) se puede determinar \(f\) usando
+\end{enumerate}
+
+$\backslash$[
+f(x) = P(X = x) =
+\begin{cases}
+F(x_i) - F(x_i-1) & \text{si } x = x_i \in Img(X) \\
+0 & \text{otro valor}
+\end{cases} 
+$\backslash$]
+
+\textbf{Ejemplo}
+\[
+f(2) 2 \in Img(X) \text{si por lo tanto} = F(2) - F(1) =
+\frac{7}{8} - \frac{4}{8} = \frac{3}{8}
+\]
+\end{enumerate}
+
+\item Propiedades
+\label{sec:orgdf0d5c6}
+\begin{enumerate}
+\item \(F\) es creciente si \(\lim_{x \to -\infty} F(x) = 0 \text{y }
+   \lim_{x \to +\infty} F(x) = 1\)
+\item \(P(a < X \leq b) = F(b) - F(a)\)
+\item \(P(a \leq X \leq b) = F(b) - F(a) + P(X = a)\)
+\end{enumerate}
+\end{enumerate}
+\end{document}

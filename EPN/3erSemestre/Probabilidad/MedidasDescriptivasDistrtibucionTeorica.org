@@ -1,0 +1,97 @@
+:PROPERTIES:
+:ID:       b8425e24-46c6-4dc0-bec9-d51575a7e4f4
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Medidas descriptivas en una distribución teórica
+#+filetags: :clases:probabilidad:
+#+date: <2026-06-23 Tue>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+* Medidas de tendencia central
+- Media
+  En probabilidad la media o promedio pasa a ser esperanza $\mu$
+- Mediana
+  En proba pasa de $x \text{tq } Fr(x) = 0.5$, ahora pasa a ser $x \text{tq }
+  F(x) = 0.5$
+- Moda
+  xd
+* Medidas de posición
+- Percentiles
+  Estadística $Pk = x \text{tq } Fr(x) = k%$
+  Proba $Pk = x \text{tq } F(x) = k%$
+* Medidas de dispersión
+- Varianza
+  de $s^{2} \to \sigma^{2}$
+- Desviación estándar
+  de $s \to \sigma$
+- Rango
+  Máximo - mínimo
+- Coeficiente de variación
+  de $CV = \fraq{s}{\bar x} \to CV = \fraq{\sigma}{\mu}$
+* Calculo de
+** Esperanza matemática
+$\mu$ , $E(X)$:
+- En [[id:b49b160c-84ec-4392-b44f-e5e13f65845c][Discretas (v.a.d)]]
+  $E(X) = \sum_{x} x \cdot P(X = x)$
+- En [[id:073df09c-02c7-4235-8c13-767445ee6bb6][Variable aletría continua (v.a.c)]]
+  $E(X) = \int_-\infty^{+\infty} x \cdot f(x)\,dx$
+** Varianza
+$\sigma^{2}$ , $V(X)$
+
+$V(X) = E[(X - E(X)^{2}] = E(X^{2}) - [E(X)]^{2}$
+
+- En [[id:b49b160c-84ec-4392-b44f-e5e13f65845c][Discretas (v.a.d)]]
+  $V(X) = \sum_{x} x^{2} \cdot P(X = x) - [E(X)]^{2}$
+- En [[id:073df09c-02c7-4235-8c13-767445ee6bb6][Variable aletría continua (v.a.c)]]
+  $V(X) = \int_-\infty^{+\infty} x^{2} \cdot f(x)\,dx - [E(X)]^{2}$
+** Propiedades
+1. Sea $C$ una constante
+   $E(C) = C$ y $V(C) = 0$
+2. Sea $C$ una constante y $X$ una variable aleatoria entonces:
+   $E(C + X) = C + E(X)$
+   $V(C + X) = V(X)$
+   $E(C \cdot X) = C \cdot E(X)$
+   $V(C \cdot X) = C^{2} \cdot V(X)$
+3. Sea $X$ y $Y$ variables aleatoria
+   $E(X + Y) = E(X) + E(Y)$
+4. Si estas mismas son *independientes*
+   $V(X + Y) = V(X) + V(Y)$
+** Ejemplos
+Del [[id:196e414f-8744-400f-8380-0838f64b269c][Ejemplo 2 variable aleatoria discreta]]
+- Cual es el valor esperado de las ganancias mensuales?
+  $E(X) = \sum_{x} x \cdot P(X = x)$
+  $= -3 \cdot P(X = 3) + -1 \cdot P(X = -1) \cdots + 4 \cdot P(X = 4)$
+  $= 1.28$ miles de dolares
+
+  *Interpretación* Las ganancias mensuales de la empresa serán de
+  1280$ en promedio *a la larga*
+  
+- Cual es la variabilidad de las ganancias o pedidas de la empresa?
+  =Nos interesa que la varianza sea baja=
+  $V(X) = \sum_{x} x^{2} \cdot P(X = x) - [E(X)]^{2}$
+  $V(X) = [(-3)^{2} \cdot (0.04) + \cdots (4)^{2} \cdot (0.12)] -
+  (1.28)^{2}$
+  $= 3.08$ miles de dolares
+
+Del [[id:e343b186-e4aa-4471-ab9d-ca06bcc6c46f][Ejemplo 3 Variable aleatoria continua]]
+- Cual es el promedio del diámetro de las partículas?
+  $E(X) = \int_-\infty^{+\infty} x \cdot f(x)\,dx$
+  $= \int_-\infty^{+\infty} x \cdot \fraq{2}{x^{3}}\,dx$
+  $= \int_-\infty^{+\infty} \fraq{2}{x^{2}}\,dx$
+  =Separamos=
+  $= \int_-\infty^{1} \fraq{2}{x^{2}}\,dx + \int_1^{+\infty} \fraq{2}{x^{2}}\,dx$
+  =Eliminamos :)=
+  $= \int_1^{+\infty} \fraq{2}{x^{2}}\,dx$
+  $2\lim_{a \to +\infty}(\int_1^{a} x^{-2}\,dx)$
+  $2\lim_{a \to +\infty} \fraq{-2}{x} \mid_1^{a}$
+  =resolvemos=
+  $E(X) = 2 \mu m$

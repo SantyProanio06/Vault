@@ -1,0 +1,174 @@
+:PROPERTIES:
+:ID:       e343b186-e4aa-4471-ab9d-ca06bcc6c46f
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Ejemplo 3 Variable aleatoria continua
+#+filetags: :clases:probabilidad:ejemplo:
+#+date: <2026-06-23 Tue>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+* Enunciado
+*Las partículas son un componente importante de la contaminación
+ atmosférica. Es importante estudiar su tamaño. Sea $X$ el diámetro
+ de las partículas en micrómetros y supongamos que su distribución es
+ inversamente proporcional a su volumen es decir:*
+$f(x)
+\begin{cases}
+\fraq{C}{x^{3}} & x \geq 1\\
+0 & x < 1
+\end{cases}
+$
+
+1. Determinar $C$ para que $f$ sea una función de densidad
+=Para que una función sea de densidad deben cumplirse las propiedades
+por lo tanto verificamos las propiedades=
+[[id:6501895e-efd9-4326-a789-fdbd54cb0c7c][Función de densidad $f$]]
+
+*Primera propiedad*
+$f(x) \geq 0$, $\forall x \in \mathbb{R}$
+
+Sea$x \geq 1$
+$\fraq{C}{x^{3}} \geq 0$ =como x es mayor que 1 entonces no puede ser
+negativo=
+
+$C \geq 0$
+*Segunda propiedad*
+$\int_-\infty^{+\infty} f(x)\,dx = 1$
+
+=Como la función esta dividad en 2 intervalos podemos dividir a la
+integral en 2 intervalos también=
+
+$\int_-\infty^{1} f(x)\,dx + \int_1^{+\infty} f(x)\,dx$
+
+=Como la función en el primer intervalo es 0, se elimina=
+
+$\int_1^{+infty} \fraq{C}{x^{3}}\,dx$
+
+=Integral impropia=
+
+$\lim_{a \to +\infty}(\int_1^{a} \fraq{C}{x^{3}}\,dx)$
+
+=Como c es constante, puede salir=
+
+$C\lim_{a \to +\infty}(\int_1^{a} x^{-3}\,dx)$
+
+=integramos=
+$C\lim_{a \to +\infty} \fraq{x^{-2}}{-2} \mid_1^{a}$
+$C\lim_{a \to +\infty} \fraq{1}{-2x^{2}} \mid_1^{a}$
+
+=Hacemos los extremos, superior menos inferior=
+$C\lim_{a \to +\infty} \fraq{1}{-2a^{2}} + \fraq{1}{2}$
+
+=Como el limite de una variable que tiende al infinto es 0 la primera
+fracción se hace 0 y la otra es solo una constante=
+
+$C + \fracq{1}{2} = \fraq{C}{2}$
+
+=teniendo eso, recordamos que toda la integral estaba igualada a 1=
+
+$\fraq{C}{2} = 1$
+
+$C = 2$
+
+
+=Por lo tanto si es una funcion de densidad y queda como:=
+
+$f(x)
+\begin{cases}
+\fraq{2}{x^{3}} & x \geq 1\\
+0 & x < 1
+\end{cases}
+$
+
+*Importante validar siempre que sea una función de densidad*
+
+2. Que proporción de partículas tendrían diámetros de hasta $5 \mu m$?
+=gracias a la definición de= [[id:e1d0843b-107f-4b38-947d-9500a7e5119f][Función de distribución $F$ continua]]
+
+$F(5) = P(X \leg 5) = \int_-\infty^{5} f(x)\,dx$
+
+=Del mismo modo podemos divir la integral en dos=
+
+$\int_-\infty^{1} f(x)\,dx + \int_1^{5} f(x)\,dx$
+
+=Eliminando la primera=
+
+$\int_1^{5} \fraq{2}{x^{3}}\,dx = 0.96 \to 96%$
+
+
+3. Determinar la función de distribución de los diámetros.
+=Para esto del mismo modo que en el literal anterior usamos la
+definición, pero el objetivo es hacerlo para cualquier $x$=
+
+$F(x) = P(X \leg x) = \int_-\infty^{x} f(x)\,dx$
+
+=del mismo modo separamos y eliminamos la primera=
+
+$\int_1^{x} \fraq{2}{x^{3}}\,dx \to -\fraq{1}{x^2} \mid_1^{x} =
+-\fraq{1}{x^2} + 1$
+
+=es decir=
+
+$F(x) = -\fraq{1}{x^2} + 1$
+
+=pero no hay que olvidarse de que es en todos los reales=
+
+$
+F(x) =
+\begin{cases}
+0 & x < 1\\
+-\fraq{1}{x^2} + 1 & x \geq 1
+\end{cases}
+$
+
+=Con esto ya podemos determinar cualquier F(x) solo reemplazamos y ya
+por ejemplo=
+
+$P(X > 3) = 1 - P(X \leq 3)$
+
+$1 - F(3)$
+
+$1 + \fraq{1}{9} - 1 = \fraq{1}{9}$
+
+
+4. Que porcentaje de partículas tienen diámetros mayores a $2 \mu m$ y
+   como máximo $5 \mu m$?
+   
+=Normalmente se pensaría que la resolución seria con=
+$P(2 < X \leq 5)$
+
+=pero eso esta mal por que cuando hacemos que x sea mayor que 2,
+estamos reduciendo el espacio muestral a todos los que son mayores que
+2, por tanto usamos probabilidad condicional=
+
+$P(X \leq 5 \mid X > 2 = \fraq{P(x \leq 5 \cap x > 2)}{P(x > 2)}$
+
+$\fraq{P(2 < x \leq 5)}{1 - P(x \leq 2)}
+=Aplicamos propiedades de la función de distribución de v.a.d, por que
+asumo que ambas son funciones de distribución solo que en la continua
+hay unas mas= [[id:ba89c1f6-ae42-4642-bffd-cd1d9075a476][Propiedades]]
+
+$\fraq{F(5) - F(2) }{1 - F(2)}$
+
+=y aplicamos la funcion para cualquier x del literal 3=
+
+$\fraq{0.96 - 0.75}{1 - 0.75} = 0.84 \to 84%$
+
+
+=pasos fundamentales=
+$X$ mide el diámetro de las partículas.
+=Podemos ver en la funcion esa que para valores menores a 1 la
+probabilidad es 0, y que hay valores desde 1 hasta el infinito por
+tanto=
+$X \in [1, +\infty)$
+
+Como es un intervalo entonces concluimos que es una [[id:073df09c-02c7-4235-8c13-767445ee6bb6][Variable aletría continua (v.a.c)]]

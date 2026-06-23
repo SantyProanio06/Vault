@@ -1,0 +1,108 @@
+:PROPERTIES:
+:ID:       196e414f-8744-400f-8380-0838f64b269c
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Ejemplo 2 variable aleatoria discreta
+#+filetags: :clases:probabilidad:ejemplo:
+#+date: <2026-06-22 Mon>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+* Enunciado
+*En cierta empresa se realizo un estudio de las ganancias perdidas
+ mensuales y su distribución viene dada por: Con $X = $ "Ganancia o
+ perdía mensual*
+ \[
+f(x) =
+\begin{cases}
+0.04 & \text{si } x = -3\\
+0.2 & \text{si } x = -1\\
+0.23 & \text{si } x = 0\\
+0.46 & \text{si } x = 2\\
+0.15 & \text{si } x = 4\\
+0 & \text{caso contrario}
+\end{cases}
+\]
+=Si te das cuenta esta es la= [[id:3613fa5e-7e45-44b9-b28b-1a1ff9154c0c][Función de probabilidad $f$]]
+
+- Determinar la probabilidad de que en un mes la empresa reporte
+perdidas.
+- La proporción de meses en los que la empresa reporta ganancias mensuales.
+- La probabilidad de que la empresa no reporte perdidas o ganancias de
+  más de 4000$
+* Pasos fundamentales
+=Para resolver ejercicios de v.a.d=
+1. Entender la $X$ y lo que mide
+2. Determinar la función de probabilidad, osea todos los valores que
+   puede tener $X$
+3. Determinar el tipo de variable aleatoria para usar su teoría.
+
+* Resolución del ejercicio
+1. $X$ mide las ganancias MENSUALES donde $x_i$ es la cantidad en
+   miles de dolares lo que ganó o perdió la empresa.
+2. distribución de probabilidad
+   $
+   X =
+   \begin{cases}
+   -3\\
+   -1\\
+   0\\
+   2\\
+   4
+   \end{cases}
+   $
+3. =Para determinar el tipo de variable tenemos que ver la definición=
+   Según [[id:b49b160c-84ec-4392-b44f-e5e13f65845c][Discretas (v.a.d)]] y como esta este recorrido es finito
+   numerable esta $X$ es una v.a.d =usaremos la teoría de v.a.c+=
+- =Para que reporte perdidas debemos usar los valores cuando X toma -1
+  y -3 pues ahí es cuando se pierden 3000 y 1000 dolares=
+  $P(X = -3 \cup X = -1) = P(X = -3) + P(X = -1) = 0.04 + 0.12 = 0.16$
+- =Para este caso, las ganancias solo se presentan cuando X toma
+  valores mayores a 0, además cuando este en términos frecuentistas es
+  lo mismo que preguntar la probabilidad=
+  $P(X = 2 \cup X = 4) = P(x = 2) + P(x = 4) = 0.46 + 0.15 = 0.61 \to
+  61%$
+- =Hay dos formas de hacerlo pero usando la teoría podemos representar
+  así, como podemos hacer eso en forma de resta de segmentos=
+ $P(0 \leq x < 4) = P(x < 4) - P(x < 0)$
+
+ =el signo del 0 cambia por que al restar 2 segementos si uno esta
+  inlcuio al restarle se le desincluye entoneces como queremos
+  incluirle tenemos que des incluirle=
+  
+ =gracias la propieda 2= [[id:ba89c1f6-ae42-4642-bffd-cd1d9075a476][Propiedades]]
+  =Buscamos una forma de tener la misma forma de la propiedad 2 para
+  poder usarle en este caso, vemos que antes del 4 esta el dos y que
+  esta incluido, además que antes del 0 esta el -1 y este si esta
+  incluido por tanto es lo mismo que decir=
+
+  $= P(x \leq 2) - P(x \leq -1) = F(2) - F(-1)$
+
+=por ultimo para resolver simplemente hacemos la= [[id:8d00d810-c4e3-4816-b47f-6ad604375679][Función de
+distribución $F$]]
+
+$
+F(x) =
+\begin{cases}
+0 & x < -3\\
+0.04 & -3 \leq x < -1\\
+0.16 & -1 \leq x < 0\\
+0.39 & 0 \leq x < 2\\
+0.85 & 2 \leq x < 4\\
+1 & x \geq 4
+\end{cases}
+$
+ 
+$= F(2) - F(-1) = 0.85 - 0.16 = 0.69 \to 69%$
+
+  
+
+

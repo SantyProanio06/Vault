@@ -32,6 +32,9 @@ donde $w$ es un elemento elemental.
 ** Tipo de variables aleatorias
 
 *** Discretas (v.a.d)
+:PROPERTIES:
+:ID:       b49b160c-84ec-4392-b44f-e5e13f65845c
+:END:
 $X$ es discreta si su recorrido es finito o infinito numerable.
 
 *Observación.- * Si $X$ tiene un recorrido ${x_1, x_2, ..., x_n}$
@@ -44,6 +47,9 @@ P(x_1) + P(x_2) + ... + P(x_n) = 1
 \]
 
 **** Función de probabilidad $f$
+:PROPERTIES:
+:ID:       3613fa5e-7e45-44b9-b28b-1a1ff9154c0c
+:END:
 Es una función $f: \mathbb{R} \to \mathbb{R}$ tal que:
 \[
 f(x) = P(X = x)
@@ -67,6 +73,9 @@ Esta es la distribución teórica de probabilidad.
 ***** Gráfica de la función de probabilidad
 
 **** Función de distribución $F$
+:PROPERTIES:
+:ID:       8d00d810-c4e3-4816-b47f-6ad604375679
+:END:
 Esta función $F : \mathbb{R} \to \mathbb{R}$ tal que
 \[
 F(X) = P(X \leq x) = \sum_{t = x} P(X = t)
@@ -119,9 +128,30 @@ f(2) 2 \in Img(X) \text{si por lo tanto} = F(2) - F(1) =
 \]
 
 **** Propiedades
+:PROPERTIES:
+:ID:       ba89c1f6-ae42-4642-bffd-cd1d9075a476
+:END:
 1. $F$ es creciente si $\lim_{x \to -\infty} F(x) = 0 \text{y }
    \lim_{x \to +\infty} F(x) = 1$
-2. $P(a < X \leq b) = F(b) - F(a)$
+2. $P(a < X \leq b) = F(b) - F(a) = P(x \leq b) - P(x \leq a)$
 3. $P(a \leq X \leq b) = F(b) - F(a) + P(X = a)$
 
+[[id:196e414f-8744-400f-8380-0838f64b269c][Ejemplo 2 variable aleatoria discreta]]
    
+*** Variable aletría continua (v.a.c)
+Es continua si su recorrido es un intervalo de los reales, $X$ es
+continua si su función de distribución es continua.
+
+*Observación.-* Si tenemos una v.a.c entonces
+$P(X = x) = 0 \forall x \in \mathbb{R}$
+
+**** Función de densidad $f$
+Dada $X$ como v.a.c y $F$ su función de distribución a la función $f:
+\mathbb{R} \to \mathbb{R}$ tal que $f(x) = F\prime (x)$ se le llama
+función de densidad de $X$.
+
+***** Propiedades
+1. $f(x) \geq 0 \forall x \in \mathbb{R}$
+2. $\int_-\infty^{+\infty} f(x)\,dx = 1$
+3. P(a \leq x \leq b) = \int_a^{b} f(x)\,dx$
+

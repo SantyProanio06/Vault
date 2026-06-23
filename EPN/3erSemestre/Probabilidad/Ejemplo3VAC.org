@@ -37,7 +37,7 @@ por lo tanto verificamos las propiedades=
 $f(x) \geq 0$, $\forall x \in \mathbb{R}$
 
 Sea$x \geq 1$
-$\fraq{C}{x^{3}} \geq 0$ =como x es mayor que 1 entonces no puede ser
+$\frac{C}{x^{3}} \geq 0$ =como x es mayor que 1 entonces no puede ser
 negativo=
 
 $C \geq 0$
@@ -51,31 +51,31 @@ $\int_-\infty^{1} f(x)\,dx + \int_1^{+\infty} f(x)\,dx$
 
 =Como la función en el primer intervalo es 0, se elimina=
 
-$\int_1^{+infty} \fraq{C}{x^{3}}\,dx$
+$\int_1^{+infty} \frac{C}{x^{3}}\,dx$
 
 =Integral impropia=
 
-$\lim_{a \to +\infty}(\int_1^{a} \fraq{C}{x^{3}}\,dx)$
+$\lim_{a \to +\infty}(\int_1^{a} \frac{C}{x^{3}}\,dx)$
 
 =Como c es constante, puede salir=
 
 $C\lim_{a \to +\infty}(\int_1^{a} x^{-3}\,dx)$
 
 =integramos=
-$C\lim_{a \to +\infty} \fraq{x^{-2}}{-2} \mid_1^{a}$
-$C\lim_{a \to +\infty} \fraq{1}{-2x^{2}} \mid_1^{a}$
+$C\lim_{a \to +\infty} \frac{x^{-2}}{-2} \mid_1^{a}$
+$C\lim_{a \to +\infty} \frac{1}{-2x^{2}} \mid_1^{a}$
 
 =Hacemos los extremos, superior menos inferior=
-$C\lim_{a \to +\infty} \fraq{1}{-2a^{2}} + \fraq{1}{2}$
+$C\lim_{a \to +\infty} \frac{1}{-2a^{2}} + \frac{1}{2}$
 
 =Como el limite de una variable que tiende al infinto es 0 la primera
 fracción se hace 0 y la otra es solo una constante=
 
-$C + \fracq{1}{2} = \fraq{C}{2}$
+$C + \fracq{1}{2} = \frac{C}{2}$
 
 =teniendo eso, recordamos que toda la integral estaba igualada a 1=
 
-$\fraq{C}{2} = 1$
+$\frac{C}{2} = 1$
 
 $C = 2$
 
@@ -84,7 +84,7 @@ $C = 2$
 
 $f(x)
 \begin{cases}
-\fraq{2}{x^{3}} & x \geq 1\\
+\frac{2}{x^{3}} & x \geq 1\\
 0 & x < 1
 \end{cases}
 $
@@ -102,7 +102,7 @@ $\int_-\infty^{1} f(x)\,dx + \int_1^{5} f(x)\,dx$
 
 =Eliminando la primera=
 
-$\int_1^{5} \fraq{2}{x^{3}}\,dx = 0.96 \to 96%$
+$\int_1^{5} \frac{2}{x^{3}}\,dx = 0.96 \to 96%$
 
 
 3. Determinar la función de distribución de los diámetros.
@@ -113,12 +113,12 @@ $F(x) = P(X \leg x) = \int_-\infty^{x} f(x)\,dx$
 
 =del mismo modo separamos y eliminamos la primera=
 
-$\int_1^{x} \fraq{2}{x^{3}}\,dx \to -\fraq{1}{x^2} \mid_1^{x} =
--\fraq{1}{x^2} + 1$
+$\int_1^{x} \frac{2}{x^{3}}\,dx \to -\frac{1}{x^2} \mid_1^{x} =
+-\frac{1}{x^2} + 1$
 
 =es decir=
 
-$F(x) = -\fraq{1}{x^2} + 1$
+$F(x) = -\frac{1}{x^2} + 1$
 
 =pero no hay que olvidarse de que es en todos los reales=
 
@@ -126,7 +126,7 @@ $
 F(x) =
 \begin{cases}
 0 & x < 1\\
--\fraq{1}{x^2} + 1 & x \geq 1
+-\frac{1}{x^2} + 1 & x \geq 1
 \end{cases}
 $
 
@@ -137,7 +137,7 @@ $P(X > 3) = 1 - P(X \leq 3)$
 
 $1 - F(3)$
 
-$1 + \fraq{1}{9} - 1 = \fraq{1}{9}$
+$1 + \frac{1}{9} - 1 = \frac{1}{9}$
 
 
 4. Que porcentaje de partículas tienen diámetros mayores a $2 \mu m$ y
@@ -150,18 +150,18 @@ $P(2 < X \leq 5)$
 estamos reduciendo el espacio muestral a todos los que son mayores que
 2, por tanto usamos probabilidad condicional=
 
-$P(X \leq 5 \mid X > 2 = \fraq{P(x \leq 5 \cap x > 2)}{P(x > 2)}$
+$P(X \leq 5 \mid X > 2 = \frac{P(x \leq 5 \cap x > 2)}{P(x > 2)}$
 
-$\fraq{P(2 < x \leq 5)}{1 - P(x \leq 2)}
+$\frac{P(2 < x \leq 5)}{1 - P(x \leq 2)}
 =Aplicamos propiedades de la función de distribución de v.a.d, por que
 asumo que ambas son funciones de distribución solo que en la continua
 hay unas mas= [[id:ba89c1f6-ae42-4642-bffd-cd1d9075a476][Propiedades]]
 
-$\fraq{F(5) - F(2) }{1 - F(2)}$
+$\frac{F(5) - F(2) }{1 - F(2)}$
 
 =y aplicamos la funcion para cualquier x del literal 3=
 
-$\fraq{0.96 - 0.75}{1 - 0.75} = 0.84 \to 84%$
+$\frac{0.96 - 0.75}{1 - 0.75} = 0.84 \to 84%$
 
 
 =pasos fundamentales=

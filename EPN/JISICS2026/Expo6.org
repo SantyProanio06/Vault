@@ -1,0 +1,84 @@
+:PROPERTIES:
+:ID:       b6248000-4b13-4074-a611-7a77391bcf24
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Harness Engineering en proyectos Brown Field
+#+filetags: :procesar:jsics: 
+#+date: <2026-06-24 Wed>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+Exponente Pablo Correa
+* Greenfield
+Proyecto donde casi todos quisiéramos participar, desde 0,
+flexibilidad para todo
+* Brownfield
+Muchos de los proyectos son estos, existentes sin flexibilidad
+* Legacy Sistems
+Lo mas sencillo es escribir código, lo mas difícil es entender que
+hace
+* Escenario Real
+Se invierte tiempo en la arquitectura, modelos, practicas, 
+etc. Transferir conocimiento y contexto del proyecto
+** Desafios al onboardear a un coding agent
+- Los LLMs son stateless
+  no recuerdan iteraciones pasadas, cada nueva operación tenemos que
+  darle el contexto de nuevo
+- La ventana de contexto
+  Limite físico que pueden procesar los LLMs, si se sobrepasan los
+  limites pueden haber alucinaciones. Debemos identificar el contexto
+  minimo para que el cambio sea seguro.
+* Harness Engineering (harnes)
+Todas las restricciones, contexto, herramientas y mecanismos de
+validación al rededor de un coding agent.
+Ejemplo, las pruebas unitarias, es decir verificar que el codigo
+funcione, algo asi pero aplicado a las IAs.
+Analogía: los arneses de los caballos.
+** Feedforward y feedback
+Un arnes externo cumple con dos objetivos
+1. Incrementar la probabilidad de que la gente cumpla su tarea a la
+   primera
+2. Implementar mecanismos de auto corrección tanto como sea posible
+   antes de llegar al usuario final
+*** Feedforward
+Anticipa el comportamiento de la gente
+- Agent MD
+    Overview del proyecto, modular que hace referencia a los
+    diferentes skills. Forma parte del código fuente
+- Skills
+  Se encargan de ejecutar tareas
+Ejemplo, se le pide que de un plan de que cambios va a hacer y que
+archivos va a cambiar. Que pruebas y que tipo de pruebas funcionan
+*** Feedback
+- Pruebas estructurales
+  Pruebas de caja negra donde se da el imput y valida cualquier
+  cambio. Verifica el comportamiento. Verifica la complejidad
+  cyclomatica
+- Skills
+  Otros agentes que se encargan de un proposito especifico, o code
+  reviwers.
+* Es suficiente?
+Elefante en la sala, si el agente escribe las pruebas y el codigo por
+eso hay que poner un arnés para el comportamiento. Es decir los
+ejemplos deben venir de los humanos.
+* Nueva labor del equipo
+- Conocimiento
+  Capturar el negocio y definir restricciones de comportamiento
+- Verificación
+  Construir mecanismos que permitan cambios seguros de implementación
+- Autonomía
+  Supervisar que el agente evolucione el sistema sin alterar su
+  propósito.
+* Conclusiones
+Usar el mas nuevo por que si no te asegura el éxito sin una estrategia
+clara
+El factor humano sigue siendo el núcleo de la definición del propósito
+Entre mas difícil parezca definir el harness mas vale la pena.

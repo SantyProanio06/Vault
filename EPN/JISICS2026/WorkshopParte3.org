@@ -1,0 +1,158 @@
+:PROPERTIES:
+:ID:       00bf9b30-35df-4630-a930-bf882cfdbfef
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Branding e IA en 3 pasos
+#+filetags: :procesar:jisics:workshop:
+#+date: <2026-06-24 Wed>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+Como la IA a logrado ser una herramienta para hacer branding, crear
+marcas se vuelve rapido, no facil. No significa que hay menos
+importancia en el diseño grafico. 3 Pasos nace de usar herramientas de
+pago, sin ambargo se usaran herramientas faciles, permite vecotrizar
+un elemento.
+* Nuevo proceso creativo
+- Antes
+  Investigacion, bocetaje, diseño y produccion
+- Ahora
+  Ivestigacion + IA
+* Branding
+
+
+** Paso 1 Estrategia y Concepto
+Para generar una marca se dice que es una persona, es como un amigo,
+ejemplo la cola. Concepto de la cola la felicidad, la cola no tenia
+competencia, como producto y como marca. Las marcas apuntan a
+familiaridad.
+
+Toda marca nace de una idea, quien es, que problema resuelve, a quien
+ayuda, como quiere ser recordada.
+
+Lo haremos en base a la IA, en este caso Chat GPT. Pues es mejor para
+generar imágenes.
+
+Ejemplo de Prompt "Actua como consultor de branding y desarolla una marca de
+servicio de redes lan diriga a jovenes profesionales"
+
+Se solicitan
+- Naming
+  Suepr importante pues de este se acuerda la gente
+- Eslogan
+- Misión y visión
+  Que quiero hacer y que me veo en un tiempo
+- Valores
+  Puntualidad, persistencia, etc.
+- Publico objetivo
+- Personalidad de Marca
+
+  
+*** Funcional
+Debería de ponerle en una botella y en un esfero y que funcione.
+
+*** Arquetipos
+Hay varios tipos de arquetipos jaja, como explorador como redbull, o
+creador como Lego, etc. Tengo que decidir que arquetipo de marca
+quiero tener. Ahora con un prompt puedo definir mi arquetipo
+
+** Paso 2 Dirección Visual
+puente entre estrategia y diseño
+
+Composición, estilo, colores
+
+En composicion se manejan los pesos graficos y las marcas siempre van
+a la derecha, lo mejor y caro o lo que quiero que se vea debería de ir
+a la derecha, lo contrario con la izquierda. La composicion tambien es
+como vestimos por ejemplo
+
+Sensación, ejemplo la botella de coca cola se hizo en base a la figura
+de la mujer.
+
+*** Moodboard
+Visualizar la personalidad de la marca antes de diseñar
+La paleta de color rojo amor, blanco salud, verde naturaleza
+
+Tipografías, prohibidas marcas con churitos pues si se reduce se ven
+bichos y así.
+
+Nuestro objetivo es usar la IA para transmitir emociones que esta no
+puede entender.
+
+*** Color
+Hay tantas variaciones que las marcas cojen una ejm rojo coca cola
+- Rojo
+  Calidez, peligro, amor
+- Azul
+  Profesionalidad, seriedad, calma
+- Verde
+  Naturaleza, etica, frecura
+- Amarillo
+  Felicidad, calidez, alegria
+- Naranja
+  juventud, innovación,
+- Violeta
+  Lujo, realeza, poder
+- Rosa
+  diversión, inocencia, femenino, romántico
+- Marron
+  Masculino, natural, tierra
+- Gris
+  Autoridad, respeto, humildad
+- Negro
+  Poder, sofisticación, valor, muerte
+
+Los significados varían según el país
+
+*Sabias que* En medio oriente no es cruz roja sino luna media roja.
+
+*** Adobe Color
+Herramienta para construir sistemas cromáticos. Permite hacer
+armonías, contrastes, extracción desde imágenes, etc.
+
+** Paso 3 Identidad y producción
+
+*** Del concepto al logotipo
+Luego de todos esos pasos usamos el
+
+*** Ilustrador
+- Recolor
+- Texto a vector
+- Vectorización
+  De una imagen a hacer curvas
+
+Los vectores como se pueden escalar, nos permite imprimir imagenes
+enormes sin que se pixele, y asi.
+*** Photoshop + IA
+Ayuda bastante en el diseño de aplicaciones (investigar)
+
+*** Apps de marca
+Redes sociales, papeleria, etc.
+packaging es donde se envía el producto
+
+*** Combinación ganadora
+- IA
+  Velocidad, invariación, inspiración, etc.
+- Diseñador
+  Contexto cultural, pensamiento estrategico, empatia, creatividad,
+  etc.
+  
+** Conclusión
+La IA no supera al Branding sino lo apoya y mejora junto con el
+humano.
+
+"La tecnología acelera el trabajo pero la estrategia sigue siendo humana"
+
+* Practico
+Chat GPT y vectorpea.com
+
+Que nos represente y que tiene significado, si tenemos una marca
+debemos cumplirla, usar moodboards, sino están fritos

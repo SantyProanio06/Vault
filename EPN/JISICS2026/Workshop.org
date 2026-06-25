@@ -1,0 +1,128 @@
+:PROPERTIES:
+:ID:       f25352a8-e3e7-4b1e-b004-0ac54e16551d
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: IA aplicada workshop parte 1
+#+filetags: :jisics:procesar:workshop:
+#+date: <2026-06-24 Wed>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+* La revolucion
+- El boom  empezo ahorita, hay 800 millones de usuarios en GPT
+- La IA  es una tecnologia con adopcion mas rapida de la historia
+- Un 66% de empresas tiene inteligencia artificial pagadas y asi.
+- Solo 15% de personas usan agentes de IA.
+- Solo el 6% tiene utilidad operativa osea ganan plata de esto.
+*  La ley AMARA
+Métrica que valida el impacto de la tecnología en el ser
+humano. Nosotros sobre estimamos el impacto de la tecnología al corto
+plazo, nos asustamos y así, pero conforme pasa el tiempo se entra en
+una zona de confort y se deja de aprender y así
+* No te remplaza la IA
+Te remplaza alguien que la use mejor, y que tenga estrategia. La
+exponente nos dice que su empresa quiso meter IA en todas las areas,
+sin estrategia eso se hizo una "masa".
+** La IA tiene que tener norte
+Preguntate, la uso para amplificar mi proposito? o para ir mas rapido
+a donde sea, incluso si es en direccion erronea.
+
+- Saber lo que quiero crear
+
+
+La IA es el vehiculo, pero si no sabemos a donde ir, es solo como
+acelerar un ferrary hacia un barranco y moriri :)
+* Ruta de adopción de IA
+Tenemos que implementar IA de forma estructurada
+1. Declaracion de una vision estratégica
+2. Que se quiere lograr en la organización
+3. Priorizar casos de negocio de la organización
+
+
+Evaluar los perfiles de mi organización, talleres, formaciones,
+comunidades de practica.
+
+Necesito un modelo operativo, que personas regulan, que roles hacen x
+cosas
+
+Llevar el producto hecho con IA para que no genere un rechazo por la
+gente. Debe estar claro por que usamos IA y como es seguro
+
+Orquestador de valores y sostenibiliad
+Como impacta en la organización estos productos hechos con IA
+* Herramientas para la ruta de adopción de IA
+- Por donde empiezo?
+  Radar de oportunidades, validar por donde empezar, en el ejemplo de
+  la empresa que se hizo masa, se hubieran buscado las mejores
+  oportunidades
+- 
+   Radar de madurez, ver que areas estan o no actualizadas con la
+   tecnologia
+- Como genero un caso de negocio para IA?
+  IA canvas descubrir las necesidades de tecnologia en un campo
+  especifico, se detecta el problema.
+  Identificar los casos de exito temprano
+- Que gaps tengo?
+  IA gaps, ver que brechas tengo en la organización y a partir de eso
+  ver una posible solución
+-Que tan madura esta mi organización?
+  La inovacion tiene un enfoque en el cliente, osea que el cliente
+  pueda usar con el tiempo y que use todo el programa
+
+Ahí recién puedo hacer invocación en una organización
+* IA no herramienta
+Es una capacidad que nos permite tomar decisiones aumentadas.
+* Donde estamos hoy?
+- Machine Learning
+- Machine Inteligence
+- Machine Conscioness
+Estamos en machine learning pues la ia esta diseñada para realizar
+tareas dependiendo de un humano en caso de que no dependa  llagamos a
+machine intelligence
+* Conceptos nuevos
+- RAG
+  la biblioteca donde se guarda la información
+- MCP
+  Enchufe universal, protocolo que conecta la IA con todas las
+  aplicaciones
+- Self hosting
+  IA personal la que usamos vaya.
+* Prompt Engineering
+Hay un monton de formatos para crear prompts RTF, CARE
+Entre mas explícitos y mas respetemos al español mejor comunicación con
+la IA
+* Ejercicio 1
+Con ese prompt ahora la IA nos da patrones para mejorar en las
+finanzas personales, y dejan de ser datos
+* Skill
+Archivo de instrucciones que define como debe comportarse en una tarea
+especifica, como darle un manual a un empleado, sin necesidad de
+explicar nada mas, este es un archivo .md, el skill no es código
+aunque si puede ser código depende su uso, si
+se repite mas de 3 veces se puede poner como skill.
+* Formato MD
+MarkDown, texto plano mínimo, sin formatos, como un txt, con un
+contenido estructurado, con comentarios, citas, etc. Claude consume
+tokens para subir powerpoints etc, como son planos Claude los lee mas
+rápido y usa menos tokens, un md no solo es un skill, puede ser un
+readme, pueden ser todas las reglas y acuerdos de programación,
+comandos que quiero que use, convenciones de código, como correr
+testing, etc.
+#  LocalWords:  powerpoints
+* Claude Coding
+Crear un archivo md, con texto respetando al español , donde esten las
+reglas generales del proyecto.
+* N8N
+Herramienta de automatización que se complementa con IA, no es IA, es
+un agente. Se necesita un docker para correr el servidor de N8N, al
+final es un .json
+* Crystal Knows
+Trackea y nos dice como venderse ante una persona en likedin.

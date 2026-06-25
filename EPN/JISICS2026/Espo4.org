@@ -1,0 +1,67 @@
+:PROPERTIES:
+:ID:       9652702a-68ff-4959-8ade-1ea750fdd366
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: La nueva era de la IA
+#+filetags: :procesar:jisics:
+#+date: <2026-06-24 Wed>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+Exponente Henry Paz
+Deepfake nos permite ser quien queramos
+
+* Retrieval Argumented Generation
+Para que un LLM aprenda se necesitan datos, que problema quieres
+solucionar con la IA.
+
+Busqueda de similitud $\to$ mediante documentos se toma la información
+relevante $\to$ se lee el prompt $\to$ se da la respuesta
+
+** RAG - abogados
+Modelo de IA capaz de interactuar, no es Chat GPT,sino es como tener
+conversación con un abogado de verdad, esta IA es capaz de contactar
+con un humano cuando no sepa como resolver un problema.
+
+Básicamente un GPT que sirve como abogado.
+
+** Detección de ondas cerebrales
+Interpreta tu pensamiento, el expositor nos muestra un casco para que
+una persona invalida pueda mover robots mediante sus
+pensamientos. Esto la ayudo a tener una neuroreabilitacion médica, el
+robot mueve tu musculo cuando tu no puedas.
+
+** IA en seguridad
+Cámaras de seguridad que detectan algún evento, en tiempo real,
+riesgos es decir un robo, pelea, etc. 
+
+** Gráfica de cuaterniones
+Permite identificar a una persona por su forma de caminar, ya no
+interesa si se le ve la cara o no, solo hace falta un vídeo donde el
+man de 4 pasos y busca en todas las grabaciones a dicha persona.
+
+Solo hace falta la cadera para identificar a la persona.
+
+** IA en futuros desarrollos
+Neuroreabilitacion, robots militares, entrenamiento con encefalogramas
+para medir si hay o no estrés en el combate y ver si eres capaz o no.
+
+* Como sera el mundo en 15 años
+El mundo físico se fusionara con el digital, el mundo estará rodeado
+de agentes de IA, las empresas ya saben que hacer, ya no necesitan IA,
+sino ahora sienten que necesitan.
+
+** El rol del ingeniero
+Ya no programador, integrador, nada, sino ahora un *arquitecto de
+ecosistemas inteligentes* .
+
+
+

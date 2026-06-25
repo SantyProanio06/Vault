@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       643ffce7-0955-4209-94c8-14a9cfc3365e
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Segundo Cerebro
+#+filetags: :procesar:jisics:workshop:
+#+date: <2026-06-24 Wed>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+* Importancia
+En este mundo con IA, lo importante del ser humano es pensar, entonces
+por que no la usamos para nosotros mismos?
+
+Nos va a ayudar a pensar mejor, el segundo cerebro es de organización
+* Como se estructura el pensamiento
+No es lineal, se corta el pensamiento, estos vienen en flujos.
+Metacongnicion: aprender a pensar.
+Idea, investigación, planificación y ejecución
+
+
+open router get api key
+
+
+mlarcoparedes@gmail.com

@@ -1,0 +1,87 @@
+:PROPERTIES:
+:ID:       03e60c9c-ffb4-437f-a21a-998d06de7a0f
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: El poder de los datos aplicada en la educación
+#+filetags: :procesar:jisics:
+#+date: <2026-06-24 Wed>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+Exponente Patricia Acosta
+* Introducción
+La IA transformara la educación
+Sin datos no existiría la IA, es super importante saber tomar
+decisiones. Todo depende de como se le alimenta a la IA.
+La IA es una herramienta
+* La revolución
+La revolución ya comenzó. Los datos nos ayudaran a tomar mejores
+decisiones, la IA se comporta como nosotros
+Observamos $\to$ analizamos $\to$ identificamos $\to$ patrones $\to$ Reforzamos el aprendizaje.
+Yo como humano debo confirmar, revisar lo que me dice la IA esta bien,
+hay que conocer la información, ejemplo en España se puede buscar si
+una noticia es verdad o falsa.
+* Ejemplo
+No aprendemos de la misma forma. 
+Ana aprende de forma visual, usa infografías.
+Juan aprende mejor con ejemplos y practica.
+
+Toca usar la IA según el estilo de aprendizaje es decir usar mis datos
+de la forma en la que aprendo (creo).
+* Datos educativos
+Es como una huella digital que identifica como aprende el estudiante,
+saber estas medidas y datos nos permite enseñar de mejor manera
+
+Que datos vamos a seleccionar?
+Hay que tomar los datos mas representativos, mas conceptuales que nos
+muestre la relevancia.
+
+Datos $\to$ Información $\to$ Conocimiento $\to$ Decisión $\to$
+Impacto.
+
+Aplicar el método socrático para aprender con IA, preguntar conversar
+con la IA para generar un criterio propio, obvio usando evidencia
+real.
+* Mas allá de las calificaciones
+Ver que datos debo usar, como usar, el responsable de esos datos, los
+prompts son claves :
+Rol, objetivo, contexto y el problema.
+Al interactuar aprendemos.
+Si nos piden alguna consulta, podemos descargar los últimos papers y
+pásale a la IA, el estudiante tiene la decisión final.
+
+Es una herramienta que nos ayuda pero debemos darle el criterio para
+que nos ayude
+* Riesgos
+Cyber delincuencia, subir datos a la IA, toca ver a que empresa se les
+da los datos, con cuidado.
+* IA responsable
+Usar IA transparente, responsable.
+Como se transparenta? Decir que IA uso, como la uso, que prompt uso,
+que versión, etc.
+* El futuro
+Con las IAs se generan preguntas para aprender. Simular museos,
+conocer en un mundo inmersión. Aprendizaje personalizado.
+* Cual es el rol de la institución
+Construir una cultura de datos, capacitar estudiantes y docentes y
+promover una IA con ética, cuidando la privacidad, transparencia, etc.
+
+1. Evidencia
+2. Ética
+3. Inclusión
+4. Calidad de datos
+
+
+No pedir a la IA los datos, por que no existen, sino crear los datos
+nosotros y subir a un repositorio
+
+Cada dato representa una historia. 
+   

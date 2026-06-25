@@ -1,0 +1,60 @@
+:PROPERTIES:
+:ID:       9dc8a310-6028-464f-8340-c2b6962d0661
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Derecho, ética y negocios en IA
+#+filetags: :procesar:jisics:
+#+date: <2026-06-24 Wed>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+Exponente David Sperber
+* Ancdota
+Una empresa uso GPT para hacer un informe de 440 mil dolares, vieron
+que habían alucinaciones en ese contrato y les demandaron.
+
+Problemas con el informe: alucinaciones, privacidad, Bias, y faltas a los derechos de autor.
+* Microsoft trends para 2026
+1. Colaboración humano IA`
+2. Segurida de agentes
+3. Salud
+4. repositorios inteligentes
+5. Computación cuántica.
+* Ley de inteligencia artificial
+- Prohibido
+  Manipulación social y explotación de menores
+- Alto
+  Biométrica, educación, empelo y justicia: Hay que ser cuidadosos al
+  pedir bienes o servicios de estos elementos
+- Limitado
+  Sistemas específicos con transparencia
+- Bajo
+  Aplicaciones no criticas
+* Código de ética internacional
+En algunos casos solo la ética es lo que va a poder determinar lo que
+es bueno y es malo, la IA no debería de decidir eso. La ética esta
+atada a la confianza.x
+
+Unesco + IEEE + HLEGA(UE)
+1. Transparencia
+   Divulgar como funciona
+2. Responsabilidad
+   Confiabilidad
+3. Equidad
+   Evitar sesgos
+4. Sostenibilidad
+   Impacto social
+5. Autonomía
+   Humanos en control
+
+
+
+

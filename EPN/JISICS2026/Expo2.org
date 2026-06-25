@@ -1,0 +1,66 @@
+:PROPERTIES:
+:ID:       9d10213a-95f7-4d85-8e99-a0c8356811ce
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Como la IA impacta en la educación
+#+filetags: :jisics:procesar:
+#+date: <2026-06-24 Wed>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+Tomado de 
+* Introducción
+1849 Miles de personas migran a California por la fiebre del oro. 2022
+sale Chat GPT al publico, se llena de prompts agentes etc. Ahora hay muy
+pocas industrias sin inteligencia artificial, ahora miles de empresas
+corren por el nuevo oro, generar mas, ser mas eficientes.
+* Infoxificaion 
+#  LocalWords:  Infoxificaion
+la gente esta preocupada por perder el trabajo, las señoras ya esta
+entrenando a los robots que van reemplazarlos.
+En este mundo sobre saturado confundimos novedad con valor,
+automatización con criterio y eficiencia con propósito
+
+"Cuando la inteligencia se vuelve abundante se vuelve mas escaso" y
+mas valioso la presencia, criterio, responsabilidad.
+Antropic dice que somos la región con mas interacción con las IA's 
+
+El cerebro se apaga cuando se le delega al modelo, mas texto menos
+retención
+
+la IA es una muletilla cognitiva
+el andamiaje pedagógico es la estructura que el docente crea para que
+el estudiante piense con IA no a través de ella. Hay que usar la IA de
+forma ética, pensante.
+
+1. Reducir la deuda cognitiva
+   El estudiante piense primero la IA viene después.
+2. Inteligencia híbrida
+   Como usar IA junto con los humanos de par a par, razonamiento,
+   etica, lo hace el humano, lo mecanico, repetitivo, la IA.El docente
+   debe enseñar en que punto el estudiante debe detenerse
+3. Interaccionismo
+   El docente rediseña el ecosistema del aula, no solo la tarea.
+* Lo que escaso no es programa se cultiva
+3 ideas para innovar sin perderse en el ruido
+Como construir el futuro en medio del ruido?
+1. Dirige a la ia, no dejes que ella te dirija
+   Saber decirle que hacer y juzgar lo que responde
+2. Enamórate del problema no de la herramienta
+   Las herramientas cambian cada 3 semanas. Pero el problema que de
+   verdad importa se queda.
+3. Usarla para potenciar no para remplazar
+
+
+En la fiebre del oro ganaron los que vendían las palas, en la de la IA
+gana los que no olvidan que hay detrás de cada pala: un humano.
+* Preguntas
+Cambiar la forma de evaluar.

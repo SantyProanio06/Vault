@@ -1,0 +1,72 @@
+:PROPERTIES:
+:ID:       89a462ee-db42-4837-8c44-87e839f281c2
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: El horizonte de la inmaterialidad
+#+filetags: :procesar:jsics:
+#+date: <2026-06-25 Thu>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+Exponente Santiago Padron
+* Hisotria de la comunicacion
+La humanidad evoluciona gracias al lenjuage, y la forma en la que nos
+comunicamos
+
+Ahora estamos en la post historia
+
+3 grandes pensadores
+* El telefono
+Un aparato sofisticado, nos ayuda a varias cosas, el celular se ha
+convertido en algo que no podemos dejar.
+El nuevo ecosistema tecnológico se entra a travez del
+celular. Configuramos nuestros perfiles y el algoritmo nos muestra
+todo lo que queremos.
+
+Lo que ocurre es que el ser humano se va difuminando, dejamos de ser
+sociales, ahora nos perdemos en las nuevas tecnologias y ecosistema
+digital
+* Los 3 pensadores
+Fidel Flussel, al principio teníamos la escritura, las pinturas
+rupestres, la escritura tiene 4000 años, convirtió al ser humano en un
+ser racional, ahora esta esta muriendo, los aparatos y las camaras nos
+propopne una nueva forma de comunicaicon el multimodo, ya no vamos a
+escribir. Muere la escritura y se muere la hisotria lineal, ahora la
+gente piensa que son artistas por tomar fotos, sino aprendemos de los
+apartaso vamos a caer en una ignorancia suprema. Cambian las
+identidades. Los aparatos nos van a gobernar si no sabemos como usar
+los aparatos.
+
+Byu chul han, la sociedad del cansancio, quiero ser el propio jefe,
+emprendedor, etc, pero no seremos nuestros propios esclavos. Los
+perfiles son solo apariencias, los algoritmos nos dirigen en la vida,
+cuando uno se aburre surgen las ideas, ahora estamos contaminados por
+miles de perfiles que el algoritmo junta para que estemos mas y mas
+sobre estimulados, mostramos nuestra vida creyendo que no pasa nada
+pero si es peligroso.
+Todos pensamos igual, no vamos a poder hacer una colectividad rebelde
+en caso de, no somos un colectivo, somos perfiles, no tenemos
+poder. Yo yo todo yo, cuantos likes tengo. Competencia de aprobación
+de perfiles.
+
+Rusiano Florido, ya estamos en el mundo de las tecnologías ya no hay
+vuelta atras. Lo unico que nos queda es ser felices. Tenemos una vida
+tan absurda como la de sisifo, cargamos una piedra sin sentido, el
+suicido esta mal por que daria cuenta que esta vida nos vencio,
+cargemos la piedra y en la mitad regresamos a ver a los dioses y nos
+reimos de ellos, asi ganamos a la vida siendo felices en la tragedia.O
+nos hacemos maquinas o nos hacemos seres sintientes, para descubir al
+otro, sintamos.
+* Ideas
+1. Aprendamos como funcionan los aparatos
+2. El misterio del otro, darse el tiempo para descubrí a la otra
+   persona
+3. Somos el escalofio, sentir de nuevo en este mundo sin sentimientos

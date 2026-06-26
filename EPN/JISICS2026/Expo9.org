@@ -1,0 +1,111 @@
+:PROPERTIES:
+:ID:       4f597e11-d41d-4583-a62e-f46ed6c6c1a3
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Cambios en la sociedad moderna
+#+filetags: :procesar:jisics:
+#+date: <2026-06-25 Thu>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+Exponente Profe Sang Yoo
+* Como prepararnos para la era de IA
+La nueva normalidad, los cambios que aparecen en la sociedad
+Como vivimos, trabajamos y nos relacionamos
+** Introducción
+AI sapiens, comenzar a usar IA en todos los aspectos de la vida,
+actualmente se usa en muchisimos aspectos como en la educaion por
+ejemplo.
+A la gente le preocupa que la IA tenga creatividad.
+Estamos llegando a una era con agentes de IA y luego llegaremos a IA
+fisica, autos robors etc.
+
+Moltbook como facebook para agentes de IA. Los agentes ya tienen su
+propio criterio.
+
+En corea la comida, los meseros, el manejo de paquetes ya esta siendo
+automatizado por robots con IA.
+
+Los humanoides están evolucionando poco a poco, al igual que los carros
+autónomos como tela con los taxis autónomos.
+** Vivimos
+El entretenimiento, ahora vemos lo que queremos cuando lo queremos,
+ahora la IA puede crear los finales o escenas que queremos, ya no
+tenemos que conformarnos con lo que nos den los productores. Ahora ya
+no se paga por el tiempo sino se paga por la imagen.
+- Movilidad como servicio
+  Carros automáticos, pagas mensual y puedes tener taxi cuando quieras.
+- Actividades diarias
+  robos que limpian y así
+- Medicina personalizada
+  Se trackea todo lo que hacemos y así el doctor puede decidir de
+  mejor manera como tratarnos o que enfermedad podríamos tener.
+- Casas inteligentes con IA
+  Las casas tendrían IAs integradas que ayudan y facilitan todo lo que
+  hacemos en base a nuestro hábitos
+** Trabajamos
+La tecnología elimina las barreras del espacio y el tiempo, no hace
+falta ir a la oficina ni trabajar en un horario. No se ha eliminado la
+barrera del idioma. Poco a poco se esta borrando, soluciones de
+traducción en tiempo real.
+Esto generara un beneficio a las personas limitadas por el idioma, da
+una oportunidad para los profesionales con excelencia
+
+La IA ahora es un colega de trabajo, nos ayuda a programar o también
+como ayudante tributario o para ayudar a simulaciones de captura
+militar.
+
+Lo preocupante seria que los agentes de IA hagan mas parte del trabajo
+que los humanos.
+
+** Relacionamos
+El tiempo en pantalla es excesivo, en promedio esta en 6 horas y
+media!!
+
+Estar solo va ser cómodo pero solitario y en grupo se va estar
+incomodo pero no vamos a estar solos.
+
+Pero la IA se puede volver nuestra compañía, podemos socializar y
+hablar con esta desconectándonos mas con la sociedad. Provocaría que
+la gente se llegue a casar con IA en vez de con humanos, incluso dicen
+que se sienten mejor confesándose con una IA que con un ser humano.
+
+** Estamos preparados en Ecuador
+Ecuador esta en la mitad del ranking ILIA, Ecuador no aprace en
+dicho ranking. Deberiamos ver la calidad de los
+paises desarollados y esforzarnos para llegar a ese nivel de calidad
+
+* Que competencias necesitamos
+- Alfabetización de IA, aprender a usarla y bien.
+- habilidades blandas
+  creatividad, comunicación, pensamiento critico y colaboración
+  Creativo significa hacer preguntas que no has hecho antes ya que
+  ahora podemos obtener respuestas gracias a la IA. Se puede ampliar
+  el conocimiento de forma exponencial.
+  Pensamiento critico, preguntarse por que
+  Comunicación, una idea no sirve si no sabemos como comunicarla, hay
+  que saber expresarse para poder comunicarnos de mejor manera con la
+  IA, la clave de la comunicacion es escuchar
+  Colaboración, Si quieres ir lejos necesitas estar acompañado
+- Conciencia:
+  Social: Como practicas la ética y como te comportas en la sociedad,
+  responsabilidad, orden, disciplina, honestidad, empatía.
+  corea era inseguro pero ahora ya no, por que hay
+  conciencia social
+  Política
+  Economía
+  Tecnología: Mucha gente tiene acceso a la tecnología, no han
+  enseñado a ser usuarios pero no como usarla para ser productivos ni
+  para ser creadores de tecnología
+
+
+
+La IA traerá grandes cambios pero también traerá grandes oportunidades.

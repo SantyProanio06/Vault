@@ -1,0 +1,88 @@
+:PROPERTIES:
+:ID:       e2104ad9-cfe2-483c-b66c-b41b32b4cf67
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Integración
+#+filetags: :clases:calculo:
+#+date: <2026-06-30 Tue>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+[[id:366e289a-215d-4f9b-a575-85ca60f140e5][Métodos de integración]]
+
+* Que es?
+Es lo contrario de la [[id:c0e37bde-4ef6-465a-93b5-1596c23fe407][Derivación]], por eso es conocida como la anti
+derivada, básicamente representa el area bajo la curva de una función
+osea da el cambio total de dicha función por ejemplo la integral de la
+velocidad representa el desplazamiento.
+* Integrales de tabla
+** I. de una constante
+#+begin_export latex
+\int C \, dx = x + C
+#+end_export
+
+** I. normal
+*Super importante*, nunca olvidarse de la constante de integración
+
+#+begin_export latex
+\int x^{n} \,dx = \frac{x^{n+1}}{n+1} + C
+#+end_export
+
+** I. de una fracción
+:PROPERTIES:
+:ID:       b29281cc-0a38-4348-9afc-e9c10affcc07
+:END:
+#+begin_export latex
+\int \frac{1}{x} \, dx = \ln{x} + C
+#+end_export
+
+#+begin_export latex
+\int \frac{f \prime (x)}{f(x)} \,dx = \ln{f(x)} + C
+#+end_export
+
+** I. de un exponente
+#+begin_export latex
+\int a^{x} \, dx = \frac{a^{x}}{\ln{a}} + C
+#+end_export
+
+** I. de euler
+#+begin_export latex
+\int e^{x} \, dx = e^{x} + C
+#+end_export
+
+#+begin_export latex
+\int f \prime (x)e^{f(x)} \, dx = e^{f(x)} + C
+#+end_export
+
+** I. Trigonométricas
+
+*** Seno
+#+begin_export latex
+\int \sin{x} \, dx = - \cos{x} + C
+#+end_export
+
+*** Coseno
+#+begin_export latex
+\int \cos{x} \, dx = \sin{x} + C
+#+end_export
+
+** I. definida
+:PROPERTIES:
+:ID:       4d31cbc7-2f09-4424-bbd6-b6dc7129b33b
+:END:
+#+begin_export latex
+\int_{a}^{b} f(x) \, dx = F(b) - F(a)
+#+end_export
+
+donde:
+#+begin_export latex
+F(x) = \int f(x) \, dx
+#+end_export

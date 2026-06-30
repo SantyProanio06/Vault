@@ -26,14 +26,18 @@ velocidad representa el desplazamiento.
 * Integrales de tabla
 ** I. de una constante
 #+begin_export latex
+\[
 \int C \, dx = x + C
+\]
 #+end_export
 
 ** I. normal
 *Super importante*, nunca olvidarse de la constante de integración
 
 #+begin_export latex
+\[
 \int x^{n} \,dx = \frac{x^{n+1}}{n+1} + C
+\]
 #+end_export
 
 ** I. de una fracción
@@ -41,37 +45,51 @@ velocidad representa el desplazamiento.
 :ID:       b29281cc-0a38-4348-9afc-e9c10affcc07
 :END:
 #+begin_export latex
+\[
 \int \frac{1}{x} \, dx = \ln{x} + C
+\]
 #+end_export
 
 #+begin_export latex
+\[
 \int \frac{f \prime (x)}{f(x)} \,dx = \ln{f(x)} + C
+\]
 #+end_export
 
 ** I. de un exponente
 #+begin_export latex
+\[
 \int a^{x} \, dx = \frac{a^{x}}{\ln{a}} + C
+\]
 #+end_export
 
 ** I. de euler
 #+begin_export latex
+\[
 \int e^{x} \, dx = e^{x} + C
+\]
 #+end_export
 
 #+begin_export latex
+\[
 \int f \prime (x)e^{f(x)} \, dx = e^{f(x)} + C
+\]
 #+end_export
 
 ** I. Trigonométricas
 
 *** Seno
 #+begin_export latex
+\[
 \int \sin{x} \, dx = - \cos{x} + C
+\]
 #+end_export
 
 *** Coseno
 #+begin_export latex
+\[
 \int \cos{x} \, dx = \sin{x} + C
+\]
 #+end_export
 
 ** I. definida
@@ -79,10 +97,14 @@ velocidad representa el desplazamiento.
 :ID:       4d31cbc7-2f09-4424-bbd6-b6dc7129b33b
 :END:
 #+begin_export latex
+\[
 \int_{a}^{b} f(x) \, dx = F(b) - F(a)
+\]
 #+end_export
 
 donde:
 #+begin_export latex
+\[
 F(x) = \int f(x) \, dx
+\]
 #+end_export

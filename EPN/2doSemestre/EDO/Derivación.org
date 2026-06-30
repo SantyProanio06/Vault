@@ -28,51 +28,71 @@ distancia con respecto del tiempo.
 
 ** D. Constante
 #+begin_export latex
+\[
 \frac{d}{dx} c = 0
+\]
 #+end_export
 
 ** D. sola variable
 #+begin_export latex
+\[
 \frac{d}{dx} x = 1
+\]
 #+end_export
 
 ** D. Normal
 #+begin_export latex
+\[
 \frac{d x^{n}}{dx} = nX^{n-1}
+\]
 #+end_export
 
 ** D. Multiplicación
 #+begin_export latex
+\[
 \frac{d (f(x)g(x))}{dx} = g(x) \cdot \frac{d f(x)}{dx} +  f(x) \cdot \frac{d g(x)}{dx}
+\]
 #+end_export
 
 ** D. Division
 #+begin_export latex
+\[
 \frac{d}{dx} \frac{f(x)}{g(x)} = \frac{g(x) \cdot \frac{d f(x)}{dx} - f(x) \cdot \frac{d g(x)}{dx}}{(g(x))^{2}}
+\]
 #+end_export
 
 ** D. Logaritmo natural
 #+begin_export latex
+\[
 \frac{d}{dx} \ln{x} = \frac{1}{x}
+\]
 #+end_export
 
 ** D. Euler
 #+begin_export latex
+\[
 \frac{d}{dx} e^{x} = e^{x}
+\]
 #+end_export
 
 ** D. seno
 #+begin_export latex
+\[
 \frac{d}{dx} \sin{x} = \cos{x}
+\]
 #+end_export
 
 ** D. coseno
 #+begin_export latex
+\[
 \frac{d}{dx} \cos{x} = -\sin{x} 
+\]
 #+end_export
 
 ** La regla de la cadena
 Si hay algo dentro de dicha funciona hay que derivar de la misma forma
 #+begin_export latex
+\[
 \frac{d}{dx} \f(g(x)) = f \prime (g(x)) \cdot g \prime (x)
+\]
 #+end_export

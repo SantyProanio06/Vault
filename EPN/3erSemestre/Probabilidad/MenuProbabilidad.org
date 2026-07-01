@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       d4f7d3b0-462c-401c-8b63-61ecb3349c3d
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Menú probabilidad
+#+filetags: :menu:clases:probabilidad:
+#+date: <2026-06-30 Tue>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+[[id:bbb903ba-50df-40cf-ab10-0c686cb4d877][Calculo de probabilidad]]
+
+[[id:d78eb371-2fbd-4b03-869c-d03e1590d726][Variables Aleatorias]]

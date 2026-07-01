@@ -19,13 +19,29 @@
 * Variable Aleatoria
 Es una función con dominio en el espacio muestral y rango como
 subconjunto de reales finito o infinito.
+
+#+begin_export latex
 \[
-X: S / \Omega \to \mathbb{R} 
+X: S / \Omega \to \mathbb{R}
 \]
+#+end_export
+#+begin_export latex
 \[
 w \mapsto X(w)
 \]
+#+end_export
+
 donde $w$ es un elemento elemental.
+
+:STUDY:
+📚 Estudio
+⭐ Keys
+Espacio muestral
+Reales
+📌 Resumen
+Una var aleatoria usa el espacio muestral y le da un valor en los
+reales. 
+:END:
 
 [[id:3d6d1e50-860e-4035-9a3e-78cf88b15dc5][Ejemplo 1 Variable Aleatoria]]
 
@@ -39,24 +55,30 @@ $X$ es discreta si su recorrido es finito o infinito numerable.
 
 *Observación.- * Si $X$ tiene un recorrido ${x_1, x_2, ..., x_n}$
 entonces:
+#+begin_export latex
 \[
 P(X = x_1) + P(X = x_2) + ... + P(X = x_n) = 1
 \]
+#+end_export
+#+begin_export latex
 \[
 P(x_1) + P(x_2) + ... + P(x_n) = 1
 \]
-
+#+end_export
 **** Función de probabilidad $f$
 :PROPERTIES:
 :ID:       3613fa5e-7e45-44b9-b28b-1a1ff9154c0c
 :END:
 Es una función $f: \mathbb{R} \to \mathbb{R}$ tal que:
+#+begin_export latex
 \[
 f(x) = P(X = x)
 \]
+#+end_export
 Como viene de los reales en los reales en la función se tienen que
 denotar todos los reales.
 Viene de [[id:3d6d1e50-860e-4035-9a3e-78cf88b15dc5][Ejemplo 1 Variable Aleatoria]].
+#+begin_export latex
 \[
 f(x) =
 \begin{cases}
@@ -67,6 +89,7 @@ f(x) =
 0 & \text{para otros valores de } X
 \end{cases}
 \]
+#+end_export
 
 Esta es la distribución teórica de probabilidad.
 
@@ -77,19 +100,17 @@ Esta es la distribución teórica de probabilidad.
 :ID:       8d00d810-c4e3-4816-b47f-6ad604375679
 :END:
 Esta función $F : \mathbb{R} \to \mathbb{R}$ tal que
+#+begin_export latex
 \[
-F(X) = P(X \leq x) = \sum_{t = x} P(X = t)
-\]
-
-\[
+\begin{align}
+F(X) = P(X \leq x) = \sum_{t = x} P(X = t)\\
 F(2) = P(X \leq 2) = P(0) + P(1) + P(2) = \frac{1}{8} + \frac{3}{8} +
-\frac{3}{8} = \frac{7}{8}
-\]
-
-\[
+\frac{3}{8} = \frac{7}{8}\\
 F(-5) = P(X \leq -5) = 0
+\end{align}
 \]
-
+#+end_export
+#+begin_export latex
 \[
 F(x) =
 \begin{cases}
@@ -100,32 +121,37 @@ F(x) =
 1 & \text{si } X > 3
 \end{cases}
 \]
+#+end_export
 
 ***** Gráfica de la función de distribución
 
 *Observación.-* Si $X$ es una v.a.d entonces:
 
 1. Si conocemos $f$ podemos conocer $F$ usando la definición:
-
+#+begin_export latex
 \[
 F(x) = P(X \leq x)
 \]
+#+end_export
 
 2. Si se conoce $F$ se puede determinar $f$ usando
-
+#+begin_export latex
 \[
 f(x) = P(X = x) =
 \begin{cases}
 F(x_i) - F(x_i-1) & \text{si } x = x_i \in Img(X) \\
 0 & \text{otro valor}
-\end{cases} 
+\end{cases}
 \]
+#+end_export
 
 *Ejemplo*
+#+begin_export latex
 \[
 f(2) 2 \in Img(X) \text{si por lo tanto} = F(2) - F(1) =
 \frac{7}{8} - \frac{4}{8} = \frac{3}{8}
 \]
+#+end_export
 
 **** Propiedades
 :PROPERTIES:
@@ -135,6 +161,36 @@ f(2) 2 \in Img(X) \text{si por lo tanto} = F(2) - F(1) =
    \lim_{x \to +\infty} F(x) = 1$
 2. $P(a < X \leq b) = F(b) - F(a) = P(x \leq b) - P(x \leq a)$
 3. $P(a \leq X \leq b) = F(b) - F(a) + P(X = a)$
+
+:STUDY:
+📚 Estudio
+v.a.d
+
+⭐ Keys
+numerable
+El total es 1
+-f
+Denotar todos los reales
+f de x es la probabilidad de x
+-F
+Suma de probabilidades hasta x
+Todos los reales
+-Obs
+Si f, F es la suma de f hasta x
+Si F, f es la resta de ese x y el anterior, si esta en X
+-Prop
+Crece si - infinito es 0 y mas infinito es 1
+Entre dos, el segundo igual, la resta sup menos inf de F
+Ambos igual, resta sup menos inf de F mas el inf.
+📌 Resumen
+La v.a.d tiene un rango numerable, su funcion de probabilidad es la
+probabilidad de que X tome dicho valor(casos fav posibles), la funcion
+de distribución es la suma de las probabilidades hasta ese x. Si
+conocemos F y x esta en el rango de X se resta el F de x y el F del x
+anterior. Si es un intervalo y el segundo es igual se resta F del sup
+y del inferior, si ambos son iguales a esa resta se le suma f de x
+inferior
+:END:
 
 [[id:196e414f-8744-400f-8380-0838f64b269c][Ejemplo 2 variable aleatoria discreta]]
    
@@ -148,19 +204,24 @@ continua si su función de distribución es continua.
 *Observación.-* Si tenemos una v.a.c entonces
 $P(X = x) = 0 \forall x \in \mathbb{R}$
 
+[[id:e343b186-e4aa-4471-ab9d-ca06bcc6c46f][Ejemplo 3 Variable aleatoria continua]]
+
 **** Función de densidad $f$
 :PROPERTIES:
 :ID:       6501895e-efd9-4326-a789-fdbd54cb0c7c
 :END:
 Dada $X$ como v.a.c y $F$ su función de distribución a la función $f:
 \mathbb{R} \to \mathbb{R}$ tal que $f(x) = F\prime (x)$ se le llama
-función de densidad de $X$.
+función de densidad de $X$. Es decir la [[id:c0e37bde-4ef6-465a-93b5-1596c23fe407][Derivación]] de $F(x)$ es la
+función de densidad.
 
 ***** Propiedades
 1. $f(x) \geq 0 \forall x \in \mathbb{R}$ =esta funcion no puede ser
    negativa=
 2. $\int_-\infty^{+\infty} f(x)\,dx = 1$
+   
 3. P(a \leq x \leq b) = \int_a^{b} f(x)\,dx$
+   [[id:4d31cbc7-2f09-4424-bbd6-b6dc7129b33b][I. definida]]
 
 **** Función de distribución $F$ continua
 :PROPERTIES:
@@ -173,3 +234,29 @@ $F(x) = P(X \leq x) = \int_-\infty^{x} f(t)\,dt$
 1. $F$ es creciente si $\lim_{x \to -\infty} F(x) = 0 \text{y }
    \lim_{x \to +\infty} F(x) = 1$
 2. $P(a \leq x \leq b) = P(a < x < b) = \int_a^{b} f(x)\,dx$
+   [[id:4d31cbc7-2f09-4424-bbd6-b6dc7129b33b][I. definida]]
+:STUDY:
+📚 Estudio
+
+⭐ Keys
+Recorrido, intervalo real
+probabilidad especifica 0
+-f densidad
+derivada de F, distribución.
+Positiva
+integral infinita es 1
+Probabilidad intervalo, integral definida
+-F
+x, la probabilidad de X ser menor a x, integral del menos infinito a
+esa x.
+sea igual o no, los intervalos son iguales, integral definida
+
+📌 Resumen
+La v.a.c, tiene como rango un intervalo, la probabilidad de un valor
+en especifico es 0, la función de densidad, positiva, es la derivada
+de la distribution, la integral infinita es 1 (ayuda a sacar cualquier
+C), se hace una integral definida para el intervalo necesario, la de
+distribución es la integral del menos infinito a dicho valor, los
+intervalos sean iguales o no son lo mismo, de igual forma se saca por
+integral definida 
+:END:

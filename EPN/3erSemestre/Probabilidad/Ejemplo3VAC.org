@@ -21,12 +21,16 @@
  atmosférica. Es importante estudiar su tamaño. Sea $X$ el diámetro
  de las partículas en micrómetros y supongamos que su distribución es
  inversamente proporcional a su volumen es decir:*
-$f(x)
+ 
+#+begin_export latex
+\[
+f(x)
 \begin{cases}
 \fraq{C}{x^{3}} & x \geq 1\\
 0 & x < 1
 \end{cases}
-$
+\]
+#+end_export
 
 1. Determinar $C$ para que $f$ sea una función de densidad
 =Para que una función sea de densidad deben cumplirse las propiedades
@@ -81,13 +85,15 @@ $C = 2$
 
 
 =Por lo tanto si es una funcion de densidad y queda como:=
-
-$f(x)
+#+begin_export latex
+\[
+f(x)
 \begin{cases}
 \frac{2}{x^{3}} & x \geq 1\\
 0 & x < 1
 \end{cases}
-$
+\]
+#+end_export
 
 *Importante validar siempre que sea una función de densidad*
 
@@ -121,14 +127,16 @@ $\int_1^{x} \frac{2}{x^{3}}\,dx \to -\frac{1}{x^2} \mid_1^{x} =
 $F(x) = -\frac{1}{x^2} + 1$
 
 =pero no hay que olvidarse de que es en todos los reales=
-
-$
+#+begin_export latex
+\[
 F(x) =
 \begin{cases}
 0 & x < 1\\
 -\frac{1}{x^2} + 1 & x \geq 1
 \end{cases}
-$
+\]
+#+end_export
+
 
 =Con esto ya podemos determinar cualquier F(x) solo reemplazamos y ya
 por ejemplo=
@@ -150,7 +158,7 @@ $P(2 < X \leq 5)$
 estamos reduciendo el espacio muestral a todos los que son mayores que
 2, por tanto usamos probabilidad condicional=
 
-$P(X \leq 5 \mid X > 2 = \frac{P(x \leq 5 \cap x > 2)}{P(x > 2)}$
+$P(X \leq 5 \mid X > 2) = \frac{P(x \leq 5 \cap x > 2)}{P(x > 2)}$
 
 $\frac{P(2 < x \leq 5)}{1 - P(x \leq 2)}
 =Aplicamos propiedades de la función de distribución de v.a.d, por que

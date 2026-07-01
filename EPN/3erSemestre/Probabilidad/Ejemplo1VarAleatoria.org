@@ -27,20 +27,25 @@ conjunto de todos los valores posibles que puede tomar $X$.*
 1. Entender el experimento =Cual es el exp?=
    Lanzar la moneda 3 veces
 2. Entender el $\Omega$
-   \[
-   \Omega = {(c,s,s), (c,c,s) .... }
-   \]
+#+begin_export latex
+\[
+\Omega = {(c,s,s), (c,c,s) .... }
+\]
+#+end_export
 *Como funciona X*
 Ejemplo:
+#+begin_export latex
 \[
-X[(c,c,c)] = 3
-\]
-\[
+\begin{align}
+X[(c,c,c)] = 3\\
 X[(c,s,c)] = 2
+\end{align}
 \]
+#+end_export
 
 Entonces con estos casos se logra sacar todo el rango
 *Sacar el rango*
+#+begin_export latex
 \[
 X =
 \begin{cases}
@@ -50,26 +55,22 @@ X =
 3
 \end{cases}
 \]
-
+#+end_export
 
 Por lo tanto $P(X = 0) \text{es de} P(s,s,s)$
 Como $\Omega$ es discreta y la probabilidad es equi-probable aplica
 [[id:8f187abe-9b18-4330-8b33-db01dcaf73c5][Equi probables]]
+#+begin_export latex
 \[
-P(s,s,s) = \frac{1}{2x2x2} = \frac{1}{8}
-\]
-\[
-P(X = 1) = P(\frac{(c,s,s)U(s,c,s)U(s,s,c)}{|\Omega|}) = \frac{3}{8}
-\]
-\[
-P(X = 2) = P(\frac{(c,c,s)U(c,s,c)U(s,c,c)}{|\Omega|}) = \frac{3}{8}
-\]
-\[
-P(X = 3) = P(\frac{(c,c,c)}{|\Omega|}) = \frac{1}{8}
-\]
-\[
+\begin{align}
+P(s,s,s) = \frac{1}{2x2x2} = \frac{1}{8}\\
+P(X = 1) = P(\frac{(c,s,s)U(s,c,s)U(s,s,c)}{|\Omega|}) = \frac{3}{8}\\
+P(X = 2) = P(\frac{(c,c,s)U(c,s,c)U(s,c,c)}{|\Omega|}) = \frac{3}{8}\\
+P(X = 3) = P(\frac{(c,c,c)}{|\Omega|}) = \frac{1}{8}\\
 \sum P(X) = 1
+\end{align}
 \]
+#+end_export
 
 
 

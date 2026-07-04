@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       72f8cfd3-d184-401c-a08b-0b03e71964b7
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Deontología
+#+filetags: :knowledge:personal:
+#+date: <2026-06-09 Tue>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiago.proano01@epn.edu.ec
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+* Definición
+Es una rama de la ética que estudia las normas, deberes y obligaciones 
+de cada profesional, es decir, se implementa la ética, el estudio de
+los valores, enfocado en las profesiones.
+
+Básicamente, establece los principios para que un profesional actué
+de forma responsable y honesta frente a desafíos morales. 

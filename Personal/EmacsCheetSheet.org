@@ -17,16 +17,22 @@
 #+creator: Emacs 29.3 (Org mode 9.6.15)
 #+cite_export:
 * Comandos de emacs
-| *Comando*   | *Acción*                     |
-| ~C-c b~     | Insertar bloques de comandos |
-| ~C-c e l~   | Insertar latex matemático    |
-| ~C-c .~     | Corrección de palabra        |
-| ~C-c C-e #~ | Ingresar las templates       |
-| ~C-c y~     | Ejecutar yassnipets          |
-| ~C-c C-l~   | Insertar hipervínculo        |
+| *Comando*                 | *Acción*                     |
+| ~C-c b~                   | Insertar bloques de comandos |
+| ~C-c e l~                 | Insertar latex matemático    |
+| ~C-c .~                   | Corrección de palabra        |
+| ~C-c C-e #~               | Ingresar las templates       |
+| ~C-c y~                   | Ejecutar yassnipets          |
+| ~C-c C-l~                 | Insertar hipervínculo        |
+| ~std~                     | Bloque de estudio(yasnipet)  |
+| ~C-c i c~ + ~RET ESC-RET~ | Seleccionar citas .bib       |
 * Comandos org-roam
 | *Comando* | *Acción*                 |
 | ~C-c n i~ | Insertar Nodo            |
 | ~C-c n f~ | Buscar nodo por titulo   |
 | ~C-c n t~ | Buscar nodo por los tags |
 | ~C-c C-o~ | Abrir enlace             |
+* Bibliografias
+#+latex_header: \nocite{*}
+
+#+print_bibliography: 

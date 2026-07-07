@@ -26,6 +26,7 @@
 | ~C-c C-l~                 | Insertar hipervínculo        |
 | ~std~                     | Bloque de estudio(yasnipet)  |
 | ~C-c i c~ + ~RET ESC-RET~ | Seleccionar citas .bib       |
+| ~ESC-TAB~                 | Completa un #+               |
 * Comandos org-roam
 | *Comando* | *Acción*                 |
 | ~C-c n i~ | Insertar Nodo            |
@@ -36,3 +37,11 @@
 #+latex_header: \nocite{*}
 
 #+print_bibliography: 
+* Gptel (que gooooood)
+| *Comando*      | *Accion*                                |
+| ~M-gpetl-menu~ | Abre el menu para usar el gptel         |
+| ~s~            | Instrucciones que le puedes dar         |
+| ~-f~ (-)       | puedes agregar un archivo como contexto |
+| ~-b~           | puedes agregar un buffer como contexto  |
+| ~m~            | minibufer para escribir el prompt       |
+|                |                                         |

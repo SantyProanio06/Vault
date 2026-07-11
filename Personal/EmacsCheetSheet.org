@@ -27,6 +27,17 @@
 | ~std~                     | Bloque de estudio(yasnipet)  |
 | ~C-c i c~ + ~RET ESC-RET~ | Seleccionar citas .bib       |
 | ~ESC-TAB~                 | Completa un #+               |
+** Remplazo de palabras enteras
+~M-%~ "la palabra que queramos remplazar" ~RET~ "la nueva palabra"
+~RET~
+
+| Letra | Accion                        |
+| ~y~   | remplazar ocurrencia          |
+| ~n~   | saltar                        |
+| ~!~   | remplazar todas sin preguntar |
+| ~q~   | salir                         |
+| ~u~   | deshacer ultimo remplazo      |
+
 * Comandos org-roam
 | *Comando* | *Acción*                 |
 | ~C-c n i~ | Insertar Nodo            |
@@ -37,6 +48,11 @@
 #+latex_header: \nocite{*}
 
 #+print_bibliography: 
+* Imagenes
+#+ATTR_LATEX: :float nil :width 0.8\textwidth
+#+CAPTION: 
+#+NAME: fig:
+
 * Gptel (que gooooood)
 | *Comando*      | *Accion*                                |
 | ~M-gpetl-menu~ | Abre el menu para usar el gptel         |

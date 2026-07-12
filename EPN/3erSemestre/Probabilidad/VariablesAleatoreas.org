@@ -204,6 +204,15 @@ continua si su función de distribución es continua.
 *Observación.-* Si tenemos una v.a.c entonces
 $P(X = x) = 0 \forall x \in \mathbb{R}$
 
+#+begin_src shell
+echo "Hola, Emacs 2026"
+
+sleep 2
+#+end_src
+
+#+RESULTS:
+| Hola | Emacs 2026 |
+
 [[id:e343b186-e4aa-4471-ab9d-ca06bcc6c46f][Ejemplo 3 Variable aleatoria continua]]
 
 **** Función de densidad $f$

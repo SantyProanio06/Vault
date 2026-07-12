@@ -30,6 +30,10 @@
 ** Remplazo de palabras enteras
 ~M-%~ "la palabra que queramos remplazar" ~RET~ "la nueva palabra"
 ~RET~
+** Zathura
+~f6~ guarda el org y lo convierte en pdf auto
+~f7~ limpia cualuqier archivo basura del zathura
+~f8~ abre la carpeta del org (goood)
 
 | Letra | Accion                        |
 | ~y~   | remplazar ocurrencia          |

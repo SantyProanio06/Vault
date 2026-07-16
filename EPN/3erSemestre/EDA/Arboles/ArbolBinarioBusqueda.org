@@ -1,0 +1,60 @@
+:PROPERTIES:
+:ID:       93074a8e-d40f-4120-b8ed-b9af5c3a0dc7
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Árbol binario de búsqueda
+#+filetags: :clases:eda:arboles:
+#+date: 2026-07-15 Wed
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+* Binarios de búsqueda
+Son como los [[id:c593e08c-da6c-412e-ab97-5b868f39fb5a][Arboles Binarios]], solo que a diferencia de estos, los de
+busqueda tienen unas características especiales. 
+** Características
+- Los elementos del subarbol izquierdo son menores al valor del nodo.
+- Los del derecho son mayores.
+Así para todos los nodos del árbol. *Gracias a esta propiedad, todos
+los algoritmos se basan en si se busca, añade, o elimina un nodo mayor
+o menor que el actual.*
+Por lo que el algoritmo que mas interesa es el de eliminación.
+** Eliminación
+Este tiene en total 3 casos:
+*** Eliminación de una hoja
+El más fácil, solo se elimina y se pone el puntero del padre como null.
+*** Eliminación de un solo hijo
+El nodo padre del eliminado debe apuntar al nodo hijo. Easy
+*** Eliminación con dos hijos
+ Aquí la cosa cambia, pues se tienen dos hijos. Existiendo dos formas
+ en las cuales se selecciona un nodo de los subarboles y se lo reemplaza
+ por el eliminado.
+ - Predecesor: Es el mayor del izquierdo. Y tiene sentido pues así no
+   afecta nada.
+ - Sucesor: El menor del derecho.
+Hagamos un ejemplo. Tenemos este árbol y queremos eliminar el 30
+#+begin_src
+             50
+           /    \
+         30      60
+        /  \       \
+      20    40      70
+#+end_src
+Vemos que tenemos dos hijos por lo que seleccionamos en este caso el
+mayor de la derecha, que es 40, y lo remplazamos por el 30
+#+begin_src
+             50
+           /    \
+         40      60
+        /          \
+      20           70
+#+end_src
+Y así tenemos la eliminación super hyper easy.
+Seguimos en [[id:2f2d951c-2b25-411f-9208-12eef5bfe908][Arboles AVL]]. Y continuamos en [[id:ab62ef50-7f06-474a-8b91-f673b6b479af][Arboles B]] 

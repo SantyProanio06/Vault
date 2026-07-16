@@ -1,0 +1,159 @@
+:PROPERTIES:
+:ID:       2f2d951c-2b25-411f-9208-12eef5bfe908
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Arboles AVL
+#+date: 2026-07-15 Wed
+#+filetags: :clases:eda:arboles:
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+* AVL
+Tiene los mismos conceptos que [[id:93074a8e-d40f-4120-b8ed-b9af5c3a0dc7][Árbol binario de búsqueda]], osea, en
+orden.
+** Conceptos básicos
+Este es un árbol donde en cada nodo se tiene un equilibrio donde un
+subarbol no puede tener mas de 1 nodo mas que el otro.
+***  Factor de equilibrio
+Se calcula restando los niveles del subarbol
+derecho menos los del izquierdo. Solo puede tomar estos valores
+  #+begin_export latex
+\[
+-1 \quad 0 \quad +1 
+\]
+#+end_export
+  Existe un desequilibrio si esto llega a tomar $-2$ o $+2$ y es aquí
+donde entran los mecanismos de corrección
+**** Mecanismos de corrección
+Existen 2
+***** Simples
+EL desequilibrio ocurre en linea recta. Puede ser derecha/derecha, o
+izquierda/izquierda.
+Por ejemplo se tiene este árbol
+#+begin_src
+                    50 (5 - 3 = 2) des equilibiro
+                  /    \
+                30      70
+               / \     /   \
+             20  40   60     90
+            /           \    /  \
+          10            65  78   95
+                            /     \
+                           76     100
+                                 /
+                                98
+#+end_src
+Vemos que el desequilibrio esta a la derecha por que el 2 es positivo
+y sabemos que es derecha/derecha, por que si seguimos desde el
+des balanceado hacia donde se produce el des balance es derecha y en el
+70 otra vez a la derecha. Por tanto
+#+begin_src
+50 
+  \ D
+   70
+     \ D
+     90
+#+end_src
+*La clave esta en seguir la siguiente estructura, sin importar que
+tantos niveles tengamos. Siendo A el nodo des balanceado, B y C los
+otros nodos.*
+#+begin_src
+      A
+       \
+        B
+         \
+          C
+#+end_src
+Pasa a ser el del medio osea el B pasa a ser raíz y el A pasa a la
+izquierda del B, em caso de que B tuviera mas nodos a su izquierda
+simplemente se conecta a la derecha del A lo que tenia B a la
+izquierda siguiendo así lo que dice [[id:93074a8e-d40f-4120-b8ed-b9af5c3a0dc7][Árbol binario de búsqueda]]. Quedando así:
+#+begin_src
+        B
+       / \
+      A   C
+#+end_src
+En el ejemplo, vemos que nuestro B seria el 70, y se mueve el 50 a la
+izq. Se pregunta 50 es mayor o menor que el 60?, menor, entonces a la
+izq. Y así hasta que se pueda.
+#+begin_src
+                     70
+                  /     \
+                50       90
+               / \      /  \
+             30  60    78   95
+            /  \   \   /      \
+          20   40  65 76     100
+         /                    /
+        10                   98                          
+#+end_src
+ 
+Lo mismo pasa para la izquierda/izquierda
+***** Complejas
+Esta vez el desequilibrio ocurre como en forma de zig zag, es decir, a
+la derecha y luego izquierda, o viceversa.
+Supongamos este ejemplo:
+#+begin_src
+                         50
+                       /    \
+         (4 - 2 = 2) 20      80
+                    /  \    /  \
+                  10   40  70  90
+                 / \   /
+                5  15 30
+                     / \
+                   25  35
+                     \
+                     27
+#+end_src
+Vemos que hay un desequilibrio en 20, y como el ejemplo anterior vemos
+desde el des balanceado hacia el desequilibrio vemos que empieza a la
+derecha pues el desequilibrio es positivo, en ese caso va del 20
+al 40 y luego al 30, por lo tanto derecha izquierda.
+#+begin_src
+20
+  \ D
+  40
+ / I
+30
+#+end_src
+Como en el ejemplo anterior sin importar los niveles seguimos esta
+estructura. Siendo A el des balanceado y B y C los otros. Pasando de:
+#+begin_src
+ A
+  \
+  B
+ / 
+C
+#+end_src
+Subimos el C y bajamos el A a la izquierda del C, conectado a C con B,
+de la siguiente mantera, en caso de haber nodos en C, se coloca al A
+a la izquierda del C y a la derecha de A lo que tenia C a la
+izquierda, y viceversa con B.
+#+begin_src
+     C
+   /   \
+  A     B
+#+end_src
+El objetivo es que siga lo mencionado en [[id:93074a8e-d40f-4120-b8ed-b9af5c3a0dc7][Árbol binario de búsqueda]]. En
+este caso tiene que subir el 30 y bajar el 20, como 30 tiene 2 nodos. 
+#+begin_src
+                         50
+                       /    \
+                     30      80
+                    /  \    /  \
+                  20   40  70  90
+                 / \   /
+                10  25 35
+               /  \  \
+             5    15  27 
+#+end_src
+Pese a que hay otro desequilibrio se entiende la idea.

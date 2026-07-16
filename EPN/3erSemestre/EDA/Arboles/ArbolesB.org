@@ -1,0 +1,140 @@
+:PROPERTIES:
+:ID:       ab62ef50-7f06-474a-8b91-f673b6b479af
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Arboles B
+#+date: 2026-07-15 Wed
+#+filetags: :clases:eda:arboles:
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+* B
+Es un tipo de [[id:93074a8e-d40f-4120-b8ed-b9af5c3a0dc7][Árbol binario de búsqueda]] sin embargo, tiene una
+peculiaridad.
+** Estructura
+Un árbol B tiene una variable llamada orden $d$ que define toda la
+estructura
+- A diferencia del árbol de búsqueda el B pude tener en un solo nodo
+hasta $2d$ claves. Es decir, que en un nodo se tienen claves como si
+fuera un arreglo,y como mínimo $d$ claves Solo el nodo raíz puede
+tener menos claves.
+- El árbol de búsqueda solo tiene 2 hijos, el B tiene hasta $2d +1$ hijos.
+- Las claves en el nodo son ordenadas de menor a mayor.
+Para ordenar se ve que si un nodo tiene $k$ claves, tiene por ley
+$k+1$ hijos.
+Por ejemplo una pagina de un nodo se puede ver algo así:
+#+begin_src
++----------------------+
+| 12 | 25 | 38 | 49 |
++----------------------+
+#+end_src
+Y las conexiones con otras paginas se hacen por cada borde osea
+son algo así:
+#+begin_src
+      |20|40|60|
+     /   |   |   \
+#+end_src
+En base a estas condiciones es donde se dan las operaciones.
+** Operaciones
+*** Búsqueda
+Como viene del [[id:93074a8e-d40f-4120-b8ed-b9af5c3a0dc7][Árbol binario de búsqueda]] las claves se buscan en base
+a si es la clave actual es mayor o menor que la clave a buscar,sin
+embargo aquí se recorre la pagina hasta o que no hayan mas claves o
+encontrar un medio. Por ejemplo en el siguiente arbol queremos buscar
+el 65.
+#+begin_src
+          |20|50|80|
+#+end_src
+Enotces preguntamos, 65 es mayor o menor que 20, mayor, ok seguimos a
+la derecha, 65 es mayor o menor que 50, mayor, ok vamos derecha, 65 es
+menor o mayor que 80, menor, entonces como no recorrimos toda la
+pagina, entonces bajamos por la pagina que esta entre el 50 y el 80.
+#+begin_src
+          |20|50|80|
+                |
+             bajar aquí
+#+end_src
+Y se hace lo mismo hasta encontrar o recorrer todo y no
+encontrarle. La clave es *bajar por el intervalo correcto.*
+*** Inserción
+Aquí es donde se ve el orden del árbol, si al ingresar una clave se
+supera el orden toca hacer un split, básicamente se ingresa la clave y
+se encuentra la mediana y se separa la pagina subiendo esta mediana
+como pagina raíz uniéndola a las otras. Veamos el ejemplo:
+Digamos que tengo un árbol de orden 4, es decir, máximo 8 claves y
+mínimo 4 claves:
+#+begin_src
+|10|20|30|40|50|60|70|80|
+#+end_src
+Y decido insertar el 90, ahí tendríamos 9 claves siendo esto mayor al
+máximo permitido. Por lo que toca separar en dos, la raíz puede
+quedarse con uno así que no hay problema, la media podemos sacarle
+con $d + 1$:
+#+begin_src
+|10|20|30|40|50|60|70|80|90| 4 + 1 = 5
+              5
+
+             |50|
+            /    \
+|10|20|30|40|    |60|70|80|90|
+#+end_src
+Si agregamos mas y mas lo que haríamos seria en vez de separar
+subiríamos el de la mitad a la raíz y separamos hasta que otra vez la
+raíz estuviera llena entonces ahí tocaría dividir otra vez.
+*** Eliminación
+Eliminar genera un problema grandísimo, que podemos tener menos claves
+de las mínimas, surgiendo 2 casos.
+**** Redistribución
+Si alguna de mis paginas tienen claves suficientes, se baja la raíz a
+donde queda "desordenado" y se sube el menor de los de la derecha o el
+mayor de los de la izquierda. Ejemplo:
+Tenemos el siguiente árbol donde esta eliminado una clave:
+#+begin_src
+                    |40|
+             /                \
+     |10|20|30|         |50|60|70|80|90|
+#+end_src
+Como el subarbol de la parte derecha si tiene suficientes se baja el
+40 a la pagina donde quedo mal y como es derecho se sube el menor de
+dicha pagina.
+#+begin_src
+               |50|
+           /          \
+|10|20|30|40|        |60|70|80|90|
+#+end_src
+**** Fusión
+Si es que ninguna pagina hermana puede prestar ninguna clave entonces
+juntamos las paginas. Por ejemplo, tenemos este árbol de orden 3, es
+decir tenemos como mínimo 3 y máximo 6 claves.
+#+begin_src
+                  |40|
+                 /     \
+        |10|20|30|      |50|60|70|
+#+end_src
+ Digamos que eliminamos el 30, entonces nos queda des balanceado, por lo
+ que, bajamos la clave de la raíz, y como la pagina hermana no tiene
+ para darnos uno, se fusionan:
+ #+begin_src
+                  |40|
+                 /     \
+           |10|20|      |50|60|70|
+
+                  
+                 /     \
+        |10|20|40|      |50|60|70|
+
+
+        |10|20|40|50|60|70|
+ #+end_src
+Si es que tenemos hacia arriba padres sin suficientes claves, se
+redistribuye o se fusiona como si fuera un efecto domino hasta llegar
+a la raíz.
+Su evolución [[id:8686691c-9c25-4a72-8741-b99c5c65a872][Arboles B+]]

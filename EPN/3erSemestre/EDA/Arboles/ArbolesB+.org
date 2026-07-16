@@ -1,0 +1,109 @@
+:PROPERTIES:
+:ID:       8686691c-9c25-4a72-8741-b99c5c65a872
+:END:
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Arboles B+
+#+date: 2026-07-16 Thu
+#+filetags: :clases:eda:arbooles:
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+cite_export:
+* B plus
+Son una evolución de los [[id:ab62ef50-7f06-474a-8b91-f673b6b479af][Arboles B]], básicamente los nodos hojas son
+aquellos que tienen la info real, los nodos internos solo indican por
+donde bajar siguiendo la lógica de [[id:93074a8e-d40f-4120-b8ed-b9af5c3a0dc7][Árbol binario de búsqueda]]. 
+** Características
+Básicamente, siguen un mismo orden que los [[id:ab62ef50-7f06-474a-8b91-f673b6b479af][Arboles B]] solo que este
+concepto de máximos nodos solo aplica a las hojas, no a los internos,
+entonces cuando se llena una pagina se la separa subiendo la media
+como en el anterior, pero ahora la media se queda en el derecho, pues es como si
+fuera un indice de pagina. Ademas los nodos hojas están interconectados.
+
+*** Operaciones
+
+**** Inserción
+Por ejemplo, supongamos un árbol de orden 2, es decir mínimo 2
+máximo 4. Aquí ya esta lleno por lo que toca hacer el split
+#+begin_src
+[5 10 20 30 40]
+
+      [20]
+
+      /   \
+
+[5 10]---->[20 30 40]
+#+end_src
+
+**** Eliminación
+En caso de que al eliminar quede un des balance y mi hermano me puede
+dar una clave se hace redistribuye teniendo en cuenta que la raíz que
+baja es solo el indice y lo que realmente pasa es que ese mueve el
+dato de la hoja, algo asi: Digamos que queremos eliminar el 10
+#+begin_src
+[5 10 20 30 40]
+
+      [20]
+
+      /   \
+
+[5 10]---->[20 30 40]
+
+
+      [20]
+
+      /   \
+ 
+  [5]---->[20 30 40]
+#+end_src
+Entonces el 20, "baja" o mas bien dicho el 20 se mueve del derecho al
+izq y se actualiza el indice
+#+begin_src
+      [20]
+
+      /   \
+
+[5 20]---->[30 40]
+
+      [30]
+
+      /   \
+
+[5 20]---->[30 40]
+#+end_src
+En caso de que no se pueda prestar, simplemente se fusiona y
+ya.Digamos que eliminamos el 40 solo se fusiona y queda así.
+#+begin_src
+[5 20 30]
+#+end_src
+y ya.
+
+Otro caso de la eliminación es que justo eliminamos el indice, la
+solución es sencillo, solo actualizamos el indice y ya, digamos
+que eliminamos el 20 justo.
+#+begin_src
+      [20]
+
+      /   \
+
+[5 10]---->[20 30 40]
+
+      [20]
+
+      /   \
+
+[5 10]---->[30 40]
+
+      [30]
+
+      /   \
+
+[5 10]---->[30 40]
+#+end_src

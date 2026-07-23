@@ -20,16 +20,13 @@
 Es una función con dominio en el espacio muestral y rango como
 subconjunto de reales finito o infinito.
 
-#+begin_export latex
-\[
+\begin{equation}
 X: S / \Omega \to \mathbb{R}
-\]
-#+end_export
-#+begin_export latex
-\[
+\end{equation}
+
+\begin{equation}
 w \mapsto X(w)
-\]
-#+end_export
+\end{equation}
 
 donde $w$ es un elemento elemental.
 
@@ -55,29 +52,33 @@ $X$ es discreta si su recorrido es finito o infinito numerable.
 
 *Observación.- * Si $X$ tiene un recorrido ${x_1, x_2, ..., x_n}$
 entonces:
-#+begin_export latex
-\[
+
+\begin{equation}
 P(X = x_1) + P(X = x_2) + ... + P(X = x_n) = 1
-\]
-#+end_export
-#+begin_export latex
-\[
+\end{equation}
+
+\begin{equation}
 P(x_1) + P(x_2) + ... + P(x_n) = 1
-\]
-#+end_export
-**** Función de probabilidad $f$
+\end{equation}
+
+****  Función de probabilidad $f$
 :PROPERTIES:
 :ID:       3613fa5e-7e45-44b9-b28b-1a1ff9154c0c
 :END:
 Es una función $f: \mathbb{R} \to \mathbb{R}$ tal que:
-#+begin_export latex
-\[
+
+\begin{equation}
 f(x) = P(X = x)
-\]
-#+end_export
+\end{equation}
+
 Como viene de los reales en los reales en la función se tienen que
 denotar todos los reales.
 Viene de [[id:3d6d1e50-860e-4035-9a3e-78cf88b15dc5][Ejemplo 1 Variable Aleatoria]].
+
+\begin{equation}
+
+\end{equation}
+
 #+begin_export latex
 \[
 f(x) =
@@ -100,18 +101,18 @@ Esta es la distribución teórica de probabilidad.
 :ID:       8d00d810-c4e3-4816-b47f-6ad604375679
 :END:
 Esta función $F : \mathbb{R} \to \mathbb{R}$ tal que
-#+begin_export latex
-\[
+\begin{equation}
 \begin{align}
 F(X) = P(X \leq x) = \sum_{t = x} P(X = t)\\
 F(2) = P(X \leq 2) = P(0) + P(1) + P(2) = \frac{1}{8} + \frac{3}{8} +
 \frac{3}{8} = \frac{7}{8}\\
 F(-5) = P(X \leq -5) = 0
 \end{align}
-\]
-#+end_export
-#+begin_export latex
-\[
+\end{equation}
+
+
+
+\begin{equation}
 F(x) =
 \begin{cases}
 0 & \text{si } X < 0 \\
@@ -120,8 +121,8 @@ F(x) =
 \frac{7}{8} & \text{si } 2 \leq X < 3 \\
 1 & \text{si } X > 3
 \end{cases}
-\]
-#+end_export
+\end{equation} 
+
 
 ***** Gráfica de la función de distribución
 
@@ -152,6 +153,11 @@ f(2) 2 \in Img(X) \text{si por lo tanto} = F(2) - F(1) =
 \frac{7}{8} - \frac{4}{8} = \frac{3}{8}
 \]
 #+end_export
+
+\begin{equation}
+2x + 3
+\end{equation}
+
 
 **** Propiedades
 :PROPERTIES:

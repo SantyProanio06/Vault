@@ -1,67 +1,137 @@
 :PROPERTIES:
-:ID:       188ee910-754d-46de-bd0a-b1347fbc1613
+:ID:       a1f4e3d2-9c6b-4a1e-8f3d-2b5e7c9a0d1f
 :END:
 #+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
 #+options: author:t broken-links:nil c:nil creator:nil
 #+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
 #+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
 #+options: timestamp:t title:t toc:t todo:t |:t
-#+title: Emacs cheat sheet
+#+title: Doom Emacs cheat sheet
 #+filetags: :cheat:
-#+date: <2026-06-30 Tue>
+#+date: <2026-07-22 Wed>
 #+author: Santiago Javier Proaño Yépez
 #+email: santiagoproano06@gmail.com
-#+language: en
+#+language: es
 #+select_tags: export
 #+exclude_tags: noexport
-#+creator: Emacs 29.3 (Org mode 9.6.15)
+#+creator: Emacs 30.2 (Doom Emacs 2.2.1)
 #+cite_export:
-* Comandos de emacs
-| *Comando*                 | *Acción*                     |
-| ~C-c b~                   | Insertar bloques de comandos |
-| ~C-c e l~                 | Insertar latex matemático    |
-| ~C-c .~                   | Corrección de palabra        |
-| ~C-c C-e #~               | Ingresar las templates       |
-| ~C-c y~                   | Ejecutar yassnipets          |
-| ~C-c C-l~                 | Insertar hipervínculo        |
-| ~std~                     | Bloque de estudio(yasnipet)  |
-| ~C-c i c~ + ~RET ESC-RET~ | Seleccionar citas .bib       |
-| ~ESC-TAB~                 | Completa un #+               |
-** Remplazo de palabras enteras
-~M-%~ "la palabra que queramos remplazar" ~RET~ "la nueva palabra"
-~RET~
-** Zathura
-~f6~ guarda el org y lo convierte en pdf auto
-~f7~ limpia cualuqier archivo basura del zathura
-~f8~ abre la carpeta del org (goood)
 
-| Letra | Accion                        |
-| ~y~   | remplazar ocurrencia          |
-| ~n~   | saltar                        |
-| ~!~   | remplazar todas sin preguntar |
-| ~q~   | salir                         |
-| ~u~   | deshacer ultimo remplazo      |
+* Evil Mode (edición modal, estilo Vim)
+** Modos
+| *Modo*   | *Para qué*                 | *Entrar*                          |
+|----------+----------------------------+-----------------------------------|
+| Normal   | Moverte, borrar, comandos  | ~ESC~ desde cualquier otro modo   |
+| Insert   | Escribir texto             | ~i~ ~a~ ~o~ ~O~                   |
+| Visual   | Seleccionar texto          | ~v~ (carácter) ~V~ (línea)        |
+| Replace  | Sobrescribir carácter      | ~R~                               |
 
-* Comandos org-roam
-| *Comando* | *Acción*                 |
-| ~C-c n i~ | Insertar Nodo            |
-| ~C-c n f~ | Buscar nodo por titulo   |
-| ~C-c n t~ | Buscar nodo por los tags |
-| ~C-c C-o~ | Abrir enlace             |
-* Bibliografias
+** Movimiento (modo Normal)
+| *Comando* | *Acción*                    |
+|-----------+-----------------------------|
+| ~h j k l~ | izq / abajo / arriba / der  |
+| ~w~       | siguiente palabra           |
+| ~b~       | palabra anterior            |
+| ~e~       | fin de la palabra actual    |
+| ~0~       | inicio de línea             |
+| ~$~       | fin de línea                |
+| ~gg~      | inicio del archivo          |
+| ~G~       | fin del archivo             |
+
+** Edición (modo Normal)
+| *Comando* | *Acción*                          |
+|-----------+------------------------------------|
+| ~x~       | borra carácter bajo el cursor     |
+| ~dd~      | borra la línea completa           |
+| ~dw~      | borra hasta la siguiente palabra  |
+| ~yy~      | copia (yank) la línea             |
+| ~p~       | pega después del cursor           |
+| ~u~       | deshacer                          |
+| ~C-r~     | rehacer                           |
+| ~3dd~     | borra 3 líneas (número + comando) |
+
+* Leader Key (~SPC~) — Navegación general de Doom
+| *Comando*   | *Acción*                          |
+|-------------+------------------------------------|
+| ~SPC SPC~   | ejecutar comando por nombre (M-x) |
+| ~SPC .~     | buscar archivos (fuzzy finder)     |
+| ~SPC f f~   | abrir archivo                      |
+| ~SPC f s~   | guardar archivo                    |
+| ~SPC b b~   | cambiar de buffer                  |
+| ~SPC b d~   | cerrar buffer actual                |
+| ~SPC p p~   | cambiar de proyecto                 |
+| ~SPC w~     | comandos de ventanas (split/cerrar) |
+| ~SPC o t~   | abrir terminal (vterm)              |
+| ~SPC h d h~ | ayuda / documentación de Doom       |
+
+* Localleader (~SPC m~) — Comandos según el modo actual
+Cambia según si estás en org, LaTeX, elisp, etc. Explora con ~which-key~
+(aparece solo, espera medio segundo tras presionar ~SPC m~).
+
+* Git / Magit
+| *Comando* | *Acción*             |
+|-----------+-----------------------|
+| ~SPC g g~ | abrir Magit (status)  |
+
+Nota: ya NO usamos ~C-x g~ ni ~F10~ personalizados — nos quedamos con el
+estándar de Doom (~SPC g g~) para no pelear contra el resto de sus atajos.
+
+* Org-roam (cerebro digital, ~/Vault)
+| *Comando*   | *Acción*                    |
+|-------------+------------------------------|
+| ~SPC n r f~ | buscar/crear nodo por título |
+| ~SPC n r i~ | insertar link a otro nodo    |
+| ~SPC n r c~ | capturar nueva nota rápida   |
+| ~SPC n r t~ | buscar nodo por tag (custom) |
+| ~C-c C-o~   | abrir enlace bajo el cursor  |
+
+* LaTeX / Export a PDF
+~F6~ guarda el org y lo exporta a PDF (ya NO abre Zathura automático)
+~F7~ limpia archivos basura (aux, log, toc, etc)
+~F8~ abre la carpeta del archivo actual
+~C-c C-x C-l~ activa/desactiva la vista previa de una fórmula LaTeX puntual
+
+| Comando anterior (vanilla) | Estado ahora           |
+|-----------------------------+------------------------|
+| ~C-c b~ (bloques de código) | igual, sigue activo    |
+| ~C-c e l~ (bloque latex)    | igual, sigue activo    |
+| ~C-c .~ (corrección palabra)| ahora vía flyspell/Doom|
+| ~C-c i c~ (insertar cita)   | igual, sigue activo    |
+
+* Imágenes (pegar screenshots)
+| *Comando* | *Acción*                                   |
+|-----------+---------------------------------------------|
+| ~SPC m i~ | pega la imagen del portapapeles en la nota   |
+| (arrastrar) | soltar un archivo de imagen sobre el buffer también funciona (+dragndrop) |
+
+* Reemplazo de palabras
+~M-%~ "la palabra que queramos remplazar" ~RET~ "la nueva palabra" ~RET~
+
+| Letra | Acción                          |
+|-------+----------------------------------|
+| ~y~   | remplazar ocurrencia             |
+| ~n~   | saltar                           |
+| ~!~   | remplazar todas sin preguntar    |
+| ~q~   | salir                             |
+| ~u~   | deshacer último remplazo         |
+
+* Terminal integrada
+~F9~ abre/cierra vterm en un panel inferior
+
+* Bibliografías
 #+latex_header: \nocite{*}
+#+print_bibliography:
 
-#+print_bibliography: 
-* Imagenes
+* Imágenes en export
 #+ATTR_LATEX: :float nil :width 0.8\textwidth
-#+CAPTION: 
+#+CAPTION:
 #+NAME: fig:
 
-* Gptel (que gooooood)
-| *Comando*      | *Accion*                                |
-| ~M-gpetl-menu~ | Abre el menu para usar el gptel         |
-| ~s~            | Instrucciones que le puedes dar         |
-| ~-f~ (-)       | puedes agregar un archivo como contexto |
-| ~-b~           | puedes agregar un buffer como contexto  |
-| ~m~            | minibufer para escribir el prompt       |
-|                |                                         |
+* Gptel (opcional, comentado en config.el hasta que agregues tus API keys)
+| *Comando*      | *Acción*                                |
+|----------------+-------------------------------------------|
+| ~M-x gptel-menu~ | abre el menú para usar gptel             |
+| ~s~            | instrucciones que le puedes dar            |
+| ~-f~           | agregar un archivo como contexto           |
+| ~-b~           | agregar un buffer como contexto            |
+| ~m~            | minibuffer para escribir el prompt         |

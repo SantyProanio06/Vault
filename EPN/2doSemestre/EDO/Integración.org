@@ -25,86 +25,64 @@ osea da el cambio total de dicha función por ejemplo la integral de la
 velocidad representa el desplazamiento.
 * Integrales de tabla
 ** I. de una constante
-#+begin_export latex
-\[
+\begin{equation}
 \int C \, dx = x + C
-\]
-#+end_export
+\end{equation}
 
 ** I. normal
 *Super importante*, nunca olvidarse de la constante de integración
 
-#+begin_export latex
-\[
+\begin{equation}
 \int x^{n} \,dx = \frac{x^{n+1}}{n+1} + C
-\]
-#+end_export
+\end{equation}
 
 ** I. de una fracción
 :PROPERTIES:
 :ID:       b29281cc-0a38-4348-9afc-e9c10affcc07
 :END:
-#+begin_export latex
-\[
+\begin{equation}
 \int \frac{1}{x} \, dx = \ln{x} + C
-\]
-#+end_export
+\end{equation}
 
-#+begin_export latex
-\[
+\begin{equation}
 \int \frac{f \prime (x)}{f(x)} \,dx = \ln{f(x)} + C
-\]
-#+end_export
+\end{equation}
 
 ** I. de un exponente
-#+begin_export latex
-\[
+\begin{equation}
 \int a^{x} \, dx = \frac{a^{x}}{\ln{a}} + C
-\]
-#+end_export
+\end{equation}
 
 ** I. de euler
-#+begin_export latex
-\[
+\begin{equation}
 \int e^{x} \, dx = e^{x} + C
-\]
-#+end_export
+\end{equation}
 
-#+begin_export latex
-\[
+\begin{equation}
 \int f \prime (x)e^{f(x)} \, dx = e^{f(x)} + C
-\]
-#+end_export
+\end{equation}
 
 ** I. Trigonométricas
 
 *** Seno
-#+begin_export latex
-\[
+\begin{equation}
 \int \sin{x} \, dx = - \cos{x} + C
-\]
-#+end_export
+\end{equation}
 
 *** Coseno
-#+begin_export latex
-\[
+\begin{equation}
 \int \cos{x} \, dx = \sin{x} + C
-\]
-#+end_export
+\end{equation}
 
 ** I. definida
 :PROPERTIES:
 :ID:       4d31cbc7-2f09-4424-bbd6-b6dc7129b33b
 :END:
-#+begin_export latex
-\[
+\begin{equation}
 \int_{a}^{b} f(x) \, dx = F(b) - F(a)
-\]
-#+end_export
+\end{equation}
 
 donde:
-#+begin_export latex
-\[
+\begin{equation}
 F(x) = \int f(x) \, dx
-\]
-#+end_export
+\end{equation}

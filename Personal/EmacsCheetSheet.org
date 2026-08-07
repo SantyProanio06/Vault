@@ -93,9 +93,9 @@ estándar de Doom (~SPC g g~) para no pelear contra el resto de sus atajos.
 
 | Comando anterior (vanilla) | Estado ahora           |
 |-----------------------------+------------------------|
-| ~C-c b~ (bloques de código) | igual, sigue activo    |
-| ~C-c e l~ (bloque latex)    | igual, sigue activo    |
-| ~C-c .~ (corrección palabra)| ahora vía flyspell/Doom|
+| ~C-c ,~(bloques de código)  | igual, sigue activo    |
+| ~mth + TAB~ (bloque latex) | igual, sigue activo    |
+| ~z =~ (corrección palabra)  | ahora vía flyspell/Doom|
 | ~C-c i c~ (insertar cita)   | igual, sigue activo    |
 
 * Imágenes (pegar screenshots)

@@ -73,6 +73,7 @@ Cambia según si estás en org, LaTeX, elisp, etc. Explora con ~which-key~
 |-----------+-----------------------|
 | ~SPC g g~ | abrir Magit (status)  |
 
+Proceso: S para stagear (ni idea) los cambios, c y luego c para escribir el comit, en este caso se escribe arriba, P y luego p para hacer el push y ya.
 Nota: ya NO usamos ~C-x g~ ni ~F10~ personalizados — nos quedamos con el
 estándar de Doom (~SPC g g~) para no pelear contra el resto de sus atajos.
 

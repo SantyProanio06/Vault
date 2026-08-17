@@ -128,14 +128,7 @@ F(x) =
 F(x) = P(X \leq x)
 \end{equation}
 
-   
-#+begin_export latex
-\[
-
-\]
-#+end_export
-
-2. Si se conoce $F$ se puede determinar $f$ usando
+1. Si se conoce $F$ se puede determinar $f$ usando
 \begin{equation}
 f(x) = P(X = x) =
 \begin{cases}

@@ -1,0 +1,85 @@
+:PROPERTIES:
+:ID:       280ea91f-8250-4d4a-9fd9-c2b65a1d83fe
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Introducción Electrónica
+#+date: <2026-08-17 lun>
+#+filetags: :clases:electronica:
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 30.2 (Org mode 9.8.7)
+#+cite_export:
+* Electricidad
+Son fenómenos causados por el movimiento de los electrones. Dependiendo el movimiento de electrones en los átomos se puede lograr una distinta *carga eléctrica* medida por los culombios $C$, este movimiento depende del material, teniendo 3 posibilidades.
+- Conductores: Pasan los electrones mas fácilmente.
+- Aislantes: No permiten el paso de electrones.
+- Semiconductores: Bajo ciertas condiciones pasan o no los electrones.
+* Magnitudes
+** Corriente $I$
+Cantidad de electrones que pasan por segundo. Medido en amperios $(A)$.
+** Voltaje $V$
+Es la fuerza con la que se empujan los electrones. Medido en voltios $(V)$. Puede ser *continuo*, el voltaje es el mismo en cualquier tiempo, o *alterno* varia con el tiempo.
+** Resistencia $R$
+Oposición al paso de la corriente, medida en ohmios $(\Omega)$.
+*** Código de color :ATTACH:
+:PROPERTIES:
+:ID:       ecfe97fb-4df9-491e-9d78-787928b4f11b
+:END:
+Los valores de las resistencias usadas en circuitos pueden ser medidos por su código de color de la siguiente forma.
+
+[[attachment:20260817-151035_screenshot.png]]
+
+Dependiendo el numero de bandas que tenga la resistencia se calcula así.
+- 6 bandas
+  Las 3 primeras son solo números, la 4ta es el factor de multiplicación, la 5ta es el porcentaje de tolerancia que tiene, y la 6ta es la temperatura que soporta.
+- 5 bandas
+  No tiene lo de la temperatura (véase la foto).
+- 4 bandas
+  Son solo dos números en la resistencia.
+* Fuentes de voltaje
+Se clasifican según la forma en la que entregan corriente.
+** Corriente continua (DC) :ATTACH:
+:PROPERTIES:
+:ID:       9b1af937-b977-463f-a9a0-472258c27888
+:END:
+#+ATTR_ORG: :width 150
+[[attachment:20260817-152652_screenshot.png]]
+
+Básicamente la fuente da una corriente constante.(obvio) Se la puede observar en baterías o celdas solares.
+** Corriente alterna (AC) :ATTACH:
+:PROPERTIES:
+:ID:       4cf9da0e-212e-42bb-b7a6-cf706f75f79e
+:END:
+#+ATTR_ORG: :width 150
+[[attachment:20260817-153520_screenshot.png]]
+Corriente que varia con el tiempo. Se la puede ver en generadores o la corrientes domesticas.
+* Circuitos eléctricos
+:PROPERTIES:
+:ID:       c164370e-8661-4fe9-9195-776925df8ef4
+:END:
+Son dispositivos que permiten el paso de corriente para producir un efecto x. Pueden estar abiertos, se corta el flujo, o cerrados, se van por el camino mas corto.
+Los cortocircuitos son fallas producidas por dos cables de distinta polaridad (+ y -) se tocan sin control, la corriente va por un camino mas fácil sin resistencia lo que aumenta la fuerza de forma muy rápido.
+** Dirección de la corriente.
+En la vida real la corriente va desde el negativo hacia el lado positivo (corriente real). Pero en los circuitos es de positivo a negativo (corriente convencional).
+** Interruptores :ATTACH:
+:PROPERTIES:
+:ID:       3368d597-2f5b-4bc6-9582-9542d5c40222
+:END:
+#+ATTR_ORG: :width 200
+[[attachment:20260817-154748_screenshot.png]]
+Controlan el paso de corriente en el circuito.
+** Fusibles
+Son dispositivos cargados con la corriente máxima, si uno explota abre el circuito para que no se dañe el resto del circuito.
+** Tierra (ground) :ATTACH:
+:PROPERTIES:
+:ID:       02cf37d2-b710-46d3-827e-9bffdc7959ae
+:END:
+#+ATTR_ORG: :width 100
+[[attachment:20260817-155247_screenshot.png]]
+Permite proteger a las personas y a los equipos de descargas eléctricas dañinas, pues redirecciona los electrones directamente hacia tierra física.

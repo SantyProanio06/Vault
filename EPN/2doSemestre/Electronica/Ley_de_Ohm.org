@@ -17,8 +17,29 @@
 #+creator: Emacs 29.3 (Org mode 9.6.15)
 #+cite_export:
 * Ley de Ohm
+Nos da la energía que necesitamos para darle a todo el [[id:c164370e-8661-4fe9-9195-776925df8ef4][circuito]]. Aparece en el siglo XIX donde un científico descubrió que la corriente era directamente proporcional al voltaje e inversamente proporcional a la resistencia dando como resultado.
+\begin{equation}
+I = \frac{V}{R}
+\end{equation}
 
-[
-V = IR
-]
+Para usarla de forma mas fácil usar VIR
+\begin{equation}
+V = I \times R
+\end{equation}
+
+Gracias a la ley de ohm podemos calcular la potencia.
+* Potencia
+La energía $(W)$ es la capacidad de hacer un trabajo, la potencia es la cantidad de tiempo en la que se demora en realizar un trabajo. Por lo tanto:
+\begin{equation}
+[w] P = \frac{W [J]}{t [s]} 
+\end{equation}
+Medida en watts. Sin embargo, cuando hablamos de potencia en circuitos, esta se puede expresar con la ley de ohm como:
+\begin{equation}
+\begin{align}
+P = V \times I\\
+P = I^{2 }\times R
+\end{align}
+\end{equation}
+
+
 

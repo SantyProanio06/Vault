@@ -75,7 +75,7 @@ Cambia según si estás en org, LaTeX, elisp, etc. Explora con ~which-key~
 
 Proceso: S para stagear (ni idea) los cambios, c y luego c para escribir el comit, en este caso se escribe arriba, P y luego p para hacer el push y ya.
 Nota: ya NO usamos ~C-x g~ ni ~F10~ personalizados — nos quedamos con el
-estándar de Doom (~SPC g g~) para no pelear contra el resto de sus atajos.
+estándar de Doom (~SPC g g~) para no pelear contra el resto de sus atajos w.
 
 * Org-roam (cerebro digital, ~/Vault)
 | *Comando*   | *Acción*                    |
@@ -105,6 +105,12 @@ estándar de Doom (~SPC g g~) para no pelear contra el resto de sus atajos.
 | ~SPC m i~ | pega la imagen del portapapeles en la nota   |
 | (arrastrar) | soltar un archivo de imagen sobre el buffer también funciona (+dragndrop) |
 
+** Para redimensionar la imagen en el ORG
+#+ATT_ORG: :width #
+Luego presionar ~C-c C-x C-v~
+** Redimensionar en PDF
+#+ATTR_LATEX: :width 0.x\textwidth
+Luego presionar ~C-c C-x C-v~
 * Reemplazo de palabras
 ~M-%~ "la palabra que queramos remplazar" ~RET~ "la nueva palabra" ~RET~
 

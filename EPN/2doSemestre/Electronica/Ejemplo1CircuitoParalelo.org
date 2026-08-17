@@ -1,0 +1,47 @@
+:PROPERTIES:
+:ID:       49ebdf20-11e7-47c0-a8bf-0dcf53d79a00
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Ejemplo 1 circuito en paralelo
+#+date: <2026-08-17 lun>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 30.2 (Org mode 9.8.7)
+#+cite_export:
+* Ejercicio :ATTACH:
+:PROPERTIES:
+:ID:       5c819e64-eaf7-4df3-a3c8-739773f6287b
+:END:
+#+ATTR_ORG: :width 350
+[[attachment:20260817-170052_screenshot.png]]
+
+Se calcula todo lo que se puede calcular mediante una tablita:
+|    | V | I    | R    | P    |
+| F  | *5* | 1,83 | 2,73 | 9,15 |
+| R1 | *5* | 1    | *5*    | 5    |
+| R2 | *5* | 0,5  | *10*   | 2,5  |
+| R3 | *5* | 0,33 | *15*   | 1,65 |
+
+Primero calculamos la resistencia total usando la formula de los circuitos en paralelo:
+\begin{align*}
+Rt = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_n}} \\
+Rt = \frac{1}{\frac{1}{5} + \frac{1}{10} + \frac{1}{15}} \\
+Rt = 2,73 \Omega
+\end{align*}
+
+Teniendo la resistencia ya podemos calcular todas las corrientes con la [[id:2247a3be-0603-453a-8da6-06d97a2e900e][ley de Ohm]]
+\begin{align*}
+I_n = \frac{V_T}{R_n}
+\end{align*}
+
+La corriente total simplemente es la suma de todas las corrientes y ya.
+Y por ultimo la potencia
+\begin{align*}
+P = Vt \times I_n
+\end{align*}

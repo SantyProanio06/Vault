@@ -1,0 +1,59 @@
+:PROPERTIES:
+:ID:       706a4318-30e4-4527-8adc-be20c92d024c
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Ejemplo 1 de circuitos en serie
+#+filetags: :clases:electronica:ejemplo:
+#+date: <2026-08-17 lun>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 30.2 (Org mode 9.8.7)
+#+cite_export:
+* Ejercicio :ATTACH:
+:PROPERTIES:
+:ID:       6fe3adef-6ac6-42d8-b420-d8dcdc081caa
+:END:
+#+ATTR_ORG: :width 300
+[[attachment:20260817-162854_screenshot.png]]
+
+Básicamente en este tipo de ejercicios el objetivo es calcular todo lo posible en una tabla. Buscando calcular en el siguiente orden.
+1. Rt
+2. I
+3. V
+4. P
+|    | V | I   | R  | P   |
+| F  | *6* | 0,2 | 30 | 1,8 |
+| R1 | 2 | 0,2 | *10* | 0,4 |
+| R2 | 1 | 0,2 | *5*  | 0,2 |
+| R3 | 3 | 0,2 | *15* | 0,6 |
+
+Entonces calculamos Rt
+\begin{align*}
+Rt = R_{1} + R_{2} + R_{3} \\
+Rt = 10 + 5 + 15 \\
+Rt = 30 \Omega 
+\end{align*}
+Con esto ya podemos calcular la corriente total, gracias la [[id:2247a3be-0603-453a-8da6-06d97a2e900e][ley de ohm]] 
+\begin{align*}
+It = \frac{Vt}{RT} \\
+It = \frac{6}{30} \\
+It = 0,2 A
+\end{align*}
+Listo la corriente total, podemos calcular el voltaje en cada resistencia
+
+\begin{align*}
+V_n = It \times R_n
+\end{align*}
+
+Y teniendo esto solo usamos la formula de la potencia para poder calcularla.
+\begin{align*}
+P_n = V_n \times It
+\end{align*}
+
+Y con eso completamos la tabla :) 

@@ -1,0 +1,72 @@
+:PROPERTIES:
+:ID:       e198524a-a12d-40a9-9ac6-25da4272beca
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Tipos de circuitos
+#+filetags: :clases:electronica:
+#+date: <2026-08-17 lun>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 30.2 (Org mode 9.8.7)
+#+cite_export:
+[[id:c164370e-8661-4fe9-9195-776925df8ef4][Circuitos eléctricos]]
+* Circuitos en serie :ATTACH:
+:PROPERTIES:
+:ID:       1dc2158d-f267-48ba-83df-6e01feab47b7
+:END:
+Los elementos de dicho circuito están conectados de forma lineal.
+#+ATTR_ORG: :width 200
+[[attachment:20260817-161625_screenshot.png]]
+** Características
+La corriente es la misma en todo. Por lo tanto usando [[id:2247a3be-0603-453a-8da6-06d97a2e900e][la ley de ohm]]
+\begin{equation}
+I = \frac{Vt}{Rt}
+\end{equation}
+Donde la resistencia total es la suma de las resistencias.
+\begin{align*}
+Rt = R_1 + R_2 + \dots + R_n
+\end{align*}
+
+
+El voltaje de la fuente es la suma de los voltajes. Es decir el voltaje se divide.
+\begin{equation}
+Vt = V_{R1} + V_{R2} + \dots + V_{Rn}
+\end{equation}
+*Corriente igual, voltaje divide*
+
+Y ya con la [[id:2247a3be-0603-453a-8da6-06d97a2e900e][ley de ohm]] podemos calcular cada resistencia o cada voltaje faltante.
+ [[id:706a4318-30e4-4527-8adc-be20c92d024c][Ejemplo 1 de circuitos en serie]]
+* Circuitos en paralelo :ATTACH:
+:PROPERTIES:
+:ID:       b986fa40-be74-4ca7-8915-e8085953ced4
+:END:
+Son circuitos que al seguir la linea del cable se dividen en varios caminos, quedando los elementos en paralelo.
+#+ATTR_ORG: :width 300
+[[attachment:20260817-164835_screenshot.png]]
+** Características
+El voltaje es el mismo para todo. Usando [[id:2247a3be-0603-453a-8da6-06d97a2e900e][ley de ohm]] tenemos:
+\begin{align*}
+V = It \times Rt
+\end{align*}
+
+La corriente en cambio se divide para todos. Es decir la suma de las corrientes es la corriente total.
+\begin{align*}
+It = I_1 + I_2 + \dots + I_n
+\end{align*}
+
+En este caso la resistencia total se calcula de la siguiente forma
+\begin{align*}
+\frac{1}{Rt} = \frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_n}
+\end{align*}
+
+Aunque es mas fácil de usar la siguiente formula
+\begin{align*}
+Rt = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_n}}
+\end{align*}
+

@@ -1,0 +1,65 @@
+:PROPERTIES:
+:ID:       204b83c6-eb51-487f-9c99-f51103e10b3d
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Códigos de direcciones
+#+filetags: :clases:compiladores:fast:
+#+date: <2026-10-03 sáb>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Direcciones
+Las direcciones en el código son los lugares en donde un dato vive, ya sea una variable, una constante o un temporal, incluyendo el resultado.
+* Que son los códigos de direcciones
+En compiladores, representan las operaciones, y se dividen según el número de direcciones que se representen.
+Existen varios pero el que usaremos es:
+
+** Tres direcciones
+Básicamente tiene solo 2 operandos y un solo resultado. Por ejemplo:
+
+#+begin_src
+t2 = velocidad * t1
+#+end_src
+donde t2 es el resultado, velocidad y t1 son operandos y * un operador.
+
+Entonces como regla general una sola operación por linea, de ahí que usemos un árbol binario para representar al código. Esta forma es para el estilo de arquitecturas RISC (ARM, RISC-V)
+** Dos direcciones
+Como solo se usan dos direcciones cuando se requiere hacer una operación se pone al resultado como operando. Parecido a von neuman
+
+#+begin_src
+t1 = b
+t1 = t1 * c
+#+end_src
+
+Usado en un estilo de arquitectura x86
+** Una dirección
+Aquí se usa un registro implícito, un acumulador, siempre participa, por lo que solo se nombra al otro operando.
+
+#+begin_src
+LOAD  b        ; ACC = b
+MUL   c        ; ACC = ACC * c
+ADD   a        ; ACC = ACC + a
+STORE x        ; x = ACC
+#+end_src
+
+Usado en un estilo de arquitectura antigua y simple
+** Cero direcciones
+Usado en maquina de pila, lo hace todo como una pila
+
+#+begin_src
+PUSH b
+PUSH c
+MUL
+PUSH a
+ADD
+POP x
+#+end_src
+
+Modelo de JVM (bytecode de Java) y de WebAssembly

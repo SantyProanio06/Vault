@@ -1,0 +1,122 @@
+:PROPERTIES:
+:ID:       cdc5e40b-0da4-4ee7-ac96-9d26b2031a43
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Fases de compilación
+#+filetags: :clases:compiladores:
+#+date: <2026-10-03 sáb>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+
+* Conceptos de la lengua
+Antes de entrar en que hace la compilación tenemos que entender los 3 conceptos claves.
+** Léxico
+Son todas las palabras correctamente escritas. Viéndolo desde el mundo real un error de léxico seria
+"El gatx come pescado" aquí gatx no existe en el lenguaje, por lo que esta mal lexicamente.
+
+** Sintaxis
+Es la gramática de la oración, básicamente verifica como están ordenadas las palabras en sujeto verbo y predicado. Pueden estar bien escritas pero no entenderse nada. Por ejemplo:
+"Pescado el come el gato" todas las palabras existen pero el orden es imposible.
+
+** Semántica
+Es el significado de la oración, verifica si tiene sentido lo que se dice. Una oración puede tener todas las palabras existentes, tener sentido en orden, pero no tener un significado correcto.
+Por ejemplo: "La mesa bebe café". Todo existe, el orden esta bien, pero no tiene un significado correcto.
+ 
+* Fases de la compilación
+Compilar tiene 8 bloques importantes, y se verán a través de un ejemplo:
+** Fuente
+Programador diseña y escribe el código en un lenguaje de alto nivel, es decir que usa lenguaje cercano al del ser humano.
+
+#+begin_src
+posicion = inicial + velocidad * 60
+#+end_src
+
+** Preprocesador
+Junta todo el programa en uno solo y lo deja listo para empezar a compilar 
+
+#  LocalWords:  Preprocesador intToReal
+** Análisis léxico
+Lee lo escrito en el programa de izquierda a derecha, carácter por carácter, definiendo dos cosas
+- Cuando una palabra es valida, por ejemplo =velocidad=, se le clasifica como un *lexema*. 
+- A dicho lexema se lo verifica y se agrega un identificador, por ejemplo === seria =ASIG= estos son los *tokens*
+Verifica que cada palabra este bien escrita.
+
+#+begin_src
+posicion -> ID
+= -> ASIG
+inicial -> ID
++ -> SUMA
+velocidad -> ID
+(*) -> MLUT
+60 -> NUM
+#+end_src
+
+** Análisis sintáctico
+Se construye un árbol sintáctico con los tokens siguiendo una regla de oro "Se debe considerar que lo que esta en la parte superior es lo ultimo en ejecutar y lo que esta en la parte inferior es lo primero en ejecutar".
+
+Verifica que el orden este correcto. Entonces recorremos de izquierda a derecha y analizamos cual va ultimo y así 
+
+#+begin_src
+            =
+        /        \    
+posicion                +
+                     /       \
+
+                inicial         *
+                               /    \
+                        Velociad    60
+#+end_src
+
+** Análisis semántico
+Comprueba que las operaciones tengan sentido con los tipos de datos que es manejan.
+En este caso posición, inicial y velocidad están definidas como tipo =double= y 60 es entero
+entonces toca hacerle de tipo double como 60.0
+
+Aquí vemos que entra la tabla de símbolos
+
+| Nombre    | Clase    | Tipo | Alcance |
+| posición  | variable | real | local   |
+| inicial   | variable | real | local   |
+| velocidad | variable | real | local   |
+
+** Generación de código intermedio
+Convierte el árbol sintáctico en instrucciones simples, operando linea por linea, este no depende de ningún lenguaje de fuente ni maquina de destino.
+
+Se lo hace en código de tres direcciones [[id:204b83c6-eb51-487f-9c99-f51103e10b3d][Códigos de direcciones]]
+
+#+begin_src
+t1 = intToReal(60)
+t2 = t1 * velocidad
+t3 = inicial + t2
+posicion = t3
+#+end_src
+
+** Optimización del código
+Básicamente toma el código intermedio y le disminuye las instrucciones sin cambiar el resultado del programa. En el caso de ejemplo el intToReal(60) se lo puede hacer en tiempo de compilación así que no hace falta ejecutarle cada vez. Esto se le llama constant folding
+
+#+begin_src
+t2 = velocidad * 60.0
+t3 = inicial + t2
+posicion = t3
+#+end_src
+** Generación de código objeto
+Cambia y traduce el código intermedio ya optimizado en instrucciones de maquina, o ensamblador, esta fase ya depende del hardware.
+
+#+begin_src
+LOADF velocidad, R2
+MULTF #60.0, R2
+LOADF inicial, R1
+ADDF R2,R1
+STOREF R1, posicion
+#+end_src
+
+En este código ilustrativo tenemos que Rx son los registros del CPU donde están guardándose las variables.
+

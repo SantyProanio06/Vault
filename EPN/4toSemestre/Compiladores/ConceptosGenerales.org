@@ -17,7 +17,7 @@
 #+cite_export:
 
 * El error de la industria
-Las empresas, como tienen distintas formas de hacer sus equipos, tenían cada una, distintos instruccion set para decirle al hardware que hacer, por lo tanto, para cada empresa se tenia que programar de distinta forma.
+Las empresas, como tienen distintas formas de hacer sus equipos, tenían cada una, distintos instrucción set para decirle al hardware que hacer, por lo tanto, para cada empresa se tenia que programar de distinta forma.
 
 Como programar así es una locura, se crearon los lenguajes de alto nivel, donde el programador puede escribir en un lenguaje legible y un compilador que traduce esas instrucciones en cada maquina.
 

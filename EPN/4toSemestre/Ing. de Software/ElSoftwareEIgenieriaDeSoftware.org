@@ -1,0 +1,94 @@
+:PROPERTIES:
+:ID:       073fb850-173d-48c9-a1b4-e0a4adcdd1e0
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: El Software y la ingeniería de Software
+#+filetags: :clases:software:
+#+date: <2026-10-06 mar>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+
+Extraído del libro de Pressman, ingeniería de software un enfoque práctico séptima edición.
+* Conceptos generales, una miradita rápida
+A groso modo, se entenderán que son estos dos conceptos fundamentales de la ingeniería de software.
+** Que es el software
+Conocido por Pressman como "software de computadora", básicamente son las aplicaciones o programas que son desarrolladas y mantenidos por uno o varios programadores, todos los programas ejecutados en cualquier dispositivo de cómputo.
+** Que es la ingeniería de Software
+A grandes rasgos y siguiendo con la definición anterior. La ingeniería de Software son todas a aquellas herramientas, métodos y practicas que permiten a los programadores crear y mantener estos software de computadores de alta calidad de forma ágil.
+* El software en el mundo actual
+Nadie pudo predecir lo incrustado que estaría el software en la actualidad. Ha permitido crear tecnologías nuevas como la nanotecnología; mejoró las tecnologías que ya estaban como las telecomunicaciones; se incorporó en sistemas militares, médicos, empresariales, de ingeniería, entre muchos otros. Inclusive el internet es manejado gracias al software evolucionando la forma en que investigamos, e incluso como nos relacionamos con los demás.
+
+Pese a que no se refleja la enorme conexión de la vida actual con el software se entiende que está en casi todo lado, siendo pilar fundamental de la vida diaria de la mayor parte de la población. Gracias a esta enorme incorporación, la comunidad de programadores se a enfocado en crear herramientas y prácticas para facilitar la creación de software de alta calidad en tiempos eficientes, sin embargo, se ha fragmentado el enfoque de estas herramientas en distintos dominós, ya sean en aplicaciones o usos mas amplios como los sistemas operativos, en vez crear un software que se enfoque en todos estos dominios, siendo esto ultimo improbable debido a la complejidad del software, y la complejidad de cada nicho.
+* La naturaleza del software
+El software en la actualidad actúa como un producto y como un vehículo para distribuir dicho producto.
+- Se entiende como producto cuando: *hace el algo* para lo que fue hecho, hecho a la medida, las necesidades y requerimientos de quien lo necesita. Además, como producto transforma la información, maneja y administra, ya sea un simple bit hasta cientos de miles de datos.
+- Se lo entiende como vehículo cuando: lo puede usar cualquiera, no fue hecho a la medida ni requerimientos de nadie, sino que es un software genérico. Además, es un vehículo cuando distribuye el producto, por ejemplo los sistemas operativos, el internet, etc. Inclusive el software distribuye lo más alcalescencia de la actualidad, la información, información que permite administrar negocios y mejorar su competitividad, dar un camino a las redes de comunicación, entre otros.
+
+Conforme pasaba el tiempo el hardware, las arquitecturas de las computadoras, la memoria, el almacenamiento, etc, han aumentado su eficiencia, tamaño y capacidad, y junto a las nueva y exóticas entradas y salidas el software también aumentó su complejidad y los problemas que esto conlleva. Lo que provocó que los solitarios programadores fueran reemplazados por equipos de especialistas centrados en cierta parte del sistema. Este cambio trajo consigo preocupaciones en como se desarrollaría el software, lo que adoptó a la ingeniería de software en el proceso.
+** La definición de software  
+Para entender a profundidad que es el software realmente, hay que entender las características inherentes de un producto netamente lógico, pues a diferencia de otros productos, el software no tiene una parte física.
+*** Se desarrolla con intelecto; no se manufactura de forma normal
+Aunque tiene similitud con el desarrollo de hardware, ambas difieren en lo fundamental. Pese a que en ambas se necesita un buen diseño para lograr un producto de calidad, el software requiere de un diseño más nacido de la ingeniería, pues se requiere pensar y escribir de forma lógica el funcionamiento lo más perfecto para el sistema. Siguiendo con esto, al momento de manufacturar el software no requiere mas que copiar y pegar, lo que en el desarrollo de hardware provocaría otro mundo de problemas relacionados con lo físico.
+*** El software no se desgasta :ATTACH:
+:PROPERTIES:
+:ID:       0975fff4-9297-4188-8cee-514403cbefad
+:END:
+El hardware al principio tiene una tasa de fallas altas debido a errores de diseño, manufacturación, etc. Una vez solucionado las fallas bajan hasta que vuelven a subir por el desgaste de los materiales, ya sea por altas temperaturas, suciedad, maltrato etc.
+
+[[attachment:20261006-152848_screenshot.png]]
+
+En cambio, el software tiene su curva idealizada porque no tendría los efectos del ambiente que provocan la degradación del hardware, sin embargo en la realidad eso no pasa. Con el tiempo el software recibe cambios que aumentan las fallas hasta ser solucionadas, pero conforme el programa se haga más grande y cambien las tecnologías, la complejidad también aumenta, lo que aumenta a su vez las fallas del software, y como, a diferencia del hardware, el software no tiene refacciones cuando se daña algo, su mantenimiento requiere mucha más ingeniería que con el tiempo provoca el *deterioro* del programa. 
+
+[[attachment:20261006-153435_screenshot.png]]
+*** Aunque la industria busca los componentes, el software se construye para un uso individualizado
+En el mundo del hardware se han creado componentes y piezas estandarizadas para todo producto, por ejemplo todos los iphone 18 tienen exactamente las mismas piezas, lo único que cambia es la innovación, ya sea mas memoria, mejor procesador etc. En cambio, en el mundo del software, pese a que si se reutilizan ciertas estructuras o componentes, como las ventanas gráficas, la mayor parte y la parte fundamental está hecha a la medida, por ejemplo un sistema de matriculas puede reutilizar librerías y el sistema de ventanas pero el funcionamiento fundamental del sistema es netamente individualizado.
+** Dominios de la aplicación del software
+Hay 7 áreas que plantean distintos retos para los ingenieros de software:
+1. *Software de sistemas*: Está área se caracteriza por tener gran integración con el hardware, uso por muchos usuarios a la vez, por uso de recursos compartidos y la administración de un proceso complejo, estructuras de datos e interfaces externas múltiples. Por ejemplo, los compiladores, procesadores de telecomunicaciones, etc. Básicamente dan servicio a otros programas.
+2. *Software de aplicación*: Básicamente, administran los procesos e información de los negocios, ya sea manejando datos comerciales o técnicos. Ayudan al negocio a administrar y controlar sus funciones en tiempo real. 
+3. *Software de ingeniería y ciencias*: Se caracterizan por procesar una cantidad inconmensurable de números y datos, enfocados en áreas donde la estadística y el manejo de números es fundamental, como la dinámica del transbordador espacial. Aunque últimamente han abandonado estos algoritmos de procesamiento para pasar a diseño por computadora, simulación de sistemas en tiempo real, asemejándose al software de sistemas.
+4. *Software incrustado*: Esta dentro de un producto o sistema y permite básicamente controlar características y funciones de dicho producto por el usuario final. Puede ejecutar funciones limitadas, como el tablero de un microondas, o dar control casi total de producto, como funciones de un carro que permite controlar el combustible, los frenos etc. 
+5. *Software de linea de productos*: Proporciona una capacidad especifica para muchos usuarios. Ya sea en mercados particulares, como el manejo de inventario, o mercados masivos, como hojas de cálculo, entretenimiento, etc.
+6. *Aplicaciones Web*: En su forma sencilla son un conjunto de archivos de hipertexto conectados que presentan información con texto o gráficas limitadas. Sin embargo, evolucionaron para proporcionar funciones de computo al usuario final y conexión con bases de datos corporativas y aplicaciones de negocios.
+7. *Software de inteligencia artificial*: Hace uso de algoritmos para resolver problemas complejos que son difíciles de forma convencional, por ejemplo el analizar y reconocer patrones en imágenes, redes neuronales, etc.
+
+Pese al aligeramiento del software para la siguiente generación,debido a la evolución y el trabajo de software en uno o varios de estos dominio por parte de miles de ingenieros en software, cada vez surgen nuevos desafíos. El crecimiento de las redes inalámbricas provocará el desarrollo de sistemas que se puedan comunicar a través de redes enormes.(ya lo hace jaja, de que año es este libro). Además el surgimiento de código abierto provocarán sistemas auto descriptivos que sean fáciles de entender para los consumidores y desarrolladores. Y así, con el paso del tiempo surgirán nuevos desafíos, pero el ingeniero de software deberá desarrollar un proceso ágil y adaptable a los cambios del mundo.
+** Software heredado
+El software heredado es aquel software desarrollado hace varias décadas, tanto que son costosos mantenerlos y riesgosos evolucionarlos, pues están profundamente integrados en las funciones básicas de negocios, por lo que son indispensables. Lamentablemente una característica de estos software es su mala calidad, desde código confuso hasta una pésima o nula documentación, el problema es que son usados en las funciones básicas. Por eso el trabajo de la ingeniería de software moderno es buscar una forma de desarrollar código evolucionable, basado en código antiguo y que permita que ambas parten cooperen.
+* La ingeniería de software :ATTACH:
+:PROPERTIES:
+:ID:       152112db-7595-4a54-a05f-a201eddd0ccb
+:END:
+Antes de elaborar software listo para los nuevos retos que vayan surgiendo hay que entender algunas realidades:
+- Gracias a que el software esta en casi todo lado, la gente tiene más interés en las características de un software, por lo que al crear un software surgen opiniones que incluso se contradicen, por lo tanto: *hay que hacer un esfuerzo en entender el problema antes de desarrollar*.
+- Ahora los sistemas que antes hacia un individuo ahora se conforma por grupos de especialistas, pues los requerimientos de las organizaciones o gobiernos ha aumentado. La complejidad de los nuevos sistemas demandan cuidado en las interacciones de los elementos del sistema. Por esto *el diseño es parte crucial del desarrollo*.
+- Individuos y organizaciones dependen cada vez más del software por lo que un error puede causar tremendas catástrofes. Por lo tanto: *el software debe ser de la más alta calidad*.
+- Con el aumento del valor de una aplicación, también aumenta su base de usuarios y las demandas que estos hacen la sistema. Por lo que el *software debe ser fácil de dar mantenimientos*.
+
+Es decir: *la ingeniería de software debe considerar todos sus dominios y sus formas de hacerse*
+
+Existen varias definiciones de lo que es la ingeniería de software, sin embargo se la entiende como una tecnología de varias capas apiladas de la siguiente forma:
+- *El compromiso con la calidad*: Al igual que cualquier otra ingeniería se busca la mejora continua y desarrollo de la más alta calidad.
+- *El proceso*: Define como se administrarán los proyectos, define el contexto de los métodos técnicos y como se harán los productos de trabajo como los documentos o reportes, se define como se asegura la calidad y como administrarán los cambios. 
+- *Los métodos*: Básicamente como a partir de la experiencia técnica se elabora software. Son principios de cada área tecnológica que incluyen la modelación y técnicas descriptivas.
+- *Las herramientas*: Automatizan o semiautomatizan el proceso y los métodos.
+
+[[attachment:20261006-165750_screenshot.png]]
+
+
+  
+   
+
+
+
+
+
+

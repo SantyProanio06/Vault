@@ -1,0 +1,38 @@
+:PROPERTIES:
+:ID:       d83fdc3a-8d30-460c-8706-38f23b4ccf90
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Análisis de algoritmos y notación asintótica
+#+date: <2026-10-07 mié>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Eficiencia algorítmica
+Básicamente, un algoritmo se mide en cuanto tiempo tarda en ejecutarse y en cuanta memoria ocupa al ser ejecutado. Un algoritmo bueno o bondadoso es aquel que tiene un tiempo de ejecución bajo. The lower the better.
+** Tiempo de ejecución
+Para conocer cuanto se demora en ejecutar un algoritmo hay que conocer el número de las operaciones que se ejecutan y como crece según lo que le metas. Para esto usamos una función que determina las operaciones en función del tamaño de la entrada n, es decir, T(n). Mientras más grande sea la entrada, más operaciones se realizaran por lo que se demorará mas tiempo en ejecutarse.
+** Operaciones primitivas
+Entonces a que operaciones se refiere la función anterior? Justamente a las primitivas. Básicamente son los cálculos básicos en un algoritmo.
+- Evaluar una expresión (x > b)
+- Asignar un valor a una variable (x = 2) 
+- indexar en un arreglo o matriz (A[x] //leer el valor)
+- llamar a un método (hola())
+- regresar de un método (return 0)
+- Operaciones básicas (x +-*/ b)
+
+Para esto tenemos que medir el algoritmo en el mejor, peor y caso promedio.
+
+
+
+
+  
+
+
+

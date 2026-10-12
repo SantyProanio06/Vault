@@ -1,0 +1,63 @@
+:PROPERTIES:
+:ID:       a655dcaf-9d44-455e-8cbd-e8e012232ee3
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Ejercicio 1 de T(n)
+#+filetags: :clases:ejercicio:eda2:
+#+date: <2026-10-07 mié>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Ejercicio 1
+#+begin_src
+algoritmo arrayMax(A, n):
+input: array A de n enteros
+output: el elemento max.
+
+1 max = A[0]
+2 for i = 1 to n - 1 do
+3 if(A[i] > max) then max = A[i]
+4 return max
+#+end_src
+
+** Contar sin repetición
+Entonces para contar el número de operaciones toca primero contar cuantas operaciones sin tener en cuenta los bucles
+1 (asignación y indexar en un arreglo) 2
+
+Como la estructura de un for es i = x ; i < x ; i++ entonces
+2 (asignación de i = 1, comparar, sumar) 3
+
+3(leer A[i], comprobar, leer A[i], asignar) 4
+
+4 (regresar) 1
+
+** Contar con bucles
+Luego hay que tener en cuenta los bucles
+1 (no se repite) 2
+
+Gracias a la estructura del for y que se repetirá hasta n -1 entonces la primera parte solo se hace una sola vez osea la asignación, de la comparación se hace n - 1 veces + 1 vez que es donde se sale del for por que la condición es falsa, y la suma se la hace n - 1 veces entonces:
+2 1 + n - 1 + 1 n - 1 = 2n
+ 
+Aquí se repiten las 4 operaciones pero se las hace n - 1 veces, sin embargo en el libro dice 6 pero no tiene sentido por que supuestamente cuenta la suma de la i pero no tiene sentido asi que yo le voy a dejar en 4. 
+3 4 x (n - 1)
+
+Solo se repite una vez
+4 1
+** Final
+Al final solo se suma todo y esas son las operaciones que se realizan dependiendo el tamaño de la entrada
+
+\begin{align*}
+2 + 2n + 4 \times (n - 1) + 1 \\
+3 + 2n + 4n - 4 \\
+6n - 1
+\end{align*}
+
+entonces $T(n) = 6n - 1$
+

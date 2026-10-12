@@ -1,0 +1,95 @@
+:PROPERTIES:
+:ID:       e40ecbef-f508-4b15-a119-dcc07b9220e1
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Procesadores de lenguajes
+#+filetags: :clases:compiladores:
+#+date: <2026-10-09 vie>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Procesador de lenguaje 
+Básicamente ingresa un lenguaje o programa y realiza una operación sobre ellas. Existiendo 5 tipos de procesadores de lenguaje:
+** Traductor
+Entra un algo y lo cambia algo equivalente. Mantiene el significado relevante de la entrada, solo cambia su representación. Por ejemplo el traductor de Google cambia de un idioma a otro sin cambiar su significado.
+** Compilador
+Es una especie de traductor, cambia el programa fuente a un código objeto para ser ejecutado: [[id:24e413ed-bbb6-4759-af51-bb0caa52daf6][Conceptos generales
+]]es el más rápido para ser ejecutado.
+** Ensamblador
+Otro tipo de traductor, pero lo que traduce es lenguaje ensamblador, y lo pasa al lenguaje de máquina, 1's y 0's. Las instrucciones ensamblador corresponden a las ISA's (instruccion set arquitecture) es decir vienen dichas por el set de instrucciones del procesador.
+** Intérprete
+También traduce las instrucciones del código fuente, pero lo hace linea por linea y encima las ejecuta linea por linea también, el problema es que los intérpretes antiguos cuando existía un error tenia que volver a interpretar desde la linea 1 otra vez. Esto se solucionó con los interpretes incrementales que no tienen que interpretar todo de nuevo. Ejemplo python.
+** Simulador
+Lo que hace es imitar el comportamiento de otra máquina a través de software, mantiene variables de la maquina simulada y repite el  [[id:35bd9582-7cfd-4816-b9be-55ab10aa60a1][Circulo básico del CPU]].
+* El compilador puede coexistir con el intérprete :ATTACH:
+:PROPERTIES:
+:ID:       4cc08c36-a8c7-400d-9e87-9b07ad600c8e
+:END:
+En la actualidad los sistemas modernos combinan estas dos estrategias para mejorar la ejecución. Por ejemplo
+Pasan del programa fuente y se compila hasta obtener la representación intermedia luego este es interpretado y vuelto a compilar para ser ingresado al procesador.
+
+
+[[attachment:20261011-123023_screenshot.png]]
+
+Pese a que no se debería clasificar la tecnología con una sola etiqueta, muchas veces se puede elegir una sobre otra dependiendo el objetivo.
+- Si se necesita tener un desempeño nativo es mejor usar la compilación.
+- Si se necesita tener interacción inmediata con el programa es mejor usar un interprete.
+- Si se esta usando lenguaje de bajo nivel es mejor usar un ensamblador.
+- Y por ultimo si se necesita probar otra arquitectura es mejor usar un simulador.
+
+* Caso C :ATTACH:
+:PROPERTIES:
+:ID:       2bdfdcc4-b1d6-4ce0-8617-519505fc25ac
+:END:
+
+[[attachment:20261011-123448_screenshot.png]]
+
+Este es el pipeline de como funciona un compilador. Hay nuevas etapas nuevas que no se mencionaron en la compilación pero estas son a groso modo:
+** Preprocesador :ATTACH:
+:PROPERTIES:
+:ID:       d79b2120-13f0-4cce-b462-302170990e39
+:END:
+Básicamnte junta todo el programa para hacer la compilación, puede incluso hacer transformaciones.
+Por ejemplo si se tiene en el codigo un include =uno.c= al momento de compilar se junta eeste en el codigo pricipal, vease la imagen
+[[attachment:20261011-123830_screenshot.png]]
+.
+** Linker :ATTACH:
+:PROPERTIES:
+:ID:       e4e421d2-66cb-4714-b507-1b95451ef765
+:END:
+Integra todas las referencias de los módulos de un sistema y las librerías que se usan para crear el ejecutable.Por ejemplo, si yo tengo en un archivo .c una llamada de suma que esta en math.c al compilar y tener el .o el linker pone la definicion de dicha llamada. Ojo el compilador no es el que hace esta tarea, sino linker.
+
+[[attachment:20261011-124331_screenshot.png]]
+** Loader
+:PROPERTIES:
+:ID:       61090462-b2e8-4b7f-9ad3-bb98dfc27dbc
+:END:
+Es quien carga el ejecutable producido por el linker en la memoria del procesador y alli se empieza a ejecutar el programa.
+
+Lo que hace es:
+1. Leer el encabezado para saber el formato, el tamaño etc.
+2. Luego crea el espacio de memoria donde coloca el código, los datos y reserva la pila y el heap. La pila es la memoria que se usa para las llamadas a funciones donde la ultima llamada que entra es la que sale primero. Por otro lado el heap se usa para la memoria dinámica, como una bodega para guardar los datos cuando no sabemos cuanta memoria va a ocupar.
+3. Si es dinámico el enlace, se cargan las bibliotecas y se resuelven las dependencias
+4. Ajustar direcciones si es necesario: Se pone al programa en una dirección por seguridad)
+5. Pone el contador de programa en el punto de entrada, alli el CPU empieza el fetch y sigue con  [[id:35bd9582-7cfd-4816-b9be-55ab10aa60a1][Circulo básico del CPU]]
+
+* Definiciones
+** Transliterador
+El transliterador básicamente cambia de un símbolo a otro símbolo, por ejemplo cambiar los números romanos a numero decimales. La cosa es que cada símbolo cambia según una tabla, no cambia el significado ni analiza nada solo cambia los símbolos.
+** Parser
+El programa recibe una secuencia de tokens y decide si forma una estructura permitida por una gramática. Si es correcta se acepta y se hace un árbol con esa estructura, básicamente forma parte de un analizador sintáctico [[id:24e413ed-bbb6-4759-af51-bb0caa52daf6][Conceptos generales]].
+** Máquna de estados
+Básicamente entra una cadena de entradas y se pasan por estados, dependiendo la entrada puede cambiar a uno u otro estado. Un autómata básicamente
+# Conectar cuando tengamos pasado matemáticas computacionales
+
+
+
+
+

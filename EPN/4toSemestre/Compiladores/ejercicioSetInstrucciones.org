@@ -1,0 +1,64 @@
+:PROPERTIES:
+:ID:       cd71082a-ba3b-4dab-9d91-98806547a592
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Ejercicio 1 Set Instrucciones
+#+filetags: :clases:compiladores:ejercicio:
+#+date: <2026-10-11 dom>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+
+[[id:de41c086-21fa-4e35-bd99-3298f50ff109][Ejecución Y Set De Instrucciones]]
+* Ejercicio
+Teniendo en cuenta como funcionan las instrucciones, haremos el siguiente ejercicio con dos direcciones. *Diseñe una solución con el siguiente set de instrucciones*:
+Leer tres números A, B y C, realizar R = (A + B) x C, imprimir el resultado R. Crear las instrucciones en lenguaje ensamblador usando solo READ, MOV, ADD, MUL, PRINT.
+** Crear el código
+Para hacer el ejercicio lo primero que hay que hacer es crear el código que permite resolver el problema, teniendo en cuenta el set de instrucciones,
+
+#+begin_src
+int A, B, C;
+int R = 0;
+Leer A;
+Leer B;
+Leer C;
+R = (A + B) x C;
+print(R);
+#+end_src
+** Instrucciones
+Ahora si podemos hacer las instrucciones
+
+#+begin_src
+READ A
+READ B
+READ C
+MOV R, 0
+ADD R, A
+ADD R, B
+MUL R, C
+PRINT R
+#+end_src
+** Comprobamos con una traza para ver si es que existen errores
+A = 2, B = 3, C = 4
+R = 0
+R = R + A
+# R = 0 + 2
+R = R + B
+# R = 2 + 3
+R = R * C
+# R = 5 * 4
+Print(R)
+# 20
+
+
+
+
+
+

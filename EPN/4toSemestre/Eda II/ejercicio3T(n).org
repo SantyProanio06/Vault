@@ -1,0 +1,39 @@
+:PROPERTIES:
+:ID:       f3f33f3d-33fa-48f4-9b62-178f72a47220
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:xt timestamp:t title:t toc:t todo:t |:t
+#+title: Ejercicio 3 de T(n)
+#+filetags: :clases:ejercicio:eda2:
+#+date: <2026-10-07 mié>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Ejercicio 3
+#+begin_src
+Algoritmo prefixAverges2(X, n)
+input arreglo de n enteros
+output arreglo A de prefijos promedios de X
+
+1 A = arreglo de n enteros
+2 s = 0
+3 for i = 0 to n - 1 do
+4 s = s + X[i]
+5 A[i] = s / (i + 1)
+6 return A
+#+end_src
+
+1 1
+2 1
+3 2n
+4 3n
+5 4n
+6 1
+
+T(n) = 9n + 3

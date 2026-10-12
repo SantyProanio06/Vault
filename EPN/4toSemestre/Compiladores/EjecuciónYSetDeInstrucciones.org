@@ -1,0 +1,51 @@
+:PROPERTIES:
+:ID:       de41c086-21fa-4e35-bd99-3298f50ff109
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Ejecución Y Set De Instrucciones
+#+filetags: :clases:compiladores:
+#+date: <2026-10-11 dom>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Circulo básico del CPU
+:PROPERTIES:
+:ID:       35bd9582-7cfd-4816-b9be-55ab10aa60a1
+:END:
+Luego de ser cargado en el procesador por el loader, este ejecuta instrucciones que tiene cargadas en memoria y ejecuta varias instrucciones a través de un ciclo que dura mientras se esta ejecutando el programa.
+1. *Fetch*: El procesador busca la instrucción que le toque realizar
+2. *Decode*; Encontrada interpreta el opcode, que es un número que indica que hacer, ya sea sumar, restar, etc.
+3. *Execute*: Sabiendo que hacer ejecuta la operación.
+4. *Update*: Actualiza el estado y vuelve a fetch.
+* Las instrucciones
+:PROPERTIES:
+:ID:       cc391668-4c4c-4ed2-a9ce-3ddc4969e118
+:END:
+Dentro del CPU existen ciertas instrucciones para ejecutar hacer algo dentro de la memoria del procesador. Estas son definidas por el ISA, instrucción set arquitechture, que hace que sean visibles para el software, por lo que el compilador debe conocerlas.
+** Campos :ATTACH:
+:PROPERTIES:
+:ID:       f2414a99-d34a-4a73-9fcc-27943e3aca00
+:END:
+Las instrucciones vienen dadas por campos, para resumir estan dadas por las operaciones + los operandos.
+
+[[attachment:20261011-125806_screenshot.png]]
+
+Por ejemplo =ADD R1,R2,R3=
+Obvio estas dependen de la ISA pero se usaran abstracciones para entender el curso.
+** Familias de instrucciones
+Las instruccioens pueden estar divididas segun lo que hacen en el procesador, encima con un set pequeño se pueden hacer muchas cosas.
+- Datos: =LOAD, STORE, MOVE= 
+- Aritmetica: =ADD, SUB, MUL, DIV=
+- Control: =JMP, JZ, JNZ=
+- E/S: =READ, PRINT=
+  
+[[id:cd71082a-ba3b-4dab-9d91-98806547a592][Ejercicio 1 Set Instrucciones]]
+  
+[[id:a915f910-cb8b-4565-86c1-4919e3cfbfa7][Aplicación práctica 1]]

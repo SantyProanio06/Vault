@@ -1,0 +1,71 @@
+:PROPERTIES:
+:ID:       accedddf-aabb-415d-9c38-91b223451f2d
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Ejercicio 2 de T(n)
+#+filetags: :clases:ejercicio:eda2:
+#+date: <2026-10-07 mié>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Ejercicio 2
+
+#+begin_src
+Algoritmo sumTripleArray(X , n)
+input: triple array X[][][] de n de n de n enteros
+output: sum of elements de X
+
+1 s = 0
+2 for i = 0 to n - 1 do 
+3  for j = 0 to n - 1 do
+4    for k = 0 to n - 1 do
+5      s = s + X[i][j][k]
+6 return s
+#+end_src
+** Paso a paso
+1 (solo asignación ) 1
+2 3
+3 3
+4 3
+5 (asignación, suma, lectura) 3
+** Con repetición
+
+1 1
+
+Entonces de la asignación, n - 1 veces más la del falso y eso n - 1 veces
+2 1 + n + n - 1 = 2n
+
+los mismos 2n pues es un for normal y eso se repite n veces del anterior pues la i toma valores hasta n 
+3 2n(n) = 2n^2
+
+lo mismo para esta linea,
+4 2n(n^2) = 2n^3
+
+5 3 x n^3 = 3n^3
+6 1
+** Final
+\begin{align*}
+3n^3 + 2n^3 + 2n^2 + 2n + 2 \\
+5n^3 + 2n^2 + 2n +2
+\end{align*}
+
+entonces $T(n) = 5n^3 + 2n^2 + 2n +2$
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+:PROPERTIES:
+:ID:       a915f910-cb8b-4565-86c1-4919e3cfbfa7
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Aplicación práctica 1
+#+filetags: :clases:compiladores:
+#+date: <2026-10-11 dom>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Ejercicio Práctico :ATTACH:
+:PROPERTIES:
+:ID:       4195ce5a-536d-4d95-bbc6-a26d5b59f7a1
+:END:
+El ejercicio nos pide ingresar valores enteros hacia un vector, siempre seran ingresados en positivo independientemente de lo que ingrese.Calcular el promedio de los valores ingresados e imprimir el resultado.
+Estos ejercicios son demasiado iguales a von neuman, donde se lee el codigo de operacion y se operan las localidades de memoria en base a lo que este alli.
+
+Como vimos en  [[id:cc391668-4c4c-4ed2-a9ce-3ddc4969e118][Las instrucciones]], para este ejercicio tenemos un set de instrucciones
+
+[[attachment:20261011-150456_screenshot.png]]
+** Descripcion del set de instrucciones
+| *OP CODE* | *Modelo*    | *Significado*                                                    |
+| + 0     | zzzxxx000 | Mueve hacia zzz lo que este en xxx                             |
+| + 1     | zzzxxxyyy | Suma xxx y yyy y lo guarda en zzz                              |
+| - 1     | zzzxxxyyy | Resta xxx y yyy y lo guarda en zzz                             |
+| + 2     | zzzxxxyyy | Multiplica xxx por yyy y lo guarda en zzz                      |
+| - 2     | zzzxxxyyy | Divide xxx por yyy y lo guarda en zzz                          |
+| + 3     | zzzxxx000 | Eleva al cuadrado xxx y guarda en zzz                          |
+| - 3     | zzzxxx000 | Hace la raíz cuadrada de xxx y guarda en zzz                   |
+| + 4     | dddxxxyyy | Si xxx = yyy salta a ddd                                       |
+| - 4     | dddxxxyyy | Si xxx != yyy salta a ddd                                      |
+| + 5     | dddxxxyyy | Si xxx >= yyy saltar a ddd                                     |
+| - 5     | dddxxxyyy | Si xxx <= yyy saltar a ddd                                     |
+| + 6     | tttaaaiii | Lo que esta en ttt guardar en el vector aaa en la posicion iii |
+| - 6     | tttaaaiii | Poner en ttt lo que esta en el vector aaa en la posicion iii   |
+| + 7     | dddiiinnn | Incrementa en iii compara con nnn y si es true salta a ddd     |
+| + 8     | zzz000000 | Lo que se ingresa por teclado se guarda en zzz                 |
+| - 8     | 000xxx000 | Se imprime lo que este en xxx                                  |
+| + 9     | 000000000 | Fin del programa                                               |
+| - 9     | 999999999 | Delimita los datos de las instrucciones                        |
+
+* Resolución del ejercicio
+| *localidad* | *Instruccion*     | *Comentarios*                   |
+|           | S O D O1 O2     |                               |
+|       000 | 0               | Por convención es 0           |
+|       001 | 0/1/2/3/0/1/2/3 | Guardar el valor de i         |
+|       002 | 3               | Guardar el tamaño n           |
+|       003 | 2/5/9           | Guardar el valor de la suma   |
+|       004 | 3               | Guardar el valor del promedio |
+|       005 | -2/+2/3/4/2/3/4 | Guardar la temporal           |
+|       006 | A               | Identifica el inicio de A     |
+|       007 | 2               | A[0]                          |
+|       008 | 3               | A[1]                          |
+|       009 | 4               | A[2]                          |
+|       ... |                 |                               |
+|       099 |                 | Fin datos                     |
+|       100 | - 9 999 999 999 |                               |
+
+| 101 | + 0 001 000 000 | i = 0                                                                            |
+| 102 | + 0 002 000 000 | n = 0                                                                            |
+| 103 | + 0 003 000 000 | s = 0                                                                            |
+| 104 | + 0 004 000 000 | p = 0                                                                            |
+| 105 | + 0 005 000 000 | temp = 0                                                                         |
+| 106 | + 0 006 000 000 | A = 0                                                                            |
+| 107 | + 8 002 000 000 | Ingresar tamaño ejm 3                                                            |
+| 108 | + 8 005 000 000 | Ingresar datos al temporal ejm -2                                                |
+| 109 | + 5 111 005 000 | Valida si el dato es mayor que 0, si si saltar ejm -2 >= 0 X                     |
+| 110 | - 1 005 000 005 | Cambiar de signo restando de 0 el temporal y guardando en temporal ejm t = 0 + 2 |
+| 111 | + 6 005 006 001 | Ejm A[0] = 2                                                                     |
+| 112 | + 7 108 001 002 | i ++ osea 1 < 3 si entonces saltar a 108                                         |
+| 113 | + 0 001 000 000 | inicializa nuevamente i = 0                                                      |
+| 114 | - 6 005 006 001 | ejm temp = A[0] = 2                                                              |
+| 115 | + 1 003 003 005 | ejm s = s + temp = 0 + 2                                                         |
+| 116 | + 7 114 001 002 | ejm i ++ es decir 1 < 3 true entonces saltar a 114                               |
+| 117 | - 2 004 003 002 | ejm p = s / n  * 9 /3 = 3                                                        |
+| 118 | - 8 000 004 000 | imprime lo que este en 004 ejm 3                                                 |
+| 119 | + 9 000 000 000 | Fin del programa                                                                |
+        

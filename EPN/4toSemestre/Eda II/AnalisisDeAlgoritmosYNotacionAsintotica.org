@@ -6,6 +6,7 @@
 #+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
 #+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
 #+title: Análisis de algoritmos y notación asintótica
+#+filetags: :clases:eda2:
 #+date: <2026-10-07 mié>
 #+author: Santiago Javier Proaño Yépez
 #+email: santiagoproano06@gmail.com
@@ -28,11 +29,12 @@ Entonces a que operaciones se refiere la función anterior? Justamente a las pri
 - Operaciones básicas (x +-*/ b)
 
 Para esto tenemos que medir el algoritmo en el mejor, peor y caso promedio.
+[[id:a655dcaf-9d44-455e-8cbd-e8e012232ee3][Ejercicio 1 de T(n)]]
 
+Consideramos a como el tiempo en realizar una operación primitiva mas rápida y a b como el tiempo mas lento. Por lo que el peor de los casos en T(n) en este caso seria b x T(n) y el mejor a x T(n).
 
+[[id:accedddf-aabb-415d-9c38-91b223451f2d][Ejercicio 2 de T(n)]]
 
-
-  
-
+ [[id:f3f33f3d-33fa-48f4-9b62-178f72a47220][ejercicio3T(n)]]
 
 

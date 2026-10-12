@@ -1,0 +1,42 @@
+:PROPERTIES:
+:ID:       3a34bf6b-2584-409c-9e37-d2a7c841a951
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Lenguajes de programación
+#+filetags: :clases:compiladores:
+#+date: <2026-10-11 dom>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Los lenguajes de programación
+Son símbolos, reglas y estructuras que permiten escribir programas para que la computadora realice tareas especificas. Estas tareas resuelven un problema o ayudan a conseguir un objetvo.
+* Clasificación
+** Bajo nivel
+Lo más cercano al hardware de la computadora:
+*** Lenguaje de máquina
+Son todas las instrucciones en código binario ejecutables por el procesador
+#+begin_src
+110000 000111 000111    
+#+end_src
+*** Lenguaje ensamblador
+Usa lenguaje nemónico para hacer las operaciones, usa registros y localidades de memoria. Este es traducido a lenguaje de máquina mediante un ensamblador
+** Alto nivel
+Más cercanos al lenguaje humano, independientes al hardware
+*** Propósito general
+Se los puede usar para solucionar diversos problemas, no se etiquetan en un solo problema, por ejemplo C, C++, Java, Python.
+*** Propósito especifico
+Para un dominio o aplicación particular. Lenguajes de cuarta generación, por ejemplo: SQL, MathLab.
+** Traductores de lenguajes
+Convierten un programa fuente en otro
+   [[id:e40ecbef-f508-4b15-a119-dcc07b9220e1][Procesadores de lenguajes]]
+Estos generan un código objeto.
+
+
+

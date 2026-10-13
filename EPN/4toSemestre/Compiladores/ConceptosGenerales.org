@@ -74,7 +74,3 @@ Por lo tanto, un compilador tiene la siguiente estructura.
 
 
  [[id:cdc5e40b-0da4-4ee7-ac96-9d26b2031a43][Fases de compilación]]
-
-
-
-  

@@ -1,0 +1,97 @@
+:PROPERTIES:
+:ID:       a40fa3de-b222-4743-b31d-e0547fbf701a
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Orden de crecimiento asintótico
+#+filetags: :clases:eda2: 
+#+date: <2026-10-13 mar>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Introducción
+El tiempo de ejecución de un algoritmo crece en proporción a su tamaño de entrada n, y como depende de cada computadora, a veces n se tiene como constante. Pero al analizar los algoritmos se deben ignorar estas constantes mediante otras funciones, mismas que devuelven solo la parte pesada de los algoritmos, es decir lo que al aumentar n más genera peso en el tiempo de ejecución. Es aquí donde entra el análisis asintótico.
+
+Este análisis se lo hace mediante 3 funciones que en transforman todo el conteo de pasos de T(n) [[id:d83fdc3a-8d30-460c-8706-38f23b4ccf90][Análisis de algoritmos y notación asintótica]] en tiempo de ejecución.
+* Notación Big-O (Big-O)
+:PROPERTIES:
+:ID:       555e9205-0fed-422a-8006-a7cde229f32f
+:END:
+Sea f(n) una función para medir los pasos de un algoritmo y g(n) una función simple para comparar, se dice
+que
+
+\begin{align*}
+f(n) \text{ es } O(g(n))
+\end{align*}
+
+o es Big-O de g(n) si existe una constante  $C>0$ y una constante entera $n_0 \ge 1$ de modo que
+
+\begin{align*}
+f(n) \le Cg(n) 
+\end{align*}
+
+para $n \ge n_0$
+** Explicación :ATTACH:
+:PROPERTIES:
+:ID:       b4ba63fb-9336-4ebd-a629-b650a31e144f
+:END:
+Digamos que tenemos a la función $T(n) = f(n) = 8n - 2$ entonces se dice que este 8n - 2 es Big-O de n, (n seria g(n) por que es una función simple para comparar) si encontramos una constante entera a partir de 1, desde donde crecerá n, y una constante C positiva que al multiplicar por esta g(n) y reemplazar n a partir de esta constante será mayor o igual que la f(n).
+
+En el ejemplo del libro tenemos que $C = 8$ y $n_0 = 1$ , entonces $n \ge 1$ como lo verificamos? reemplazamos
+
+\begin{align*}
+8n - 2 \le Cn \\
+n = 1 , C = 8 \\
+6 \le 8
+\end{align*}
+
+Y así podemos ir subiendo $n$ y verificamos que en efecto f(n) siempre sera menor o igual que esa Cg(n) ya que si restamos el 8n por el dos siempre sera menor o igual que solo tener 8n. Por lo tanto f(n) es O(n). Ojo estas constantes no son únicas pueden haber varias.
+
+Es decir, 8n - 2 no crecerá más rápido que una 8n. Entonces Big-O determina un techo de crecimiento de una función, de modo que esta función crecerá a un ritmo similar que su techo pero no tendrá un ritmo de crecimiento más rápido. Además siempre buscará que ese techo sea el más ajustado para f(n). Por ejemplo si bien es cierto que el techo de f(n) puede ser n^2 o 2^n, estas dos crecen demasiado en comparación a f(n) por lo que la más cercana en este caso es n.
+
+[[attachment:20261013-160437_screenshot.png]]
+Si te das cuenta en la grafica a partir de ese n0 es donde el crecimiento de f(n) es similar que su techo Cg(n)
+
+Es profundiza en [[id:db666d4c-322e-4361-ac4e-200169d31175][Notación Big-O]]
+* Notación Big-Ω (Big-omega)
+Sea f(n) una función de los pasos de un algoritmo y g(n) una función simple para comparar se dice que
+\begin{align*}
+f(n) \text{ es } \Omega(g(n))
+\end{align*}
+Si hay una constante $C > 0$ y una constante entera $n_0 \ge 1$ tal que:
+
+\begin{align*}
+f(n) \ge Cg(n)
+\end{align*}
+
+para $n \ge n_0$
+** Explicación :ATTACH:
+:PROPERTIES:
+:ID:       39b84ce5-8952-4af4-8a71-0f826dd79982
+:END:
+Es lo contrario al Big-O, en este caso se busca una constante positiva real, que al multiplicar por un g(n) y una constante n0 desde donde crecerá n, crezca g(n) a un ritmo similar al de f(n) pero nunca será mayor. O sea se busca un suelo desde donde f(n) crece a un ritmo similar pero siempre será mayor o igual que ese suelo. Al igual que en big-O se debe ajustar ese suelo lo más posible a f(n).
+
+[[attachment:20261013-162216_screenshot.png]]
+
+* Notación Big-θ (Big-theta)
+Permite decir que dos funciones crecen al mismo ritmo hasta factores constantes. Entendiendo las dos grandes notaciones anteriores se dice que f(n) es θ(g(n)) si es O(g(n)) y Ω(g(n)). Entonces hay constantes $C_1>0$ y $C_2 > 0$ y una constante entera $n_0 \ge 1$ tal que:
+
+\begin{align*}
+C_1 g(n) \le f(n) \le C_2 g(n)
+\end{align*}
+
+** Explicación :ATTACH:
+:PROPERTIES:
+:ID:       b0da03c1-f736-4b4b-9ea3-6cd26d5b2db1
+:END:
+Siguiendo la lógica de las anteriores notaciones en este caso el big theta busca un suelo y un techo por el cual una función f(n) crecerá, a un ritmo no menor que su suelo, ni mayor que su techo. Acota el crecimiento de f(n) entre dos constantes.
+
+
+[[attachment:20261013-164554_screenshot.png]]
+

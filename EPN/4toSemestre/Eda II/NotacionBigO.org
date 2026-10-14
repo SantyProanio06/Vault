@@ -1,0 +1,115 @@
+:PROPERTIES:
+:ID:       db666d4c-322e-4361-ac4e-200169d31175
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Notación Big-O
+#+filetags: :clases:eda2:
+#+date: <2026-10-13 mar>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* La notación Big-O
+Como vimos define que tan rápido crece una función respecto a un techo. Es decir, que big O demuestra que una funcion no va a ser peor que algo, o sea que analiza el peor de los casos para cada función. Debido a esto es que se usa esta notacion para representar la complejidad del algoritmo y como este va escalando conforme escala la entrada.
+** Propiedades de la notación
+*** Polinomios
+Gracias a la definición de la notación para determinar más fácilmente la constante dentro de una funcion f(n) que es un polinomio lo que podemos hacer es remplazar cada termino inferior al grado con dicho grado y asi obtenemos la constante y el valor de x en O(x). Por ejemplo
+
+\begin{align*}
+5n^4 + 3n^3 + 2n^2 + 4n + 1 \le cg(n) \\
+5n^4 + 3n^3 + 2n^2 + 4n + 1 \le 5n^4 + 3n^4 + 2n^2 + 4n^2 + n^4 \\
+5n^4 + 3n^3 + 2n^2 + 4n + 1 \le (5 + 3+ 2+ 4 + 1)n^4 \\
+ 5n^4 + 3n^3 + 2n^2 + 4n + 1 \le 15n^4
+\end{align*}
+Por lo tanto la constante C en este sería 15 y el g(n) sería n^4 entonces por definición
+
+\begin{align*}
+O(g(n)) = O(n^4) 
+\end{align*}
+
+/El grado más alto del polinomio es la tasa de crecimiento asintótico/
+*** Regla de las constantes multiplicativas
+Se ignoran los factores constantes
+
+\begin{align*}
+O(cg(n)) = O(g(n)) \text{ para una constante } C > 0
+\end{align*}
+*** Regla de la suma
+Se ignoran los factores más pequeños
+
+\begin{align*}
+\text{si } O(q(n) < g(n)) \\
+\text{entonces } O(q(n) + g(n))  = O(g(n))
+\end{align*}
+*** Regla de la multiplicación
+
+\begin{align*}
+O(h(n)) \times O(g(n)) = O(h(n) \times g(n)) 
+\end{align*}
+
+Por ejemplo
+Luego de multiplicar nos que da la expresión
+\begin{align*}
+O((n^3 + 2n^2 + 3n\log n + 7)(8n^2 + 5n + 2) = O(n^5)
+\end{align*}
+** Bucles :ATTACH:
+:PROPERTIES:
+:ID:       60358960-b3fc-43fd-95b1-187377859571
+:END:
+La complejidad de un bucle esta determinada por el número de iteraciones en el ciclo por la complejidad del cuerpo del ciclo
+
+[[attachment:20261013-185435_screenshot.png]]
+*** Independientes anidados :ATTACH:
+:PROPERTIES:
+:ID:       fa023401-7813-4e52-8f56-2aede94ba8d0
+:END:
+Se determina por la complejidad del bucle interno * la complejidad del bucle externo
+
+[[attachment:20261013-185532_screenshot.png]]
+*** Bucles dependientes anidados :ATTACH:
+:PROPERTIES:
+:ID:       298dec56-ee7c-4798-8f9c-884913756bfe
+:END:
+
+La complejidad del externo afecta al interno
+
+[[attachment:20261013-185631_screenshot.png]]
+** Secuencias de declaraciones :ATTACH:
+:PROPERTIES:
+:ID:       e6d8d5a8-ae0e-4e5e-9f19-1cc94b67a862
+:END:
+
+Básicamente aquí se hace la regla de la suma con todas las complejidades de todas las declaraciones por ejemplo:
+
+[[attachment:20261013-185820_screenshot.png]]
+** Tasas de crecimiento :ATTACH:
+:PROPERTIES:
+:ID:       dbb7ae31-a1d9-4a55-94d5-9c2bcdf76641
+:END:
+Dependiendo la complejidad por big o, las tasas de crecimiento se verian asi
+
+[[attachment:20261013-185924_screenshot.png]]
+
+ Sin embargo para tener una noción de cual es peor o mejor esta mejor esta gráfica
+
+[[attachment:20261013-190016_screenshot.png]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+

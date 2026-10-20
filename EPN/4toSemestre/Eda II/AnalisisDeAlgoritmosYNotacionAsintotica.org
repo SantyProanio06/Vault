@@ -19,6 +19,8 @@
 Básicamente, un algoritmo se mide en cuanto tiempo tarda en ejecutarse y en cuanta memoria ocupa al ser ejecutado. Un algoritmo bueno o bondadoso es aquel que tiene un tiempo de ejecución bajo. The lower the better.
 ** Tiempo de ejecución
 Para conocer cuanto se demora en ejecutar un algoritmo hay que conocer el número de las operaciones que se ejecutan y como crece según lo que le metas. Para esto usamos una función que determina las operaciones en función del tamaño de la entrada n, es decir, T(n). Mientras más grande sea la entrada, más operaciones se realizaran por lo que se demorará mas tiempo en ejecutarse.
+
+El tiempo polinomial se refiere cuando T(n) tiene una estructura con n elevado a una constante k, entonces su complejidad es O(n^k) [[id:555e9205-0fed-422a-8006-a7cde229f32f][Notación Big-O (Big-O)]]
 ** Operaciones primitivas
 Entonces a que operaciones se refiere la función anterior? Justamente a las primitivas. Básicamente son los cálculos básicos en un algoritmo.
 - Evaluar una expresión (x > b)

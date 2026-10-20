@@ -1,0 +1,118 @@
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Análisis léxico
+#+filetags: :clases:compiladores:
+#+date: <2026-10-19 lun>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Análisis léxico
+También conocido como scanner, es el bloque funcional que hace de interfaz para el programador y el compilador, primera fase de la compilación. Básicamente, va de arriba a abajo y de izquierda a derecha recorriendo el programa fuente carácter por carácter, esa es la entrada, luego se reconoce el patrón al que cae y por ultimo del analizador salen los tokens o también llamados componentes léxicos.
+
+En esta fase se ignora y eliminan: comentarios, espacios en blanco, tabuladores, saltos de linea entre otros, dejando al texto plano listo para el analizador sintáctico. Además de que se notifican los errores léxicos y ayuda a corregirlos.
+
+- Modo pánico, básicamente elimina los caracteres, arregla la entrada o recupera palabras reservadas para encontrar un token bien formado.
+  
+Por otro lado mientras sacan los tokens estos son guardados en la tabla se símbolos. 
+
+Una de sus funciones es comprobar que estén bien escritos los símbolos de un lenguaje de programación:
+
+- Identificadores: epn25, jisisc2026, x ...
+- Números: 1, 2, -3 ...
+- Palabras reservadas: if, while, for, ....
+- Operadores aritméticos: +, -, * ...
+- Operadores racionales: >, <, = ...
+- Símbolos de agrupación: (), {}, []
+
+  Esta fase tiene 3 conceptos que no deben confundirse.
+** Lexema
+Es una secuencia de caracteres, delimitada usualmente por un vacío. Usa un puntero para recorrer los caracteres y cuando se encuentra con un vacío se lo pone como lexema por ejemplo
+
+#+begin_src
+epn25_
+^    ^ 
+|    |
+
+#+end_src
+
+el lexema sería epn25
+** Patrón
+Es la regla con la que se analiza al lexema y con la cual se decide a que token pertenece.
+*** Patrón identificador
+Define lo que es y no es un identificador
+
+\begin{align*}
+l(l|d)^* \\
+l \to |a|b| \dots |z|A|B| \dots |Z| \\
+d \to |0| \dots |9|
+\end{align*}
+
+
+** Token
+Es la categoría en donde cae el lexema luego de ser analizado su patrón. Por ejemplo ID, ASIG para el =, NUM para un número etc.
+** Ejemplo :ATTACH:
+:PROPERTIES:
+:ID:       8c959780-d0ad-47dc-814c-10938f225884
+:END:
+En el ejemplo se hace una correspondencia entre el lexema y un número que identifica a token.
+
+[[attachment:20261019-184901_screenshot.png]]
+Teniendo el código fuente
+#+begin_src
+if Plazo >= 30
+ then Tasa = Base + Recargo / 100
+ else Tasa = Base
+#+end_src
+
+Se reconoce cada lexema
+#+begin_src
+[if] [Plazo] [>=] [30]
+ [then] [Tasa] [=] [Base] [+] [Recargo] [/] [100]
+ [else] [Tasa] [=] [Base]
+#+end_src
+
+Entonces se transforma a números, si un token puede tener varios lexemas se pasa al analizador sintáctico el token-lexema. por ejemplo
+#+begin_src
+[59] [27, 'Plazo'] [80] [28, '30']
+ [60] [27, 'Tasa'] [85] [27, 'Base'] [70] [27, 'Recargo'] [73] [28, '100']
+ [61] [27, 'Tasa'] [85] [27, 'Base']
+#+end_src
+
+luego se juntan todos los números y se pasan los tokens sin espacio, aparte de hacer la tabla se simbolos
+
+#+begin_src
+IF ID >= CTE THEN ID = ID + ID / CTE ELSE ID = ID
+#+end_src
+  
+Por lo tanto el esquema de esta fase seria asi:
+
+[[attachment:20261019-185950_screenshot.png]]
+
+** Errores léxicos :ATTACH:
+:PROPERTIES:
+:ID:       5e7fec88-bf80-4415-9121-09209c7965a9
+:END:
+El analizador rechaza todos los caracteres o combinaciones ilegales, es decir todo lo que no esta reconocido en el alfabeto o que son caracteres mal puestos. Por ejemplo:
+- Las tildes ("é", "ají", etc)
+- Incoincidencias (:::, >>, etc) básicamente patrones que no coincide con los tokens posibles.
+  
+Entonces detectado el error el analizador deberá mostrar un mensaje de error de forma correcta, mostrando la linea, columna y el error en si. por ejemplo:
+
+[[attachment:20261019-190835_screenshot.png]]
+
+** Manejo de buffers
+Este scanner debe leer el archivo carácter por carácter, sin embargo es muy lento leer el programa del disco duro a diferencia del CPU. Sin embargo el truco esta en que el costo del sistema operativo para leer es lo mismo si es 1 o 4096 bites.
+
+Para que se entienda como analogía, si quieres mover 10 000 cajas de un lado a otro es más eficiente llevar en una carretilla 4096 cajas en vez de 1 a 1. Por lo tanto el buffer vendira a ser esa carretilla.
+
+
+
+
+
+

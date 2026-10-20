@@ -53,7 +53,7 @@ n = 1 , C = 8 \\
 
 Y así podemos ir subiendo $n$ y verificamos que en efecto f(n) siempre sera menor o igual que esa Cg(n) ya que si restamos el 8n por el dos siempre sera menor o igual que solo tener 8n. Por lo tanto f(n) es O(n). Ojo estas constantes no son únicas pueden haber varias.
 
-Es decir, 8n - 2 no crecerá más rápido que una 8n. Entonces Big-O determina un techo de crecimiento de una función, de modo que esta función crecerá a un ritmo similar que su techo pero no tendrá un ritmo de crecimiento más rápido. Además siempre buscará que ese techo sea el más ajustado para f(n). Por ejemplo si bien es cierto que el techo de f(n) puede ser n^2 o 2^n, estas dos crecen demasiado en comparación a f(n) por lo que la más cercana en este caso es n.
+Es decir, 8n - 2 no crecerá más rápido que una 8n. Entonces Big-O determina un techo de crecimiento de una función, de modo que esta función crecerá a un ritmo similar que su techo pero no tendrá un ritmo de crecimiento más rápido. Además siempre buscará que ese techo sea el más ajustado para f(n).
 
 [[attachment:20261013-160437_screenshot.png]]
 Si te das cuenta en la grafica a partir de ese n0 es donde el crecimiento de f(n) es similar que su techo Cg(n)

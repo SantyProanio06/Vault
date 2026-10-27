@@ -1,0 +1,88 @@
+:PROPERTIES:
+:ID:       7f6cc3d0-af3e-44a8-ab2a-7a1415e8d88f
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Ejercicio 1 NP Completo
+#+filetags: :clases:eda2:ejercicio:
+#+date: <2026-10-27 mar>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Vertex cover
+*Demostrar que vertex cover es un problema de NP completo.*
+
+Entonces Vertex cover me dice que teniendo un grafo no dirigido G y un número entero k cualquiera, hay un conjunto de vértices tal que cada arista del grafo este conectada a al menos uno de esos vértices?
+
+Para demostrar que es un problema de NP completo demostramos
+** NP 
+Pertenece a NP? (es verificable en tiempo polinomial (rápidamente))
+Para demostrar esto usamos un ejemplo, tenemos el grafo G {A,B,C}, con las siguientes aristas (A,B) y  (B,C), y me dan el número k = 2, si me dicen A y B son los k vértices tal que todas las aristas los tocan a al menos uno. Si yo verifico puedo recorrer el grafo y ver que en efecto todas las aristas tocan a al menos uno de estos dos vértices. Es decir verifique una solución en tiempo polinomial O(n^{k}).   
+
+# Por que no es un problema P? P es para los problemas que tienen un algoritmo que solucione el problema en tiempo polinomial, claro que como es un ejemplo pequeño puede parecer que se resuelve en poco tiempo, pero si tenemos miles y miles de vértices y un número k cualquiera, recorrer todo el grafo y ver que toquen todas las aristas crece de forma inconmensurable. Ahora si me dan una solución ver que se toquen todas las aristas se verifica en un santiamén.
+
+** NP-hard :ATTACH:
+:PROPERTIES:
+:ID:       e2244796-9287-4404-86b9-9def3bf71601
+:END:
+Tenemos que demostrar que este problema es al menos tan difícil como un problema NP, para esto usamos un NP completo (que sabemos que es al menos tan difícil como los problemas NP) conocido el 3-SAT.
+
+Teniendo la fórmula
+
+\begin{align*}
+(x_1 \lor x_2 \lor \lnot x_3)
+\end{align*}
+
+
+Tenemos n variables osea 3, y m conjuntos (paréntesis) o sea 1 existe una formula que transformando esa expresión booleana a un grafo determinamos un k donde se cumple el vertex cover. De la siguiente forma:
+
+Se graficán los verices de verdadero o falso de todas las variables
+
+[[attachment:20261027-154425_screenshot.png]]
+
+
+Luego se grafica cada clausa
+
+
+[[attachment:20261027-154619_screenshot.png]]
+
+
+y se conectan las variables con su respectivo valor, es decir si conectamos x1 con x1 quiere decir que x1 es verdadero, si conectamos x3 con \not x3 entonces decimos que x3 es falso.
+
+
+[[attachment:20261027-154814_screenshot.png]]
+
+Ahi tenemos el grafo, ahora hay que conectar todos las aristas a un grupo de vértices
+
+
+[[attachment:20261027-155004_screenshot.png]]
+
+En este caso seleccionamos un k de 5 vértices.
+Como vemos esta solucion que satisface vertex cover también satisface 3-SAT, por que
+
+\begin{align*}
+(V \lor V \lor F) \\
+(V \lor F) \\
+V
+\end{align*}
+
+Y si nos fijamos la forma de sacar K es una fórmula matemática que transforma de 3-SAT a vertex cover en tiempo polinomial
+
+\begin{align*}
+k = 2m + n
+\end{align*}
+
+Siendo m las clausulas y n las variables.
+
+Pooooor lo tanto, como logramos reducir en tiempo polinomial de 3-SAT a vertex cover y como la solución de vertex cover también satisface 3-SAT, entonces vertex cover es al menos tan difícil como 3-SAT y por lo tanto vertex cover es tan difícil como cualquier NP, y por lo tanto es NP-hard.
+
+
+
+
+

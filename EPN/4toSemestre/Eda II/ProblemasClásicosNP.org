@@ -27,10 +27,10 @@ Por ejemplo, para la formula
 existen valores para todas la x que hagan verdadera la expresión?
 Es NP completo por que:
 
-- Es NP: si damos una solción certificada, verificarle se lo puede hacer en tiempo polinomial, pues simplemente es remplazar valores, pero encontrar una solución desde 0 es super complicado
-- Es NP hard: como es el primero cook no podia hacer la [[id:5a1722d2-bc26-44d1-9cd3-0a511b56a768][Reducción polinomial]] pero penso, hasta cierto punto en la computación cualquier problema de computadora, resolver un sudoku, buscar una ruta, etc. se podia traducir en compuetas lógicas basadas en 1's y 0's que se traducían en or and not etc. Por lo cualquier NP ([[id:e6b67923-beea-4dc3-a090-4258353a48e7][Problemas polinomiales no deterministas NP]]) podía ser traducido en tiempo polinomico (rápido) en estas compuertas lógicas es decir en un SAT y que si resolvemos este SAT estamos resolviendo esos NP, por lo tanto es NP-hard.
+- Es NP: si damos una solución certificada, verificarla se lo puede hacer en tiempo polinomial, pues simplemente es remplazar valores, pero encontrar una solución desde 0 es súper complicado
+- Es NP hard: como es el primero cook no podía hacer la [[id:5a1722d2-bc26-44d1-9cd3-0a511b56a768][Reducción polinomial]] pero pensó, hasta cierto punto en la computación cualquier problema de computadora, resolver un sudoku, buscar una ruta, etc. se podía traducir en compuertas lógicas basadas en 1's y 0's que se traducían en or and not etc. Por lo que cualquier NP ([[id:e6b67923-beea-4dc3-a090-4258353a48e7][Problemas polinomiales no deterministas NP]]) podía ser traducido en tiempo polinómico (rápido) en estas compuertas lógicas es decir en un SAT y que si resolvemos este SAT estamos resolviendo esos NP, por lo tanto es NP-hard.
 * 3-SAT
-Parecido al SAT pero en vez de tener 2 variables en los parentesis tenemos 3
+Parecido al SAT pero en vez de tener 2 variables en los paréntesis tenemos 3
 
 Por ejemplo
 
@@ -40,7 +40,35 @@ Por ejemplo
 
 Es NP completo por que:
 - Es NP: si me dan una solución se verifica en tiempo polinomial
-- Es NP-hard: pues puedo reducir un problema SAT (NP completo verificado) en un problema 3-SAT y si resuelvo el 3-SAT puedo resolver cualuqier SAT, por lo tanto es al menos tan dificil como el SAT y por tanto es NP - hard.
+- Es NP-hard: pues puedo reducir un problema SAT (NP completo verificado) en un problema 3-SAT y si resuelvo el 3-SAT puedo resolver cualquier SAT, por lo tanto es al menos tan difícil como el SAT y por tanto es NP - hard.
 * Vertex cover
-Dado un grafo no dirigido G y un número k
+  [[id:7f6cc3d0-af3e-44a8-ab2a-7a1415e8d88f][Ejercicio 1 NP Completo]]
+* Clique :ATTACH:
+:PROPERTIES:
+:ID:       6f2fe17f-f14b-4ec7-aa25-e0fb87c14683
+:END:
+Dado un grafo G y un número k, hay k vértices de ese grafo donde cada par de esos vértices este conectado por una arista?
 
+Por ejemplo, dado el siguiente grafo, y el número k = 4, existe un subconjunto de k vertices que cada par se toque entre si? Sip, mira:
+
+
+[[attachment:20261027-160949_screenshot.png]]
+
+- Es NP: dado los k vértices podemos verificar en tiempo polinomial que en efecto todos los pares de esos k vértices de tocan
+
+- Es NP-Hard: podemos reducir vertex cover a clique en timpo polinomial, y la solución de ese clique satisface a ese vertex cover, por lo tanto es al menos tan difícil como el vertex cover por lo que es un NP-Hard
+
+* Traveling salesman
+Dado un conjunto de ciudades y las distancias entre ellas. Existe un recorrido que visite cada ciudad exactamente una sola vez y regrese al punto inicial con un costo total menor o igual a k?
+
+por ejemplo dadas 5 ciudades y sus distancias, existe un recorrido que sea menor a 100km
+
+- NP: si nos dan un recorrido basta con verificar que no se repitan las ciudades y sumar las distancias y ver que sea menor que 100km, es decir se verifica en tiempo polinomial
+- NP-Hard: podemos reducir el problema del ciclo hamiltoniano (un NP completo verificado) a traveling salesman y demostrar que esa reducción es en tiempo polinomial y el TS es al menos tan difícil como el ciclo hamiltoniano por lo que es NP-Hard
+
+  
+   
+
+
+
+  

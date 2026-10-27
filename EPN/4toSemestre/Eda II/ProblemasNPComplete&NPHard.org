@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       0520fc7a-5fd3-49f3-9840-8784be4b65d3
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Problemas NP-Complete y NP-Hard
+#+filetags: :clases:eda2:
+#+date: <2026-10-26 lun>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* NP hard
+Se dice que un problema es NP hard si es al menos tan difícil como cualquier problema de NP:
+
+- No necesariamente tiene que pertenecer a NP, osea no necesariamente se verifica en tiempo polinomial
+- No necesariamente son problemas de decisión, pueden ser de optimización o de búsqueda por ejemplo
+- Si es que se encuentra un algoritmo para resolver un problema NP hard, se podrían resolver cualquier problema NP y P (pues pertenecen a NP).
+
+Para demostrar que un problema es NP hard, hay que demostrar que es tan difícil que como los demas NP. Para esto se usa una:
+** Reducción polinomial
+:PROPERTIES:
+:ID:       5a1722d2-bc26-44d1-9cd3-0a511b56a768
+:END:
+Básicamente es hacer que una instancia de un problema A se transforme en la instancia de un problema B.
+
+Si es que esta traducción se lo hace en tiempo polinomial (es decir rápido) y si la respuesta de B soluciona A, entonces podemos demostrar que el problema B es al menos tan difícil como el A.
+* NP completo
+Es un problema que pertenece a los problemas NP, osea que si nos dan una solución podemos verificarla rápidamente, pero ademas tiene que ser NP-hard, es decir el problema tiene que ser al menos tan difícil como los NP, osea si reducimos polinomialmente a NP hasta una instancia del problema NP completo, y la solución satisface al NP entonces es tan difícil como el NP.
+
+ [[id:e9b79738-535c-466a-8413-5700544e4473][El teorema de cook-levin]] es quien da el primer problema de NP completo, es el SAT, pues este demostro ambas características y por tanto SAT es un problema NP completo.
+
+ 
+  
+

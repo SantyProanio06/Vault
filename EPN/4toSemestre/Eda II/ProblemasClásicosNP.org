@@ -1,0 +1,46 @@
+:PROPERTIES:
+:ID:       b4b2a37e-c684-49bd-a00b-a56f7558da80
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Problemas clásicos NP completos
+#+filetags: :clases:eda2:
+#+date: <2026-10-26 lun>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* SAT
+Primer problema demostrado ser NP-completo. Es el problema de satisfacibilidad booleana. Dice que dado un conjunto de variables booleanas y una fórmula lógica en forma normal conjuntiva, determina si existe una asignación de valores para que la formula sea verdadera.
+
+Por ejemplo, para la formula
+
+\begin{align*}
+(x_1 \lor \lnot x_2) \land (\lnot x_1 \lor x_3)
+\end{align*}
+
+existen valores para todas la x que hagan verdadera la expresión?
+Es NP completo por que:
+
+- Es NP: si damos una solción certificada, verificarle se lo puede hacer en tiempo polinomial, pues simplemente es remplazar valores, pero encontrar una solución desde 0 es super complicado
+- Es NP hard: como es el primero cook no podia hacer la [[id:5a1722d2-bc26-44d1-9cd3-0a511b56a768][Reducción polinomial]] pero penso, hasta cierto punto en la computación cualquier problema de computadora, resolver un sudoku, buscar una ruta, etc. se podia traducir en compuetas lógicas basadas en 1's y 0's que se traducían en or and not etc. Por lo cualquier NP ([[id:e6b67923-beea-4dc3-a090-4258353a48e7][Problemas polinomiales no deterministas NP]]) podía ser traducido en tiempo polinomico (rápido) en estas compuertas lógicas es decir en un SAT y que si resolvemos este SAT estamos resolviendo esos NP, por lo tanto es NP-hard.
+* 3-SAT
+Parecido al SAT pero en vez de tener 2 variables en los parentesis tenemos 3
+
+Por ejemplo
+
+\begin{align*}
+(x_1 \lor \lnot x_2 \lor x_3) \land (\lnot x_1 \lor x_4 \lor \lnot x_5)
+\end{align*}
+
+Es NP completo por que:
+- Es NP: si me dan una solución se verifica en tiempo polinomial
+- Es NP-hard: pues puedo reducir un problema SAT (NP completo verificado) en un problema 3-SAT y si resuelvo el 3-SAT puedo resolver cualuqier SAT, por lo tanto es al menos tan dificil como el SAT y por tanto es NP - hard.
+* Vertex cover
+Dado un grafo no dirigido G y un número k
+

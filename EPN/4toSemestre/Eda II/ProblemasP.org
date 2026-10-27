@@ -1,0 +1,38 @@
+:PROPERTIES:
+:ID:       081622ff-a70e-4041-a766-22116176841b
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Problemas P y NP
+#+filetags: :clases:eda2:
+#+date: <2026-10-26 lun>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Problemas polinomiales P
+Son problemas que como su nombre lo indica pueden ser resueltos en tiempo polinomial, es decir su complejidad es O(n^k) donde k es una constante, y n es el tamaño de la entrada. Teniendo en cuenta lo visto en  [[id:d83fdc3a-8d30-460c-8706-38f23b4ccf90][Análisis de algoritmos y notación asintótica]], quiere decir que para los problemas P existe un algoritmo cuyo numero de pasos en una entrada n, es siempre un polinomio.
+
+Básicamente son problemas fáciles de resolver
+* Problemas polinomiales no deterministas NP
+:PROPERTIES:
+:ID:       e6b67923-beea-4dc3-a090-4258353a48e7
+:END:
+Por otro lado los NP son aquellos que encontrar una solución puede ser muy completa, pero si es que tenemos una solución el comprobarlo será super rápido, es decir que su verificación puede ser en tiempo polinomial, O(n^k). En este sentido son no deterministas por que no siguen ninguna regla en especifico. Se cree que un problema P pertenece a los problemas NP por que son fáciles de verificar.
+
+El problema del milenio por otra parte radica en que si un problema es fácil de verificar tambien lo es de resolver? Demostrar eso es super difícil.
+* El teorema de cook-levin
+:PROPERTIES:
+:ID:       e9b79738-535c-466a-8413-5700544e4473
+:END:
+Dice que existe un problema SAT que es el más difícil de todos los problemas NP, es decir que si solucionamos un problema SAT podemos solucionar cualquier problema NP. Esto se traduce que podemos transformar cualquier problema NP en una versión del problema SAT.
+
+Esto ayuda full al problema del milenio pues si demostramos que un problema SAT puede resolverse de forma fácil significa que P = NP y por el contrario si SAT es muy difícil demostramos que P es distinto de NP.
+
+
+

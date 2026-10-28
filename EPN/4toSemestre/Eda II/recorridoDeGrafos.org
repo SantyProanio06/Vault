@@ -1,0 +1,96 @@
+:PROPERTIES:
+:ID:       623c2949-f4b7-4f46-adb4-b347ac58de4a
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Recorrido de grafos
+#+filetags: :clases:eda2:
+#+date: <2026-10-27 mar>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Recorrido en profundidad (Depth First Search) :ATTACH:
+:PROPERTIES:
+:ID:       fc616cba-66aa-4367-94cb-62f029c4f3d5
+:END:
+Se recorren todos los vértices adyacentes al vértice actual hasta llegar al final, luego nos vamos hacia atrás y recorremos el siguiente adyacente. Es decir vamos con el primero del primero del primero.. y así hasta que no hayan más primeros adyacentes luego nos vamos hacia atrás y nos vamos con el segundo del ultimo o del penúltimo y así.
+
+De ahí su nombre se profundiza todo lo posible.
+Se usa una pila
+
+[[attachment:20261027-193934_screenshot.png]]
+
+para este caso básicamente cuando recorremos a un vértice lo ponemos en la lista de salida, entonces hagamos el recorrido desde el vértice 4. Vemos a que otro vértice adyacente se puede ir y tomamos el de menor número (si es letra recorremos alfabéticamente) y en el arreglo de visitados se coloca un verdadero, un uno o lo que sea para darnos cuenta de que ha sido visitado
+
+# Para el ejemplo no pongo el arreglo de visitado por que se sobreentiende que en la salda ya se ve
+
+#+begin_src
+pila = [] salida = []
+pila = [4] salida = [4]
+#+end_src
+
+Como alcanzamos el vértice 4 lo colocamos en el arreglo de salida, y lo colocamos en la pila, y vemos a que número llegamos, en este caso el 1, el 2, el 5 y el 6, por lo que nos recorremos al 1.  
+
+#+begin_src
+pila = [4 1] salida = [4 1]
+pila = [4 1 2] salida = [4 1 2]
+pila = [4 1 2 3] salida = [4 1 2 3]
+pila = [4 1 2 3 8] salida = [4 1 2 3 8]
+pila = [4 1 2 3 8 9] salida = [4 1 2 3 8 9]
+pila = [4 1 2 3 8] salida = [4 1 2 3 8 9]
+#+end_src
+
+Entonces hasta el 9 no podemos recorrer ninguno más por lo que sacamos de la pila los vértices hasta llegar a alguno que podamos agrandar
+#+begin_src
+pila = [4 1 2] salida = [4 1 2 3 8 9]
+pila = [4 1 2 6] salida = [4 1 2 3 8 9 6]
+#+end_src
+
+La clave esta en que no podemos recorrer un vértice ya visitado por eso en vez de irnos del 2 al 8 nos vamos al 6. Y asi hasta vaciar la pila
+
+#+begin_src
+pila = [] salida = [4 1 2 3 8 9 6 5 7]
+#+end_src
+
+
+* Recorrido en anchura (Breadth First Search) :ATTACH:
+:PROPERTIES:
+:ID:       124798fd-2c7d-421a-9669-96f256079df4
+:END:
+Por el contrario se recorren todos los vértices adyacentes al actual a la vez, como por nivel, de ahí su nombre en anchura.
+
+Ejemplo
+
+[[attachment:20261027-191742_screenshot.png]]
+
+En este caso usamos una cola para recorrer y un arreglo de la salida donde se marcan los visitados. Vamos paso por paso, pero básicamente agregamos a la cola el nodo actual y lo sacamos a la salida, pero al momento de hacer la salida colocamos en la cola los hijos del nodo que sacamos:
+
+#+begin_src
+cola = []  salida = []
+cola = [5] salida = []
+cola = [6 7] salida = [5] 
+#+end_src
+
+por ejemplo hasta este paso, sacamos el 5 y agregamos a la cola a los vértices adyacentes
+
+#+begin_src
+cola = [7 8 9] salida = [5 6] 
+#+end_src
+
+por ejemplo hasta aquí sacamos el 6 y agregamos sus adyacentes pero detrás del 7
+
+#+begin_src
+cola = [8 9 10 11] salida = [5 6 7]
+#+end_src
+
+y así hasta vaciar la cola y conseguir lo siguiente
+
+#+begin_src
+cola = [] salida = [5 6 7 8 9 10 11 12 13]
+#+end_src

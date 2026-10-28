@@ -1,0 +1,176 @@
+:PROPERTIES:
+:ID:       d5c54cb0-6314-4806-9422-20d17b00d0c3
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Teoría de grafos para eda II
+#+filetags: :clases:eda2:
+#+date: <2026-10-27 mar>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Conceptos clave
+** Grafo :ATTACH:
+:PROPERTIES:
+:ID:       d1f9e66b-9a29-42a5-a0b0-38fe1040c7a2
+:END:
+Un grafo es todo conjunto de nodos conectados por aristas, parecidos a los arboles solo que representan cosas no jerarquicas o con reglas arbitrarias, por ejemplo caminos entre ciudades, etc.
+
+Matematicamente un grafo G consta de un conjunto V de vértices y un conjuto A  de aristas que conectan esos vertices. Esta representado por:
+
+\begin{align*}
+G = \lbrace V, A \rbrace
+\end{align*}
+
+por ejemplo el grafo
+
+\begin{align*}
+G = \lbrace \lbrace A,B,C \rbrace, \lbrace (AB), (BC) \rbrace \rbrace
+\end{align*}
+
+Se lo representa como
+
+[[attachment:20261027-175033_screenshot.png]]
+*** Tipos de grafos
+Para categorizar a los grafos se mira como son sus aristas
+**** Arista y grafo dirigido :ATTACH:
+:PROPERTIES:
+:ID:       2b655455-3034-4899-90a3-195985977dc6
+:END:
+En el par ordenado de vertices (u, v) se dice que es una arista dirigida cuando el vertice u es el origen y el destino es v. Es decir que (u, v) \ne (v, u).
+
+Por lo tanto el grafo dirigido es aquel que todas sus aristas son dirigidas y se expresa de la siguiente manera
+
+
+[[attachment:20261027-175731_screenshot.png]]
+**** Arista y grafo no dirigido :ATTACH:
+:PROPERTIES:
+:ID:       6407cc58-5ce2-43e1-b968-e316ceeeff29
+:END:
+Al contrario, el par de verices (u, v) no tiene un origen ni un destino, por lo que (u, v) = (v, u)
+
+En este sentido el grafo no dirigido no tiene direcciones en sus aristas.
+[[attachment:20261027-175800_screenshot.png]]
+**** Grafo simple
+Es aquel que solo tiene una unica arista a cada vertice y que no tiene bucles, es lo más simple que se puede tener.
+
+De forma matemática un grafo simple
+\begin{align*}
+G = \lbrace V, A \rbrace
+\end{align*}
+consta de un conjunto no vació de vértices V y un conjunto de pares ordenados de elementos distintos de V, es decir A. En pocas cada par de vértices tiene a lo más una arista que los une.
+
+**** Multigrafo
+Permite que existan más de una arista paralela a un mismo par de vértices.
+
+De forma matemática un grafo
+\begin{align*}
+G = \lbrace V, A \rbrace
+\end{align*}
+es multigrafo si consta de un conjunto no vacio de vértices V, un conjunto A de aristas y una función f de A tal que
+
+\begin{align*}
+\lbrace \lbrace u, v \rbrace | u, v \in V, u \ne v \rbrace
+\end{align*}
+
+En este sentido  uv y vu son aristas múltiples si f(uv) = f(vu)
+**** Grafo ponderado :ATTACH:
+:PROPERTIES:
+:ID:       f0e9a2e6-678b-4164-bd17-4076864a6a9a
+:END:
+Cada arista tiene un valor, por ejemplo en un grafo que representa un recorrido de ciudades las aristas pueden representar la distancia que existe entre esas ciudades.
+
+
+[[attachment:20261027-181410_screenshot.png]]
+
+**** Grafo etiquetado :ATTACH:
+:PROPERTIES:
+:ID:       6ea40abb-224f-4423-8ae4-c7b6ccf1d3aa
+:END:
+Es aquel que los vértices o aristas llevan información adicional, ya sean nombres, tipos, atributos etc.
+
+[[attachment:20261027-181451_screenshot.png]]
+** Otros términos
+*** Incidencia :ATTACH:
+:PROPERTIES:
+:ID:       7cceaceb-82ac-407b-8ea7-95ac4f100e39
+:END:
+Es la relación de las aristas con los vértices, se dice que la arista (u, v) es incidente de los vertices u, v.
+
+[[attachment:20261027-181735_screenshot.png]]
+*** Adyacencia
+Dos vértices u y v son adyacentes si existe una arista (u, v) o (v, u) (dependiendo si el grafo es dirigido y no dirigido) que los une.
+*** Grado de un vértice
+Es determinado por todos los vértices adyacentes a un vértice existiendo dos tipos. En caso de ser un grafo no dirigido simplemente se cuentan todos los vértices adyacentes pero si es un grafo dirigido:
+
+- *Grado de salida*: son todos los vértices a los que se puede *llegar* desde dicho vértice.
+- *Grado de entrada*: son todos los vértices que *llegan a* dicho vértice.
+*** Más terminología :ATTACH:
+:PROPERTIES:
+:ID:       8b0778d5-404b-4358-a254-bb837302edf7
+:END:
+- *Camino*: Es la secuencia de una o más aristas que conectan dos nodos, por ejemplo, el camino de <a, b, e, d, c> en el grafo es simple de longitud 4.
+
+[[attachment:20261027-182624_screenshot.png]]
+
+- *Ciclo*: es un camino que sale de un vértice y llega al mismo vértice, por ejemplo el vértice e en el grafo anterior tiene un ciclo
+
+- *Bucle*: en este sentido un bucle es una arista que tiene extremos idénticos
+
+* Matriz de adyacencia :ATTACH:
+:PROPERTIES:
+:ID:       d7132355-a640-4967-92e0-f2edf67fd285
+:END:
+Es una tabla que guarda los vértices y las aristas, representa cada fila y cada columna un vértice y cada posición dentro de la tabla representa una arista(o la ausencia de esta). Ojo *el vértice origen se encuentra en la fila y el vértice destino en la columna, por ejemplo:
+
+[[attachment:20261027-183349_screenshot.png]]
+
+
+|   | a | b | c | d | e |
+| a | 0 | 1 | 1 | 1 | 0 |
+| b | 1 | 0 | 0 | 0 | 1 |
+| c | 1 | 0 | 0 | 1 | 0 |
+| d | 1 | 0 | 1 | 0 | 0 |
+| e | 0 | 1 | 0 | 0 | 0 |
+
+Podemos ver que al ser un grafo no dirigido la matriz termina siendo simétrica
+
+
+[[attachment:20261027-183532_screenshot.png]]
+
+|   | a | b | c | d | e |
+| a | 0 | 1 | 0 | 0 | 0 |
+| b | 0 | 0 | 0 | 0 | 0 |
+| c | 1 | 0 | 0 | 1 | 0 |
+| d | 1 | 1 | 0 | 0 | 0 |
+| e | 0 | 1 | 0 | 1 | 1 |
+
+* Lista de adyacencia :ATTACH:
+:PROPERTIES:
+:ID:       6e0420a4-06b9-47a7-8f22-c3fc831c9f61
+:END:
+Se representa con un arreglo de n elementos, con n siendo el número de vértices del grafo, y por cada vértice se entrelazan los nodos adyacentes hasta llegar al null, parecido a los mapas hash.
+
+[[attachment:20261027-184252_screenshot.png]]
+
+En este sentido podemos calcular el grado de entrada y de salid de un vértice.
+
+Para el grado de salida, nos ubicamos en la posición donde este dicho vértice por ejemplo del vértice 3, esta en la posición 3 del arreglo, y contamos todos los vértices conectados a dicha posición en este caso 2.
+
+Y para el grado de entrada, buscamos en las demás posiciones si se repite dicho vértice en este caso en el vértice 2 y el 4, entonces el grado de entrada también es 2.
+
+
+
+
+
+
+
+
+
+

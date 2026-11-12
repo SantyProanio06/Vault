@@ -1,0 +1,128 @@
+:PROPERTIES:
+:ID:       69fec83f-b757-4b01-9d41-34e5e4b9f2b9
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Árbol de expansión mínima
+#+filetags: :clases:eda2:
+#+date: <2026-11-04 mié>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* MST
+Minimum Spanning Tree, por sus siglas en ingles, es un subgrafo que usa un  [[id:f0e9a2e6-678b-4164-bd17-4076864a6a9a][Grafo ponderado]] para recorrer todos los vértices con el menor costo posible. Tiene exactamente:
+\begin{align*}
+|V| - 1 \text{ aristas}
+\end{align*}
+La diferencia es que no encuentra el camino más corto, sino que recorre todos los vértices con el menor costo posible.
+** Propiedad del ciclo :ATTACH:
+:PROPERTIES:
+:ID:       e532346d-17cd-4565-9798-022c76259e77
+:END:
+Sea T un MST de un grafo G, es decir T ya es un subgrafo que conecta todos los vértices con el menor costo posible, y e una arista de G que no esta en T y si conectas e a T se forma el ciclo C, se dice que para cada arista f de C, el peso de f sera menor o igual a e.
+
+Es decir, si ya tengo un MST y en un lugar hay una arista del original, si la conecto se genera un ciclo donde sus aristas serán menores o iguales que esta arista que se conecta, cosa que haría que el MST tenga un peso total mayor de lo que se debería. Osea no poner ciclo.
+[[attachment:20261104-093839_screenshot.png]] 
+En el ejemplo poner e sería un error, pues ya esta lo más corto posible.
+
+Por el contrario si el peso de algún f es mayor que el e, entonces quitaríamos dicho f, y dejamos solo el e.
+** Propiedad de partición :ATTACH:
+:PROPERTIES:
+:ID:       78deeb8f-b2b0-4e34-b5e7-52e8659e0af6
+:END:
+Una partición divide todos los vértices G en dos subgrupos U y V teniendo una arista que conecta con un nodo de U y de V. Si e es la arista de menor peso entre U y V existe al menos un MST que con dicha arista.
+
+Para probar esta propiedad se tomo un MST que ya es el mínimo llamado T,  donde este tiene a f, se considera el ciclo cerrado C al juntar e, por la definición el peso de f  debe ser menor que e, sin embargo como vimos e es la arista de menor peso, como eso contradice las propiedades la única posibilidad para que no se dañe el árbol es que e y f sean iguales, por lo tanto el MST de f tiene el mismo peso que el MST de e y si contiene a dicha e. 
+
+[[attachment:20261104-095002_screenshot.png]]
+* Algoritmo de Prim-Jarnik
+Se elige un vértice s de forma arbitraria desde el cual se va creciendo el MST como una nube de vértices. Se guarda cada vértice como una función d(v) que retorna la arista con menor peso que conecta a v con la nube de vértices. En cada paso se agrega el vértice fuera de la nube u con la etiqueta de distancia más pequeña y desde este actualizamos los pesos adyacentes de v.
+
+Es decir se recorren los nodos pero el siguiente nodo será el que tenga el menor peso.
+** Ejemplo :ATTACH:
+:PROPERTIES:
+:ID:       4f013960-f406-4425-9533-e826acca636a
+:END:
+
+[[attachment:20261104-100748_screenshot.png]]
+
+Tenemos el nodo A como el inicio del MST, actualizamos las etiquetas de peso de los nodos adyacentes, y seleccionamos el siguiente nodo con la menor etiqueta en este caso el B.
+
+[[attachment:20261104-100923_screenshot.png]]
+
+Desde B actualizamos las etiquetas y en este caso seleccionamos el C.
+
+[[attachment:20261104-101033_screenshot.png]]
+
+Desde el C actualizamos las etiquetas, pero como A esta recorrido, y los demas nodos desde C son 9 y 8 osea mayores que 7 y 7, regresamos uno, es decir a B y luego seleccionamos el siguiente menor, en este caso el D.
+
+[[attachment:20261104-101205_screenshot.png]]
+
+Desde el D hacemosl lo mismo y como C ya esta en la nube, nos vamos al F.
+
+[[attachment:20261104-101241_screenshot.png]]
+
+Desde el F lo mismo entonces nos vamos al E y ya tenemos todo el MST.
+
+[[attachment:20261104-101307_screenshot.png]]
+* Kruskal :ATTACH:
+:PROPERTIES:
+:ID:       0baf0e1c-6802-4e06-9377-c116a5c44df0
+:END:
+Entonces básicamente se ordenan todas las aristas de menor a mayor en base al peso de cada arista. Luego se van conectando los nodos de dichas aristas en ese orden, validando que no existan ciclos dentro del MST que se va formando.
+
+Para comprobar que un grupo de vértices no forma un ciclo, se usa el conjuntos disjuntos, que si se los interseca si es que da vacio es por que no forma un ciclo, si es que no da vacio es por que se formaría un ciclo.
+
+Se detiene cuando se han hecho V -1 aristas por la definición.
+** Ejemplo :ATTACH:
+:PROPERTIES:
+:ID:       064fea2e-8442-4eaa-ac66-5821bf01f2e0
+:END:
+
+[[attachment:20261104-102806_screenshot.png]]
+
+Ordenamos todos los pesos, y seleccionamos los conjuntos
+#+begin_src
+{A}{B}{C}{D}
+#+end_src
+
+entonces vemos el 1 y comprobamos que los conjuntos que conecta la arista den vacio, en este caso si por lo que podemos unirles
+
+[[attachment:20261104-103116_screenshot.png]]
+
+Y ahí unimos los conjuntos
+#+begin_src
+{A B}{C}{D}
+#+end_src
+
+Luego con el 2, vemos que el conjutno de C y D da vacio entonces podemos conectarles.
+
+[[attachment:20261104-103307_screenshot.png]]
+
+Y juntamos.
+#+begin_src
+{A B}{C D}
+#+end_src
+
+Luego el peso 3, y vemos que los conjuntos al intersecarlos da vacio, por lo que conectamos tambien
+
+[[attachment:20261104-103415_screenshot.png]]
+
+Y juntamos
+#+begin_src
+{A B C D}
+#+end_src
+
+Y ahi nos detenemos pues ya tenemos 3 aristas, osea V - 1. Sin embargo si comprobáramos con el peso 4, el D con el A B C D no da vacio, por lo que no podemos conectarlo ya que genera un ciclo.
+
+[[attachment:20261104-103603_screenshot.png]]
+
+
+
+

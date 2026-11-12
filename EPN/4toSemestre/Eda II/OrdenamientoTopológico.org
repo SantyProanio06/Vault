@@ -1,0 +1,65 @@
+:PROPERTIES:
+:ID:       b4309938-7245-4c03-ba23-d1188189ee0f
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+filetags: :clases:eda2:
+#+title: Ordenamiento topológico
+#+date: <2026-10-29 jue>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Que es? :ATTACH:
+:PROPERTIES:
+:ID:       90376557-97ef-41a7-8f4a-ff2527bd3d20
+:END:
+Consiste en construir una lista o una matriz por medio del ordenamiento, ascendente o descendente de los vértices de un grafo, más en especifico, un grafo acíclico, es decir sin ciclos.
+
+Básicamente usa un algoritmo de [[id:124798fd-2c7d-421a-9669-96f256079df4][Recorrido en anchura (Breadth First Search)]] por que se elige un vértice sin predecesores y a partir de allí se empieza a construir la matriz de modo que se visitan todos los vértices adyacentes y cuando se acaban de visitar esos se pasa a los adyacentes, y así recursiva-mente hasta haber recorrido todos los vértices. Es decir *no se visitara a un vértice hasta no haberse visitado sus predecesores*
+
+De forma matemática, dado un grafo dirigido (o dígrafo) acíclico, el orden lineal de los vértices del grafo G es tal que si contiene el arco (u, v) entonces u aparece antes que v en el orden dado.
+
+Por ejemplo
+[[attachment:20261029-074334_screenshot.png]]
+
+Dado que el nodo 1 apunta al 2 y al 3 deberá aparecer antes que ellos en la matriz o lista, dado que el nodo 2 apunta al 4 y al 5 deberá aparecer antes que ellos y así.
+
+#+begin_src
+[1 2 3 4 5]
+#+end_src
+
+Sin embargo un grafo puede tener más de un ordenamiento, el punto es que se respete que los nodos que apuntan estén antes que sus nodos hijos. Por ejemplo este es un ordenamiento permitido también:
+
+#+begin_src
+[1 3 2 4 5]
+#+end_src
+* Algoritmo de depuración :ATTACH:
+:PROPERTIES:
+:ID:       3ba6f9ca-9e56-4ce5-a033-f0bf2161e57e
+:END:
+Para hacer el ordenamiento topológico en un grafo dirigido se elige como primer nodo a aquel que tenga grado 0, osea que su grado de entrada es igual a 0. Y se lo elimina del grafo y se lo agrega al array del orden topológico, para así recorrer a sus nodos adyacentes, y ver cual de estos es de grado 0 también y así recursiva mente.
+
+Por ejemplo:
+[[attachment:20261104-074322_screenshot.png]]
+
+Teniendo este grafo, vemos el de grado de entrada 0 en este caso el B, y lo eliminamos, quedando al nodo E como el adyacente de grado 0, no elegimos al C por que el A esta apuntando a este osea su grado de entrada es de hecho de 2.
+[[attachment:20261104-074544_screenshot.png]]
+
+A partir de aquí el siguiente nodo sigue sin ser el C pues su grado de entrada ahora es 1, entonces nos vamos a A. y luego por fin a C hecho eso nos queda ya solo el D.
+
+[[attachment:20261104-074723_screenshot.png]]
+
+Quedando el ordenamiento:
+[[attachment:20261104-074840_screenshot.png]]
+
+Obviamente se puede tener más de un solo ordenamiento
+
+
+
+

@@ -1,0 +1,132 @@
+:PROPERTIES:
+:ID:       d818cbdd-4824-46f8-8d37-0931d35cadf8
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Algoritmos para grafos
+#+date: <2026-11-11 mié>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+Los algoritmos aplicados en los grafos sirven para encontrar el camino más corto y para rutas óptimas, por lo que se necesita de un [[id:f0e9a2e6-678b-4164-bd17-4076864a6a9a][Grafo ponderado]] para ser realizado.
+* Matriz de costos :ATTACH:
+:PROPERTIES:
+:ID:       658c3e00-3744-412b-a0a7-eb05bde470b8
+:END:
+Para representar a los grafos ponderados parecido a como se usa una  [[id:d7132355-a640-4967-92e0-f2edf67fd285][Matriz de adyacencia]]  en grafos no ponderados, pero usando ciertas reglas.
+
+- M[i , j] = 0 si i = j, es decir el peso de un mismo vértice es 0 
+- M[i, j] = \infty, cuando no hay como llegar a ese nodo, pues i \ne j.
+- M[i, j] = peso(i ,j). Si existe la arista se toma el peso.
+
+Por ejemplo:
+[[attachment:20261111-073043_screenshot.png]]
+* Algoritmo de dijkstra :ATTACH:
+:PROPERTIES:
+:ID:       d899b09f-251d-4089-80e2-caca9da778a1
+:END:
+Básicamente se recorre de forma voraz, o como  [[id:124798fd-2c7d-421a-9669-96f256079df4][Recorrido en anchura (Breadth First Search)]],  donde a cada nodo se le agrega una etiqueta [A , B](n) tal que:
+- A es la acumulación de pesos, es decir el nodo el en que estamos más los pesos sumados del recorrido, por ejemplo si estamos en C y antes estaba A y B, y las aristas de A a B es 3 y de B a C es 4, A en este caso valdría 3 + 4 osea 7.
+- B es el vértice procedente, es decir el vértice del que venimos, en el ejemplo anterior B seria en este caso C, cuando estamos en el nodo inicial se pone -.
+- n es el número de iteración, en el caso del ejemplo anterior n seria 2 por que siempre empieza en 0.'
+
+Por ejemplo:
+Queremos llegar al nodo 6 desde 1
+[[attachment:20261111-073709_screenshot.png]]
+
+Teniendo eso nos regresamos para obtener el recorrido, osea 6, 4, 2, 1, es decir el recorrido más corto para llegar a 6 es 1-2-4-6.
+** Estructuras de trabajo
+Para dikstra  tenemos ciertas estructuras de datos que nos permiten no solo representar a los grafos, sino también nos ayudan a recorrer de mejor manera los grafos.
+*** Listas enlazadas :ATTACH:
+:PROPERTIES:
+:ID:       eb55c795-db98-4a70-8463-8af80d67caa0
+:END:
+Parecido a las  [[id:6e0420a4-06b9-47a7-8f22-c3fc831c9f61][Lista de adyacencia]] solo que, el vértice de donde sacamos la lista es la cabeza de una lista que tendrá dos valores en sus adyacentes, el primero el identificador del nodo y el segundo valor el peso de la arista que conecta a la cabeza con dicho nodo. Ejemplo:
+
+[[attachment:20261112-081051_screenshot.png]]
+
+Para el nodo A la lista quedaría como:
+#+begin_src
+(A) --> [B 4] --> [C 2] --> null
+#+end_src
+*** Tabla de distancias
+Guarda en una tabla, los pesos más cortos acumulados por nodo, donde las filas representan el número de iteración y las columnas representan cada nodo, donde la primera columna representa el nodo predecesor del cual se consiguió dicho menor peso, cuando no se compara todavía dicho nodo queda con \infty
+*** Lista de no visitados
+Es una lista simple con todos los nodos del grafo en orden, estos nodos no tienen todavía una distancia mínima definitiva, en cada iteración de dijkstra se recorre esta lista para sacar de esta al nodo con menor distancia y recorrer sus vecinos.
+*** Relajar una arista
+Básicamente significa que comprobamos que la distancia que tenemos al recorrer hacia un nodo x es menor que la que teníamos antes, en ese caso se cambia la distancia a la menor. Por ejemplo, digamos que hay 2 caminos para llegar a un nodo Z, la primera distancia que teníamos digamos que fue recorriendo desde E es 20, pero cuando hacemos otra iteración con el nodo D vemos que la suma de su distancia actual más la de llegar a Z es 19, entonces cambiamos en la tabla de distancias el valor de 19.
+** Ejercicio con estructuras auxiliares :ATTACH:
+:PROPERTIES:
+:ID:       c71b897e-8829-4f39-817e-590280eed266
+:END:
+
+[[attachment:20261112-082321_screenshot.png]]
+Para esto usaremos este grafo.
+
+Entonces la tabla de distancias empieza con 0 en el origen e \infty en los que no se recorren
+
+| Paso | Visitado | A | B | C | D | E | F |
+|    0 | ---      | 0 | \infty | \infty | \infty | \infty | \infty |
+
+Y como la lista de no visitados tiene la siguiente estructura
+#+begin_src
+[A 0] --> [B \infty] --> [C \infty] --> [D \infty] --> [E \infty] --> [F \infty] --> null
+#+end_src
+
+donde A tiene el menor peso en comparación empezamos desde allí a recorrer sus vecinos en la lista de adyacencia con pesos que tiene una estructura tal que:
+#+begin_src
+[A] --> [B 4] --> [C 2] --> null
+#+end_src
+
+Entonces hacia B tenemos:
+#+begin_src
+dist[B] = 0 + 4 < \infty --> dist[B] = 4 prev[B] = A 
+#+end_src
+
+Y hacia C tenemos:
+#+begin_src
+dist[C] = 0 + 2 < \infty --> dist[C] = 2 prev[C] = A 
+#+end_src
+
+Actualizando la tabla de distancias como:
+| Paso | Visitado | A | B | C | D | E | F |
+|    0 | ---      | 0 | \infty | \infty | \infty | \infty | \infty |
+|    1 | A        | 0 | 4 | 2 | \infty | \infty | \infty |
+
+y la lista de no visitados como:
+#+begin_src
+[B 4] --> [C 2] --> [D \infty] --> [E \infty] --> [F \infty] --> null
+#+end_src
+
+y a partir de aquí como C tiene la menor distancia de todos los sacamos de la lista de no visitados y recorremos sus vecinos en la lista de adyacencia
+#+begin_src
+[C] --> [B 5] --> [E 3] --> null
+#+end_src
+
+Y hacia B tenemos:
+#+begin_src
+dist[B] = 2 + 5 = 7 < 4 --> dist[B] = 4 prev[B] = A
+            ^
+        Distancia de A a C
+#+end_src
+
+Como 7 sale en total y es mayor que el 4 que teníamos antes, dejamos como estaba
+
+Y hacia E tenemos:
+#+begin_src
+dist[E] = 2 + 2 < \infty --> dist[C] = 2 prev[C] = A 
+#+end_src
+
+
+
+
+
+
+
+

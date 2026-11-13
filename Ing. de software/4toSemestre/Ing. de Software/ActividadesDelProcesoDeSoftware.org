@@ -1,0 +1,123 @@
+:PROPERTIES:
+:ID:       c74bcb1f-9322-4023-985d-51687efc1f99
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Actividades del proceso de Software
+#+filetags: :clases:software:
+#+date: <2026-11-12 jue>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Introducción
+Los procesos de software son actividades técnicas, colaborativas y administrativas que especifican, diseñan, implementan y prueban un sistema software. Pues hacer software no es solo programar sino también colaborar con otras personas y gestionar dicho proceso.
+
+Los desarrolladores tienen herramientas que les son útiles para editar y generar documentos de apoyo al proceso de desarrollo, por ejemplo Word para generar el ERS (documento de especificación de requerimientos de software).
+
+# Documentos importantes también como: SysRS que da los requerimientos de todo el sistema, como hardware software etc, y el ERS que es solo los requerimientos del software.
+
+Estas actividades están organizadas según el proceso de desarrollo por ejemplo en cascada están organizadas de forma secuencial, mientras que en incremental de forma entrelazada.
+* Especificación del software
+En este proceso se definen y comprenden los requerimientos del sistema así como las restricciones de operación y de desarrollo, es una etapa sumamente crítica por que errores aquí pueden conducir a problemas en etapas posteriores. El objetivo es generar el documento de ERS o especificación de requerimientos del software, donde se reflejan las necesidades de los interesados.
+
+# Interesados son los clientes, usuarios, desarrolladores etc.
+** Actividades del proceso de especificación del software :ATTACH:
+:PROPERTIES:
+:ID:       afca3cff-b5e6-40a9-bd15-dfe3843d5ad8
+:END:
+
+[[attachment:20261112-190507_screenshot.png]]
+
+Este proceso tiene las siguientes actividades, remarcadas en la figura como rectángulos de esquinas curvas, y cada una genera un documento definido como un rectángulo. Como es muestra en el gráfico después de ciertas actividades se puede regresar para corregir cualquier problema detectado.
+
+1. Estudio de factibilidad: Genera el informe de factibilidad, que es donde se estima si las necesidades se podrán cubrir con las tecnologías actuales, además de buscar el costo - beneficio desde un punto de vista empresarial y si el desarrollo esta dentro de las restricciones de presupuesto, como resultado se define si se continua o no con el proyecto.
+   
+2. Obtención y análisis de requerimientos: Genera los modelos del sistema, en esta actividad se consiguen los requerimientos del sistema observando otros sistemas existentes, discutiendo con los interesados, analizando tareas, etc.
+   Aquí ademas se pueden generar modelos y prototipos para entender mejor el sistema.
+   
+3. Especificación de requerimientos: De aquí se obtienen los requerimientos del usuario y del sistema, en un documento llamado SysRS o system requirements specification en base a lo obtenido en análisis. Aquí se transcribe la información obtenida de las actividades anteriores en un documento, con dos niveles de detalle:
+   - Requerimientos del usuario: se describe con bajo detalle y alta abstracción los requerimientos del sistema, este se entrega al usuario. 
+   - Requerimientos del sistema, se describe al completo los requerimientos y la funcionalidad así como de los componentes no funcionales es decir la calidad.
+
+4. Validación de los requerimientos: Al juntar todos los documentos creados en las anteriores actividades se genera el ERS. En esta actividad se validan que los requerimientos sean creíbles y coherentes.
+   # Esta validación se la puede hacer en análisis pero aquí se lo hace con formalidad.
+    Además se buscan y corrigen cualesquier error en el documento.
+* Diseño e implementación del software 
+** Diseño del software
+Entiéndase como diseño a la descripción de la estructura del sistema, las interfaces, los modelos y las estructuras de datos y los algoritmos a usar. Es iterativo y usa backtracking para corregir modelos ya hechos.
+
+Las actividades dentro de este proceso dependen del sistema, por ejemplo uno en tiempo real requiere de un diseño de temporización y no una base de datos
+*** Actividades del proceso de diseño del software :ATTACH:
+:PROPERTIES:
+:ID:       8fcef0db-1dbb-4ec6-9b4c-15689965a1e4
+:END:
+
+[[attachment:20261112-193251_screenshot.png]]
+
+Para entender el proceso de diseño analizaremos cada etapa. Estas etapas son secuenciales y están vinculadas pues se puede obtener retroalimentación desde una etapa a otra, con lo que se puede re elaborar el diseño.
+
+**** Entradas
+La especificación de requerimientos y la descripción de los datos son los documentos obtenidos dentro del proceso de especificación, sin embargo la plataforma de información es la descripción de la plataforma de software, que es, básicamente el entorno donde se desarrollará el software.
+
+Esta compuesto de la definición de las interfaces de software: el sistema operativo, el middleware, la base de datos y otros sistemas de aplicación. 
+**** Actividades y salidas
+1. Diseño arquitectónico: Es la estructura global de sistema con sus componentes, que son los subsistemas o módulos, las relaciones y como se distribuyen, de aquí sale la arquitectura del sistema que se representa básicamente en el diagrama de clases.
+   
+2. Diseño de interfaces: Se diseñan evidentemente las interfaces del sistema, pero de forma que permita una alta cohesión y bajo acoplamiento entre los componentes. De aquí sale la especificación de interfaces.
+   
+3. Diseño de componentes: Se diseña la funcionalidad de cada componente, se da al desarrollador solo una sentencia de la funcionalidad para que este diseñe de forma específica. Cambien se le puede dar los cambios a un componente que ya existe o un modelo de diseño detallado, mismo que se usa para generar código de forma automática. De aquí sale la especificación de componentes.
+   
+4. Diseño de bases de datos: Se diseña las estructuras de datos y como se representaran en una base de datos. De aquí sale la especificación de bases de datos.
+** Implementación del software
+Básicamente se transforma una especificación en código ejecutable, aquí se aplican los procesos de diseño y programación, y a su vez se puede corregir especificaciones si se usa un enfoque incremental.
+
+El programador tiene herramientas que ayudan a generar un esqueleto del código en base a un diseño donde el programador solo tiene que rellenar con ciertos detalles específicos, pues se generó para definir e implementar interfaces.
+ 
+En este caso no hay actividades pues la programación es algo personal y no sigue un proceso en específico, pues un programador puede empezar por los componentes que entiende mejor o viceversa.
+
+Algo que si cabe recalcar es que en la programación el programador realiza pruebas unitarias a su código, este proceso se divide en:
+
+- Pruebas de defectos: Aquí es donde se define la existencia de los defectos.
+- Depuración o debugging: Se encarga de encontrar dichos defectos y corregirlos.
+
+Para la depuración se debe realizar una hipótesis de que puede estar pasando, luego se la pone a prueba para encontrar la causa de la respuesta anómala encontrada. A veces para esto se requiere rastrear manualmente el código, implementar otro caso de prueba o usar herramientas interactivas que muestran valores intermedios y el rastro del programa.
+* Validación del software
+Se la realiza durante y después de la implementación, es aquí donde se verifican (los técnicos)  y se validan (los usuarios) los requerimientos esto se conoce como V & V (validation and verification), el sistema debe cumplir con las especificaciones y con las expectativas del cliente.
+** Actividades del proceso de validación del software :ATTACH:
+:PROPERTIES:
+:ID:       2533cf52-e030-4f75-8f24-c3e969faf847
+:END:
+
+[[attachment:20261112-210113_screenshot.png]]
+
+Como se ve en la figura estas actividades pueden realizarse varias veces.
+
+1. Prueba de desarrollo: o prueba de componentes, es donde el desarrollador verifica el funcionamiento de los componentes ya sean entidades, funciones o clases, pero de forma independiente. Pueden usarse herramientas como JUnit que automatiza esta actividad y se puede volver a ejecutar cuando hayan cambios. 
+2. Pruebas del sistema: o de integración, aquí se busca descubrir errores de interacción no anticipada de componentes y problemas en las interfaces, además de mostrar que el sistema cumple con los requerimientos funcionales y no funcionales. En caso de un sistema grande se lo puede hacer por etapas con subsistemas de ciertos componentes.
+3. Pruebas de aceptación: aquí, a diferencia de las otras actividades, las pruebas se las realizan con datos suministrados por el cliente, donde se revelan errores u omisiones en los requerimientos, así como fallas en la instalación o en la infraestructura.
+
+El desarrollo y las pruebas se los hace al mismo tiempo pues el desarrollador va probando conforme genera el código
+
+Las pruebas de aceptación se dividen en dos:
+
+- Pruebas beta: Realizadas por el usuario final en el entorno en el que el sistema de se desarrolló.
+- Pruebas alfa: En caso de que el usuario diera el visto bueno y el sistema pasa a ser considerado producto se realizan estas pruebas ahora en el entorno de producción, o sea donde el cliente correrá el sistema.
+
+Luego de esto se recibe la retroalimentación por parte del cliente para hacer modificaciones y liberar el sistema ya sea para más pruebas beta o para entregar el sistema final.
+  
+
+
+
+ 
+   
+    
+
+
+
+

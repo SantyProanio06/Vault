@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       a5a89a60-d795-47c3-b518-dbd0f0a30285
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Introducción a bases de datos
+#+date: <2026-11-13 vie>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Qué es una base de datos?
+Es básicamente un conjunto de datos homogéneos, o sea del mismo tipo, amancebados y organizados de una forma especia para ser usados y procesados por una computadora de manera rápida y sencilla. Pero
+** Qué es un dato?
+Un dato es la representación de un hecho aislado que por si solo no significa nada, por ejemplo un número o una cadena de caracteres. Por ejemplo, 202420587, o Santiago
+** Qué es información?
+Es el procesamiento y la contextualización de dichos datos, es aquí donde adquieren un significado, por ejemplo estando en el SAEw el código 202420587 es el código único del estudiante Santiago.
+* DBMS
+De las siglas data base managment system (sistema de gestión de bases de datos), nos ayuda a gestionar toda la información, mantener y realizar consultas sobre una base de datos. Esta caracterizado por:
+- Globalización de la información: permite centralizar la información de una organización.
+- Elimina:
+  * Redundancia
+  * Inconsistencia
+  * Problemas de seguridad
+  * Problemas de acceso concurrente
+  * Problemas de integridad (por medio de restricciones a los datos)
+- Fácil acceso a datos
+- Independencia de datos: 
+
+
+
+
+
+
+

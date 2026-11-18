@@ -60,24 +60,50 @@ Desde B actualizamos las etiquetas y en este caso seleccionamos el C.
 
 [[attachment:20261104-101033_screenshot.png]]
 
-Desde el C actualizamos las etiquetas, pero como A esta recorrido, y los demas nodos desde C son 9 y 8 osea mayores que 7 y 7, regresamos uno, es decir a B y luego seleccionamos el siguiente menor, en este caso el D.
+Desde el C actualizamos las etiquetas, pero como A esta recorrido, y los demás nodos desde C son 9 y 8 osea mayores que 7 y 7, regresamos uno, es decir a B y luego seleccionamos el siguiente menor, en este caso el D.
 
 [[attachment:20261104-101205_screenshot.png]]
 
-Desde el D hacemosl lo mismo y como C ya esta en la nube, nos vamos al F.
+Desde el D hacemos lo mismo y como C ya esta en la nube, nos vamos al F.
 
 [[attachment:20261104-101241_screenshot.png]]
 
 Desde el F lo mismo entonces nos vamos al E y ya tenemos todo el MST.
 
 [[attachment:20261104-101307_screenshot.png]]
+
+Por la forma de iteración la complejidad de este algoritmo, usando lista de adyacencia y heap:
+
+- Extraer el mínimo
+        \begin{align*}
+        O(\log V)
+        \end{align*}
+- Actualizar las claves
+\begin{align*}
+O (\log V)
+\end{align*}
+- Tiempo total
+\begin{align*}
+O((V+E) \log V)
+\end{align*}
+- Espacio auxiliar
+\begin{align*}
+O(V)
+\end{align*}
+
+Pero si usamos una matriz de adyacencia la complejidad aumenta exponecialmente:
+\begin{align*}
+O(V^2)
+\end{align*}
+
+
 * Kruskal :ATTACH:
 :PROPERTIES:
 :ID:       0baf0e1c-6802-4e06-9377-c116a5c44df0
 :END:
 Entonces básicamente se ordenan todas las aristas de menor a mayor en base al peso de cada arista. Luego se van conectando los nodos de dichas aristas en ese orden, validando que no existan ciclos dentro del MST que se va formando.
 
-Para comprobar que un grupo de vértices no forma un ciclo, se usa el conjuntos disjuntos, que si se los interseca si es que da vacio es por que no forma un ciclo, si es que no da vacio es por que se formaría un ciclo.
+Para comprobar que un grupo de vértices no forma un ciclo, se usa el conjuntos disjuntos, que si se los interseca, si es que da vació es por que no forma un ciclo, si es que no da vació es por que se formaría un ciclo.
 
 Se detiene cuando se han hecho V -1 aristas por la definición.
 ** Ejemplo :ATTACH:
@@ -92,7 +118,7 @@ Ordenamos todos los pesos, y seleccionamos los conjuntos
 {A}{B}{C}{D}
 #+end_src
 
-entonces vemos el 1 y comprobamos que los conjuntos que conecta la arista den vacio, en este caso si por lo que podemos unirles
+entonces vemos el 1 y comprobamos que los conjuntos que conecta la arista den vació, en este caso sí por lo que podemos unirles
 
 [[attachment:20261104-103116_screenshot.png]]
 
@@ -101,7 +127,7 @@ Y ahí unimos los conjuntos
 {A B}{C}{D}
 #+end_src
 
-Luego con el 2, vemos que el conjutno de C y D da vacio entonces podemos conectarles.
+Luego con el 2, vemos que el conjunto de C y D da vació entonces podemos conectarles.
 
 [[attachment:20261104-103307_screenshot.png]]
 
@@ -110,7 +136,7 @@ Y juntamos.
 {A B}{C D}
 #+end_src
 
-Luego el peso 3, y vemos que los conjuntos al intersecarlos da vacio, por lo que conectamos tambien
+Luego el peso 3, y vemos que los conjuntos al intersecarlos da vació, por lo que conectamos también
 
 [[attachment:20261104-103415_screenshot.png]]
 
@@ -119,10 +145,34 @@ Y juntamos
 {A B C D}
 #+end_src
 
-Y ahi nos detenemos pues ya tenemos 3 aristas, osea V - 1. Sin embargo si comprobáramos con el peso 4, el D con el A B C D no da vacio, por lo que no podemos conectarlo ya que genera un ciclo.
+Y ahí nos detenemos pues ya tenemos 3 aristas, osea V - 1. Sin embargo si comprobáramos con el peso 4, el D con el A B C D no da vació, por lo que no podemos conectarlo ya que genera un ciclo.
 
 [[attachment:20261104-103603_screenshot.png]]
 
+Entonces la complejidad del  [[id:fa85eef1-282a-48ec-aaa7-ca8091a20b24][Algoritmo Kruskal Programado]] esta dividida de la siguiente forma:
+Orden de aristas 
+\begin{align*}
+O(E \log E)
+\end{align*}
+Union Find
+\begin{align*}
+O(E \alpha(V))
+\end{align*}
+Tiempo total
+\begin{align*}
+O(E log E)
+\end{align*}
+ 
+que equivale a
+\begin{align*}
+O(E log V)
+\end{align*}
+en grafos simples
+
+Espacio auxiliar
+\begin{align*}
+O(V + E)
+\end{align*}
 
 
 

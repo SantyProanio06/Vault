@@ -1,0 +1,76 @@
+:PROPERTIES:
+:ID:       fa85eef1-282a-48ec-aaa7-ca8091a20b24
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Algoritmo Kruskal Programado
+#+filetags: :clases:eda2:java:
+#+date: <2026-11-17 mar>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Algoritmo de Kruskal
+Ya entrando en la programación de Kruskal tenemos ademas de la lista de adyacencia (como una lista de listas de aristas véase [[id:2949fdfb-9927-4bb1-9266-84fe758d1c08][Algortimo Kahn Programado]]) tenemos que inicializar una lista de aristas, donde se guardaran todas las aristas con su origen, el destino y su peso. Esta lista será guardada con 2 for que recorren todos los vértices y guardan sus aristas:
+#+begin_src
+List<int []> aristas = new ArrayList<>();
+
+//adyacencia es la lista de listas de aristas donde su indice indica el vertice
+for(int i = 0; i < adyacencia.size(); i++){
+  for(Arista vecinos: adyacencia.get(i)){
+     int[] temp = {i, vecinos.getDestino(), vecinos.getPeso};
+     //Creamos un temporal para guardar en aristas (opcional) {origen, destino, peso}
+     aristas.add(temp);
+}
+#+end_src
+
+Luego de esto ordenamos con la función sort todas las aristas en base al peso:
+#+begin_src
+arsitas.sort((a, b) -> Integer.compare(a[2], b[2]));
+#+end_src
+Lo que hace esta función básicamente es como expresión se coge a y b como dos elementos aleatorios de la lista, la flecha significa sigue esta regla, donde se le pide que compare el dato contenido en el indice [2], es decir, el peso de la arista.
+
+Hasta aquí ya tenemos ordenadas las aristas del grafo, ahora creamos una lista auxiliar donde guardaremos todos los padres de los vértices, estos padres nos va a servir para que no exista un ciclo, o sea como vimos en teoría de Kruskal, para comprobar que al juntar los dos conjuntos nos de vació y así conectarles, inicializando cada vértice de esta lista como su propio padre, de paso inicializamos el peso total que devolveremos en el método:
+#+begin_src
+int pesoTotal = 0;
+
+int[] padre = new int[grafo.getNumVertices()];
+
+for(int i = 0; i < padre.size(), i++){
+ padre[i] = i;
+}
+#+end_src
+
+Aquí usamos una función auxiliar  union-find para encontrar el padre de un vértice en concreto:
+#+begin_src
+private int unionFind(int[] padre, int x){
+  //Hacemos hasta encontar el padre
+  while(padre[x] != x){
+  //Hacemos que el padre de x ahora reporte al padre del padre de x, es decir si el padre de 2 es 3 y de 0 es 2, el padre de 0 ahora sera 3.
+      padre[x] = padre[padre[x]]
+      x = padre[x]
+  }     
+  return x;
+}
+#+end_src
+Entonces esta función se le da la lista de padres de cada vértice y un vértice, al cual le conseguiremos su padre supremo, lo que hace básicamente es recorrer toda la cadena de padres del vértice para ver cual es el vértice raíz, esto se lo hace con el fin de, ahora si en el método principal, comprobar que si dos vértices tienen distinto padre supremo entonces su unión da vació:
+#+begin_src
+for(int[] arista : aristas){
+  int raizU = unionFind(padre, arista[0]); //buscamos la raiz del origen de dicha arista
+  int raizV = unionFind(padre, arista[1]); //buscamos la raiz del destino de dicha arista
+
+  if(raizU != raizV){
+     padre[raizU] = raizV; //Hacemos que ahora el padre del origen atienda al destino
+     pesoTotal += arista[2]; //Sumamos al peso total el peso de la arista concetada
+  }
+}
+#+end_src
+
+Hecho eso ya solo retornamos el peso total.
+
+

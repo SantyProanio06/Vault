@@ -106,8 +106,8 @@ El desarrollo y las pruebas se los hace al mismo tiempo pues el desarrollador va
 
 Las pruebas de aceptación se dividen en dos:
 
-- Pruebas beta: Realizadas por el usuario final en el entorno en el que el sistema de se desarrolló.
-- Pruebas alfa: En caso de que el usuario diera el visto bueno y el sistema pasa a ser considerado producto se realizan estas pruebas ahora en el entorno de producción, o sea donde el cliente correrá el sistema.
+- Pruebas alfa: Realizadas por el usuario final en el entorno en el que el sistema de se desarrolló.
+- Pruebas beta: En caso de que el usuario diera el visto bueno y el sistema pasa a ser considerado producto se realizan estas pruebas ahora en el entorno de producción, o sea donde el cliente correrá el sistema.
 
 Luego de esto se recibe la retroalimentación por parte del cliente para hacer modificaciones y liberar el sistema ya sea para más pruebas beta o para entregar el sistema final.
   

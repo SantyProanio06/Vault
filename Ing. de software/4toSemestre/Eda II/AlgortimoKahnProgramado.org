@@ -1,0 +1,73 @@
+:PROPERTIES:
+:ID:       2949fdfb-9927-4bb1-9266-84fe758d1c08
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Algortimo Kahn Programado
+#+date: <2026-11-17 mar>
+#+filetags: :clases:java:eda2:
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Algoritmo de Kahn
+Entrando en la programación como tal, el algoritmo de Kahn aplica el mismo razonamiento usando una cola de la siguiente forma.
+
+Teniendo la lista de adyacencia
+#+begin_src
+List<List<Arista>> adyacencia;
+
+// Siendo Arista una clase con los parámetros int destino 
+#+end_src
+
+En el método inicializamos la lista de orden que se retornará al final
+#+begin_src
+List<Integer> orden = new ArrayList<>();
+#+end_src
+
+Lo que se hace es un for dentro de otro for para recorrer todos los vértices vecinos de cada vértice para obtener una lista con todos los grados de entrada
+#+begin_src
+int[] gradoDeEntrada = new int[grafo.getNumVertices()];
+
+for(List<Arista> vertice : adyacencia){
+     for(Arista vecino : verice){
+     gradoDeEntrada[vecino.getDestino()]++;
+    }
+}
+#+end_src
+En este código se puede ver como recorremos cada vértice(pues cada vértice es una lista de aristas) y sus respectivos vecinos (Cada arista dentro de esa lista es un vecino, pues el vértice es el index de la arista, por ejemplo si queremos el vértice de nombre 3, toda la lista en la posición 3 son los vecinos del vértice 3), así sumamos 1 a su grado de entrada cada que un vértice aparezca.
+
+Para que? Según el algoritmo de Kahn  tenemos una cola con todos los vértices que tengan grado 0, estos son puestos en la lista del orden y eliminados del grafo para restar 1 grado de entrada a todos a los que apuntaba ese vértice, cuando un nuevo vértice consiga grado 0 se lo pone en la cola y así sucesivamente. Visto en el código primero creamos la cola a la que le añadimos todos los vértices que tengan grado 0.
+#+begin_src
+
+Queue<Integer> cola = new LikedList<>();
+
+for(int i = 0; i < grafo.getNumVertices(); i++){
+   if(gradoDeEntrada[i] == 0)cola.add(gradoEntrada[i]);
+}
+#+end_src
+
+Luego de esto iteramos mientras la cola aun tenga elementos en ella, dentro de esto hacemos lo antes mencionado, sacamos un vértice de la cola y restamos todos sus vecinos 1, y metemos a la cola aquellos vértices con nuevo grado 0.
+#+begin_src
+while(!cola.isEmpty()){
+  int actual = cola.poll();
+  orden.add(actual);
+
+//Aqui se ve que la lista de adyacencia el vertice es el indice
+  for(Arista vecinos: adyacenia.get(actual)){
+    gradoDeEntrada[vecino.getDestino()]--;
+    if(gradoDeEntrada[vecino.getDestino()] == 0) cola.add(vecino.getDestino());
+ }
+}
+#+end_src
+
+Y ese es el algoritmo de Kahn, al final hacemos una ultima verificación, pues en caso de que hayan más vértices en orden de lo que hay en el grafo quiere decir que existió un ciclo por lo que se debe retornar una lista nula
+#+begin_src
+return (orden.size() == grafo.getNumVertices())? orden : new ArrayList<>();
+#+end_src
+

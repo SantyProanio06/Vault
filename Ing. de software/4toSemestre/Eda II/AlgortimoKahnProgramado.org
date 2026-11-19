@@ -5,7 +5,7 @@
 #+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
 #+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
 #+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
-#+title: Algortimo Kahn Programado
+#+title: Algoritmo Kahn Programado
 #+date: <2026-11-17 mar>
 #+filetags: :clases:java:eda2:
 #+author: Santiago Javier Proaño Yépez

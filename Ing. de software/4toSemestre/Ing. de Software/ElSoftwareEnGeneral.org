@@ -1,0 +1,109 @@
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: El software en general
+#+filetags: :clases:software:
+#+date: <2026-11-18 mié>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+
+* Introducción
+El software esta compuesto por 3 componentes:
+- Datos
+- Procesos
+- Dinámica: Relacionada con el tiempo real, son los estados y eventos del software, entendiendo estados como un conjunto de valores en determinado tiempo y evento un suceso que cambia estados.
+* La naturaleza del software
+En la actualidad el software tiene un propósito dual, sirve tanto como producto, como vehículo. Se refiere al software como producto cuando dicho programa hace el algo para lo que fue hecho, está estrechamente relacionado con los requerimientos de un cliente, por otro lado como vehículo es software que distribuye otros software.
+
+Se dice que el software genérico, que lo puede usar cualquiera es el software como vehículo, por ejemplo Excel, los sistemas operativos, etc. y que el software especifico que transforma la información, es el software como producto.
+* Conceptos básicos :ATTACH:
+:PROPERTIES:
+:ID:       71052c2c-b32f-478e-bd5a-f85e742abf8e
+:END:
+# Hay 4 generaciones de los lenguajes de programación
+# - 1ra lenguaje de máquina, 1's y 0's.
+# - 2da lenguaje ensamblador, usan expresiones nemnonicas para las instrucciones, por ejemplo MOV de mover.
+# - 3ra lenguaje de alto nivel, ahora se usan palabras del lenguaje humano completas para las instrucciones.
+# - 4ta lenguaje estructurado, ahora ya no se hace el como sino solo se pregunta el que
+# - 5ta lenguajes descriptivos y de IA
+Entendiendo un sistema es un conjunto de módulos que trabajan para un fin común. El software por su parte es un programa que computa y esta compuesto por procesos, posible documentación y los datos. Entendiendo procesos como el conjunto de reglas o pasos para la realización del sistema software.
+Un sistema de computación tiene 7 componentes: Hardware, software, redes, personas, gestión, seguridad y cyberseguridad y datos.
+
+El ciclo de vida del desarrollo empieza desde que se conceptualiza la idea del programa hasta la puesta en marcha del programa, este ciclo es la parte inicial del ciclo de vida del software, que comprende desde la Conceptualización hasta el retiro del software, con las siguientes 8 fases:
+1) Conceptualización
+2) Requerimientos
+3) Diseño
+4) Implementación
+5) Instalación y puesta en marcha
+6) Pruebas 
+7) Operación y mantenimiento 
+8) Retiro
+
+En cuanto a diseño, se crean los diseños, valga la redundancia, de la arquitectura del sistema, los componentes, las bases de datos( [[id:8fcef0db-1dbb-4ec6-9b4c-15689965a1e4][Actividades del proceso de diseño del software]]) y el diseño de interfaces.
+Las interfaces la forma en que el software se conecta con otros componentes, existiendo:
+- Hardware, como se conecta con el hardware
+- Software, como se conecta con los sistemas operativos
+- De comunicación, como se conecta con las redes
+- De usuario, como se conecta con el usuario, ya sean pantallas, ventanas etc.
+- De sistemas, como se conecta con otros sistemas
+
+ # El diseño detallado por su parte permite hacer la implementación de forma automática, por ejemplo el pseudocodigo.
+Por lo tanto un producto software es un conjunto de programas de computadora, procesos, posible documentación y datos, diseñado para ser entregado a un usuario según un propósito
+
+Ahora un sistema software son características y funcionalidades que se compactan para resolver un problema de cómputo o de automatización. Según la definición de sistema previamente mencionada, un sistema software cuenta con los siguientes 6 componentes:
+- Componentes funcionales o funciones: Es todo lo que el sistema hace, o esta diseñado a hacer las funciones vaya.
+- Estructuras de datos o la configuración de los datos: es como el sistema organiza y usa la información.
+- Documentación: Es todo lo que se hace en el proceso de desarrollo.
+- Interfaces: Como se comunica el sistema con otros componentes.
+   # Antes mencionadas las 5 interfaces
+- Componentes no funcionales: comprenden todas las características de calidad del software.
+- Componentes dinámicos: Relacionados con los estados y eventos
+  # Previamente mencionados
+
+El software también debe ser modular, es decir estar dividido en varios módulos, donde cada uno tiene una alta cohesión es decir que  responsable de una cosa especifica y bajo acoplamiento, es decir que los módulos no dependen entre si.
+
+Un sistema de software cuenta con 2 componentes de forma genérica:
+- Estáticos: No cambian con el tiempo, por ejemplo las estructuras de datos o la configuración de los datos, o los componentes no funcionales
+- Dinámicos: Son influenciados por el paso del tiempo, los componentes funcionales, las interfaces serian ejemplos de este donde cambian por otros motivos y los componentes dinámicos que cambian en la ejecución.
+
+Ahora el software tiene 3 características que lo diferencian por no ser un producto tangible:
+- No se desgasta: A diferencia del hardware el software con el paso del tiempo no se desgasta. El hardware conforme pasa el tiempo se va desgastando por las propiedades inherentes de un componente físico, en cambio el software no por que no es tangible sin embargo conforme pasa el tiempo y se cambia los errores y problemas encontrados son cada vez mayores por lo que toca retirarlo.
+ [[attachment:20261118-142010_screenshot.png]]
+- No se manufactura en el sentido clásico pues no es algo hecho con las manos.
+- Se lo hace con intelecto, aplicando la abstracción, que es incorporar la realidad al software, descomposición, dividir el software, modulación, con módulos altamente cohesos y bajo acoplamiento.
+* La ingeniería de software
+Es en si una disciplina del área de la computación donde se aplican las ciencias exactas, de la computación entre otras, por medio de un conjunto de métodos que cubren una parte del ciclo de vida del software llamados metodologías, aplicadas mediante técnicas por medio de herramientas, incluyendo técnicas de gestión y de proyectos, con el fin de desarrollar, operar y mantener productos de software de calidad.
+* Dominios de aplicación del software
+# firmware es una mezcla de hardware y software
+Cuando nos referimos a tiempo real es cuando  a un evento de entrada se produce una salida en el mismo entorno de ejecución de la entrada en un tiempo máximo de 1 minuto.
+
+Existen dos tipos de software:
+- Determinista: donde se conoce el proceso la entrada y la salida.
+- No determinista: donde no se que es lo que pasa por dentro, como los sistemas operativos por ejemplo.
+
+Los dominios del software son:
+- Embebidos o incrustados, es el software que se usa por medio del hardware, básicamente en firmware, por ejemplo el software de los microondas.
+- De sistemas: software que se comunica con el hardware, con usuarios concurrentes, etc. Básicamente sistemas operativos. 
+- De aplicación: diseñados para algo en especifico, un conjunto de aplicaciones puede generar a su vez un sistema.
+- De ingeniería y ciencias: software que procesa cantidades monumentales de datos y operaciones numéricas complejas, adoptan a veces características de los de sistemas. 
+- Aplicaciones webs: Antes eran solo hipervínculos o comunicación y así, pero ahora ya realizan cálculos computacionales.
+- De inteligencia artificial: software que tiene inteligencia artificial, llms etc., usa la heurística.
+- Linea de productos, no es considerado un dominio de la aplicación del software sino como una técnica para reutilizar componentes, pero se dice que es software especifico que lo pueden usar en general. La reutilización es una técnica que permite desarrollar software de manera rápida, no tan costosa sin perder la calidad.
+* Software heredado
+Básicamente es software muy antiguo pero que es de suma importancia dentro de la organización. Por el hecho de ser antiguo no tiene escalabilidad, es lento, etc. Entonces se lo debería de cambiar o trabajar en conjunto cuando se tenga que adaptar a las nuevas tecnologías, cuando los requerimientos cambien, cuando se necesite ampliar la comunicación con otros sistemas y cuando se necesite adaptar a las redes.
+
+Nosotros como ingenieros de software debemos desarrollar software enfocado en la evolución, es decir que cambie continuamente, basado en los sistemas antiguos y que todo trabaje bien entre si, es decir interoperabiliidad.
+
+
+  
+
+  
+
+
+

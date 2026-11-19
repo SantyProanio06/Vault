@@ -88,7 +88,7 @@ Algo que si cabe recalcar es que en la programación el programador realiza prue
 
 Para la depuración se debe realizar una hipótesis de que puede estar pasando, luego se la pone a prueba para encontrar la causa de la respuesta anómala encontrada. A veces para esto se requiere rastrear manualmente el código, implementar otro caso de prueba o usar herramientas interactivas que muestran valores intermedios y el rastro del programa.
 * Validación del software
-Se la realiza durante y después de la implementación, es aquí donde se verifican (los técnicos)  y se validan (los usuarios) los requerimientos esto se conoce como V & V (validation and verification), el sistema debe cumplir con las especificaciones y con las expectativas del cliente.
+Se la realiza durante y después de la implementación, es aquí donde se verifican (los técnicos)  y se validan (los usuarios) los requerimientos esto se conoce como V & V (validation and verification) o como aseguramiento de la calidad (se combina la verificación con la validación), el sistema debe cumplir con las especificaciones y con las expectativas del cliente.
 ** Actividades del proceso de validación del software :ATTACH:
 :PROPERTIES:
 :ID:       2533cf52-e030-4f75-8f24-c3e969faf847

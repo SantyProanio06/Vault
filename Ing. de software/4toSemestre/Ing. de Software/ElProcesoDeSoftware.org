@@ -1,0 +1,185 @@
+:PROPERTIES:
+:ID:       16ed69e4-d284-4e43-8de5-c642585220df
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Proceso de software
+#+filetags: :clases:software:
+#+date: <2026-11-18 mié>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* El proceso de software
+Son un conjunto de actividades con el fin de crear un producto software, se lo puede hacer desde 0, ó, como sucede en la actualidad con los sistemas empresariales, se lo puede hacer extendiendo y modificando sistemas existentes, o configurando e integrando software comercial y  componentes.
+# el software comercial suele ser peligroso pues no se adapta a los requerimientos del cliente
+
+Estas actividades fundamentalmente son: (Se profundiza en  [[id:c74bcb1f-9322-4023-985d-51687efc1f99][Actividades del proceso de Software]])
+- Especificación: Determinar los requerimientos funcionales y las restricciones de la operación
+- Diseño e implementación: Hacer que el software cumpla con esas especificaciones.
+- Validación del software: El software debe cumplir con las necesidades del cliente por lo que los técnicos verifican el software y los usuarios lo validan.
+- Evolución: El software deberá cambiar con el tiempo para adaptarse a las necesidades cambiantes del cliente.
+
+La descripción de los procesos al igual que las actividades deben incluir:
+- Productos, toda actividad dentro del proceso deberá dar un resultado.
+- Roles, las responsabilidades de la gente involucrada.
+- Precondiciones y postcondiciones, declaraciones válidas antes y después de hacer un producto
+
+Se mencionan dos tipos de procesos:
+- Dirigidos por un plan: los cuales su avance es medido por un plan realizado previamente, cualquier cambio tiene un impacto muy alto y el producto final se lo entrega luego de muchisimo tiempo.
+- Ágiles: el plan se va desarrollando de forma incremental conforme se avanza en el software, pueden cambiar los requerimientos.
+
+El objetivo es encontrar un equilibrio entre los dos tipos de procesos. Sin embargo, se pueden mejorar dichos procesos con la estandarización, mejorando la comunicación, disminuyendo el tiempo invertido en capacitaciones, etc. Se dice que es el primer paso para introducir nuevas técnicas y métodos de ingeniería de software.
+* Modelos del proceso de software
+** Cascada :ATTACH:
+:PROPERTIES:
+:ID:       813ef3f7-e8dd-467f-9eb1-4665f333272d
+:END:
+Según pressman este modelo se lo usa cuando los requerimientos se entienden muy bien y el trabajo fluye de manera lineal, donde una etapa no ocurre hasta que se acabe la anterior. Estructura del modelo modificado cascada de pressman:
+
+[[attachment:20261118-212012_screenshot.png]]
+
+- Comunicación: Se recaban todos los requerimientos de software entendiéndolos bien.
+- Planeación: Se estima el costo, tiempo y los recursos, se programa quien va a hacer que y cuando y se realiza el seguimiento del plan. 
+- Modelado: Se analiza, con un detalle bajo, y se diseña, con un detalle alto, el modelo de software.
+# El código es lo mas detallado y con 0 abtraccion que existe'
+- Construcción: Se implementa el diseño y se realizan las pruebas
+- Despliegue: Se entrega el código y se recibe la retroalimentación
+La abstracción dentro de cascada es muy alta y tiene nada de detalle al empezar con la cascada, pero se va disminuyendo la abstracción y se aumenta el detalla conforme se va bajando por la cascada.
+
+Sin embargo el modelo original de cascada tiene la siguiente estructura:
+
+[[attachment:20261118-212048_screenshot.png]]
+
+- Ingeniería y análisis del sistema: Se obtienen los requerimientos del sistema: hardware, software, redes, comunicación, gestión, sin detalle. Entran las necesidades y sale el SysRS 
+- Análisis de los requisitos: Se obtienen los requisitos del software de aquí sale el ERS, especificación de requerimientos del software.
+- Diseño
+- Codificación
+- Prueba
+- Mantenimiento
+
+Se lo usa cuando los requerimientos no varían tanto en el tiempo, o cuando se cambia un sistema ya existente con requerimientos bien entendidos. 
+*** Modelo en V :ATTACH:
+:PROPERTIES:
+:ID:       c2c2b4a4-c702-44cf-bbb5-aad2744a6fd8
+:END:
+Es una variación del modelo en cascada, sin embargo, se basa en el aseguramiento de la calidad (Verificación y validación) pues en este modelo se realizan las pruebas a cada modelo en cada etapa. Aquí se baja hasta implementar el código y se vuelve a subir para hacer el aseguramiento de la calidad:
+
+[[attachment:20261118-214210_screenshot.png]]
+
+Se baja por:
+- Análisis de los requerimientos
+- Diseño del sistema
+- Diseño detallado
+
+Se llega a:
+- Implementación
+- Pruebas Unitarias: Realizada por el mismo programador una vez hace el código.
+
+Y se empieza a subir por
+
+- Pruebas de integración: Se verifica la implementación con las pruebas alfa (dentro del entorno de desarrollo) y las beta (dentro del entorno de producción).
+- Pruebas del sistema: Se verifica el sistema completo
+- Pruebas de aceptación: Se verifican que los requerimientos se hayan obtenido bien.
+- Operación y mantenimiento
+
+En este modelo se nos presentan 4 pruebas (profundiza en [[id:2533cf52-e030-4f75-8f24-c3e969faf847][Actividades del proceso de validación del software]]), planificadas en las etapas paralelas, en cada planificación se realiza las pruebas sobre un prototipo con la parte a probar parcialmente, pero ya en la etapa se realiza la prueba con todas las especificaciones.
+*** Problemas
+Es muy difícil que un trabajo siga un flujo lineal y que los requerimientos se hayan entendido bien o que no cambien tanto con el tiempo, el cliente por su parte tiene que ser paciente pues no se verá una entrega funcional hasta muy avanzado el proceso, además se generan estados de bloqueo entre los equipos y la detección de un error puede provocar un coste en potencias de 10 en función de que tan tardío se detecto dicho error.
+*** Ventajas
+Es un modelo muy estructurado y secuencial, y es el que más documentación genera. No pasa a otra etapa hasta haber acabado la anterior, siendo esto beneficioso cuando se realiza en el tiempo previsto y de forma correcta. También en cada hito, que es el tiempo entre etapas, se puede verificar el resultado y solucionar posibles errores.
+
+*Usado cuando la complejidad es muy alta, en sistemas de ingeniería y ciencias.*
+** Incremental
+Cuando se conocen bien los requerimientos, pero no se tiene los recursos para hacer el modelo cascada, ni el tiempo pues se tiene la necesidad impiedosa, es decir obligatoria, de entregar una funcionalidad limitada, es cuando se usa el modelo incremental.
+ Este mezcla la forma lineal de cascada y la forma en paralelo de hacer varias cascadas al mismo tiempo, dependiendo los recursos disponibles, como mínimo una cascada. Estas cascadas son conocidas como incrementos, donde cada uno produce una entrega funcional de el sistema en un plazo de 2 semanas a 2 meses máximo, es decir es un proceso ágil.
+
+ El problema principal de este modelo es que los incrementos no se agregan, por lo que a veces falla su implementación.
+ Luego de tener un incremento se pueden realizar uno de los siguiente planes:
+
+# El priemer incremento suele ser el que más errores tiene
+1. Plan de corrección: Se rehace el incremento desde 0 por que al cliente no le gusto
+2. Plan de agregación de funcionalidad y corrección o mejora: Cuando el cliente solo quiere cambiar unos detalles del incremento
+3. Plan de agregación: Cuando el cliente esta satisfecho con dicho incremento
+
+Estos planes son realizados hasta el final del proceso. Con este feedback del cliente se planifica el siguiente incremento. Estas planificaciones buscan minimizar los riesgos técnicos, entendiéndose como cualquier hecho o evento que pone en peligro el éxito del proyecto, entendiéndose éxito como acabar el proyecto con los recursos, tiempo, costos y calidad previstas.
+
+*** Ventajas
+Como ventajas de este modelo tenemos que el cliente tiene participación continua a lo largo del proceso, entrega muchas entregas funcionales, comprende cambios en los requerimientos y maneja los riesgos.
+
+*Usado en complejidad media, con sistemas empresariales*
+*** Desventajas
+Al haber tantos cambios se pierde la visión del proyecto y como cada incremento es individual la integración suele su principal problema.
+** Evolutivos
+*** Evolutivo :ATTACH:
+:PROPERTIES:
+:ID:       b23944e9-2eaf-489f-980f-6c6d776a8d8b
+:END:
+Cuando los requerimientos se comprenden pero cambian con el tiempo, y algunos detalles están por definirse, además de que los plazos de entrega imposibilitan el desarrollo de software perfecto, se usa el modelo evolutivo, donde se entrega una versión limitada para poder competir en la industria. Se caracteriza por ser iterativo al crear versiones cada vez más completas del sistema final.
+
+[[attachment:20261118-222844_screenshot.png]]
+
+*** Evolutivo incremental
+Mezcla el evolutivo con el modelo incremental donde se corrige el principal problema del modelo incremental la integración a través de prototipos.
+
+*Como soluciona ese problema ahora es usado en complejidad alta, en sistemas empresariales*
+*** Prototipos :ATTACH:
+:PROPERTIES:
+:ID:       e9a62d22-076c-463a-94b0-fb3d36ab13ad
+:END:
+O también conocido como modelo evolutivo de prototipos o rapid prototiping, comprendiéndose a un prototipo como una versión con una parte del sistema, este prototipo puede servir de apoyo para los modelos antes mencionados, pues ayuda a entender lo que se va a hacer si los requerimientos no están tan claros. Los prototipos a su vez se los puede usar como un modelo aislado con la siguiente estructura:
+
+[[attachment:20261118-223047_screenshot.png]]
+
+Empezando con la recolección y refinamiento de los requerimientos, se sigue por las manecillas del reloj haciendo un diseño rápido del prototipo, luego una construcción del mismo y su evaluación con el cliente para hacer el refinamiento del prototipo repitiendo el proceso n veces hasta obtener una sola entrega funcional o en este caso un solo producto de ingeniería.
+
+Para este modelo no se necesita conocer todos los requerimientos, y también esta centrado en la parte visual del sistema, es decir en las interfaces de usuario. En este modelo el prototipo es reafinado con la retroalimentación del cliente por lo que cada vez se comprende mejor lo que se quiere hacer.
+
+Hay 2 tipos de prototipos
+- Desechables: Una vez completada su función son desechados.
+- Evolutivos: Se itera sobre el prototipo hasta conseguir el producto final.
+**** Desventajas
+Se pierde la calidad pues se hace todo con suma rapidez, el cliente confunde el prototipo con el producto final por lo que el gestor cede ante las necesidades entregando un producto malo. Por esa razón el sistema operativo, los algoritmos no suelen ser los idóneos.
+**** Ventajas
+Participación permanente del cliente, no se necesita de todos los requerimientos y es sencillo realizar cambios.
+
+*Usado cuando la complejidad es baja en sistemas empresariales*
+*** Espiral
+Es una mezcla del modelo cascada con el modelo de prototipos, pues integra el proceso sistemático de cascada con la agilidad de los prototipos, lo que permite que se desarrollen versiones cada vez más completas del sistema de forma rápida ante la alta complejidad, pero se basa siempre en los riesgos para continuar.
+*Es usado ya en sistemas de computación* 
+Produce entregas iterativas cada vez más completas del sistema final, por medio de un prototipo o modelo, o también conocidos como versión.
+
+Este modelo tiene 4 cuadrantes:
+
+En el primer cuadrante se determinan los objetivos, alternativas y restricciones, en el segundo cuadrante se evalúan dichas alternativas, se identifican y se corrigen los riesgos, en el tercer cuadrante se desarrolla y verifica el prototipo, o sea se lo da al cliente para conseguir una retroalimentación, y por ultimo en el cuarto cuadrante se planifican las demás vueltas.
+
+Se dice que la primera vuelta se especifican los requerimientos para en las siguientes desarrollar un prototipo y a partir de allí versiones cada vez más completas. Se dice que este modelo se lo puede adaptar a todo el ciclo de vida de software pues:
+- El primer circuito, entendiendo circuito como n espirales es el proyecto de desarrollo del concepto o concept of operations donde se detallan las necesidades del cliente como sistema (hardware, software, etc.). 
+- Luego en caso de que se vaya a realizar dicho producto se va a hacia afuera del espiral para empezar el proyecto de desarrollo de un producto nuevo. 
+- Este proyecto se lo iterará varias veces hasta estar terminado
+- Posteriormente se hace un ultimo circuito que representa un proyecto de mejora del producto, o sea mantenimiento.
+- Se sigue en el espiral hasta retirar el proyecto.
+**** Ventajas
+Plantea un enfoque más realista para los proyectos, tiene un proceso de cascada pero de forma iterativa reflejando de mejor manera la realidad, se comprenden mejor los requerimientos y se reacciona mejor ante los riesgos.
+**** Desventajas
+Sin embargo, es difícil convencer al cliente pues no se sabe cuando se va a terminar, además de que se requieren 10 años de experiencia en evaluación de riesgos como mínimo.
+Además de que como es un proceso iterativo y en círculos, la mayoría de técnicas de Planeación no se pueden utilizar pues están realizadas para procesos lineales.
+Por último, la rapidez del proyecto debe ser templada, si se la hace muy rápido será todo un caos pero si se la hace muy lento puede afectar la productividad.
+
+  
+
+
+
+
+
+
+
+
+
+
+

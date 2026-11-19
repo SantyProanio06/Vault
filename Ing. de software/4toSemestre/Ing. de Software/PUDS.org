@@ -1,0 +1,149 @@
+:PROPERTIES:
+:ID:       79892d20-188b-44fe-b152-398b7f6d3b5f
+:END:
+#+options: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+options: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+options: email:nil expand-links:t f:t inline:t num:t p:nil pri:nil prop:nil
+#+options: stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: PUDS, proceso unificado de desarrollo de software
+#+filetags: :clases:software:
+#+date: <2026-11-18 mié>
+#+author: Santiago Javier Proaño Yépez
+#+email: santiagoproano06@gmail.com
+#+language: en
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+* Historia
+El antecedente más importante data de 1967 con la metodología Ericsson elaborada por Ivar Jacobson, donde se introduce el caso de uso. Luego en el 87 a 85 funda la compañía /Objectory AB/ y lanza el proceso de desarrollo /Objectory/.
+
+En la década del 95 /Rational Software Corporation/ adquiere /Objectory AB/ y cerca del 97 se desarrolla /Rational Objectory Process/ que adopta al UML como lenguaje de modelado. Desde entonces  Grady Booch se pone al mando de Jacobson y James Rumbaugh, con /Rational Software/ para en junio del 98 lanzar /Rational Unified Process/. Sin embargo en el curso se adoptará el termino *Proceso Unificado de Desarrollo de Software* o PUDS para referirnos a este proceso.
+* Características
+** Dirigido por casos de uso
+Los casos de uso son una descripción de un conjunto de secuencias de acciones,  incluyendo variaciones, que un sistema lleva a cabo y que conducen a un resultado observable de interés para un actor determinado. En otras palabras representan las necesidades del cliente por medio de una secuencia de acciones con sus posibles errores y que genera un resultado matemáticamente comprobable.
+
+Se dice que el PUDS esta dirigido por casos de uso por que estos proporcionan un hilo conductor en el proceso que establece la trazabilidad entre artefactos. En base a los casos de uso se crean los modelos de análisis y diseño, luego la implementación de los casos  y al final se verifica su adecuada implementación.
+** Proceso centrado en arquitectura
+Entiéndase a la arquitectura de un sistema en la forma como se organizan sus partes más relevantes, lo que permite que todos los involucrados tengan una perspectiva clara del sistema completo. PUDS establece en etapas tempranas dicha arquitectura.
+
+Cada producto tiene un función, la funcionalidad vista en los casos de uso, y una forma, proporcionada por la arquitectura, por lo que los casos de uso encajan en la arquitectura, misma que permite el desarrollo de dichos casos, provocando que evolucionen en paralelo. En las etapas más tardías del proceso la arquitectura es más robusta.
+
+La arquitectura se representa por varias vistas, que se centran aspectos concretos del sistema. En PUDS todas las vistas forman el modelo 4 + 1 de arquitectura, pues tiene la vista lógica, de implementación, de proceso y de despliegue más la de los casos de uso.
+** Proceso iterativo e incremental
+Para poder conseguir un equilibrio entre casos de uso y arquitectura se requiere tiempo, por lo que PUDS tiene un proceso iterativo en el que el trabajo se divide en mini proyectos, donde cada uno es una iteración, o un recorrido de los flujos de trabajo fundamentales , en los cuales se obtiene un incremento. Las iteraciones abordan una parte de la funcionalidad total. 
+
+Cada incremento pasa por los flujos fundamentales, la planificación de la siguiente iteración, el análisis de la iteración y las actividades especificas. Al finalizar se integra en las iteraciones anteriores.
+
+Este proceso tiene una secuencia de iteraciones, que se analizan al finalizar cada iteración, luego se determina cambios o requisitos nuevos para las siguientes iteraciones. En la planificación se examinan los riesgos que aún quedan. El feedback de la iteración pasada permite reajustar los objetivos de las siguientes, y así se continua hasta finalizar por completo la versión actual del producto.
+* Practicas del PUDS
+PUDS identifica 6 mejores prácticas de trabajar para los equipos de desarrollo.
+
+** Gestión de requisitos
+Se encuentran, organizan, documentan y seguir los cambios de los requisitos funcionales y restricciones, los casos de uso ayudan a representar los requisitos.
+** Desarrollo de software iterativo
+Desarrollar a través de iteraciones con hitos bien definidos, allí se repiten las actividades, pero difiere en enfoque de las mismas.
+** Desarrollo basado en componentes
+Dividir le sistema en componentes con interfaces bien definidas, para juntaros y generar el sistema completo.
+** Modelado visual
+Facilita la gestión de los modelos y ayuda a mantener la consistencia, se usa UML para visualizar, especificar, construir y documentar software.
+** Verificación continua de la calidad
+La calidad debe ser evaluada en varios puntos durante el proceso, y deberá focalizarse al finalizar cada iteración, es aquí donde se realizan las pruebas.
+** Gestión de cambios
+El cambio es un factor de riesgo crítico, pues el software no solo cambia por las acciones del mantenimiento sino también en el proceso de desarrollo. También se debe considerar varios desarrolladores trabajando concurrentemente en una release y en distintas plataformas. PUDS aplica aquí las disciplinas de Gestión de Cambios y de Configuración.
+* Estructura del PUDS
+Trabaja sobre 2 ejes
+** Eje horizontal
+Representa el tiempo y es aquí donde se representan los *aspectos dinámicos* del proceso, indica también las características del ciclo de vida del proceso por medio de:
+*** Fases, iteraciones e hitos
+El PUDS se repite en una serie de ciclos, cada uno con una generación del producto. Los ciclos a su vez se dividen en cuatro fases, donde las iteraciones en cada fase es n.
+
+Cada fase concluye con un hito bien definido y principal, el cual es donde se toman decisiones y se considera un punto para alcanzar metas clave para pasar a la siguiente fase, este se compone de hitos menores que pueden ser los criterios aplicables a cada iteración.
+
+Fases del eje horizontal o de la estructura dinámica del proceso:
+**** Inicio
+Se define el modelo del negocio y el alcance del proyecto. Aquí se identifican los actores y casos de uso, y se diseñan los casos más importantes, aproximadamente un 20%.
+
+Objetivos:
+- Establecer el ámbito y sus limites.
+- Encontrar casos de uso más críticos.
+- Mostrar una arquitectura candidata, al menos.
+- Estimar los costes, tanto de recursos como de tiempo, asi como los riesgos.
+
+Resultados esperados:
+- Documento visión con los requerimientos, las características clave y las restricciones principales.
+- Modelo con un 20% aproximadamente de los casos de uso.
+- Glosario con la terminología clave.
+- Caso de negocio
+- Riesgos y plan de contingencia, así como el plan del proyecto con sus fases e iteraciones estimadas.
+- Prototipos para probar conceptos o la arquitectura.
+
+Requisitos para continuar:
+- Los interesados coinciden con el ámbito y las estimaciones, que además son creíbles.
+- Entendimiento de los requisitos.
+- Comprensión total de los prototipos de la arquitectura.
+**** Elaboración
+Se analiza el dominio del problema, establece la baseline de la arquitectura, desarrolla el plan y elimina los mayores riesgos. Aquí también se construye el prototipo de la arquitectura, mismo que evolucionará hasta el sistema final, dicho prototipo contiene los casos de uso críticos
+
+Objetivos:
+- Definir, validar y cimentar la arquitectura, además de demostrar que soportará con la visión usando un coste y tiempo razonables.
+- Completar la visión.
+- Crear un plan fiable para la siguiente fase, dicho plan puede evolucionar.
+
+Resultados esperados:
+- Modelo de casos de uso hasta el 80%, identificados todos los actores y casos, con la mayoría desarrollados. 
+- Requisitos adicionales que engloban los no funcionales y los que no están asociados a los casos de uso.
+- Descripción de la arquitectura junto con un prototipo ejecutable de la misma.
+- Lista de riesgos y caso de negocio revisados.
+
+Se trata de abarcar todo el proyecto con la profundidad mínima pero profundizando en los puntos críticos de la arquitectura o los riesgos, actualizando los productos de la fase de inicio.
+
+Requisitos para continuar:
+- Visión del producto y arquitectura estable, los interesados estan de acuerdo con la visión y su alcance según los planes.
+- Con el prototipo se abordan y resuelven los riesgos principales. 
+- El plan es detallado y preciso. Las estimaciones son creíbles.
+- Hasta ahora los gastos son aceptables.
+**** Construcción
+Se alcanza la capacidad operacional del producto por medio de sucesivas iteraciones. Todos los componentes, características y requisitos deberán ser implementados, integrados y probados.
+
+Objetivos:
+- Minimizar costes de desarrollo con la optimización de recursos y evitando redundancia.
+- Conseguir calidad adecuada y versiones funcionales tan rápido como  se práctico.
+
+Resultados esperados:
+- Modelos de casos de uso, de análisis, de diseño de despliegue y de implementación completos.
+- Arquitectura íntegra, y los riesgos mitigados.
+- Manual inicial de usuario.
+- Prototipo operacional, el beta.
+- Caso de negocio actualizado.
+
+Requisitos para continuar:
+- Producto estable y madura para ser entregado para ser probado, aquí los usuarios expertos están listos para la transición en la comunidad.
+- Los gastos son aceptables según lo planeado
+**** Transición
+Aquí se pone el producto ya en manos de los usuarios finales, da nuevas versiones actualizadas, completa la documentación, se entrena al usuario y en general se hacen tareas relacionadas al ajuste, configuración, instalación y facilidad de uso.
+
+Aquí se pueden incluir las pruebas de la versión Beta para validación, el funcionamiento paralelo con los sistemas legados, la conversión de datos operacionales, entrenamiento de los usuarios y el traspaso del producto a los distintos equipos de la organización.
+
+Objetivos:
+- Conseguir que el cliente obtenga autonomía.
+- Que el producto final cumpla los requisitos, funcione y satisfaga al usuario.
+
+Resultados esperados:
+- Protoripo operacional. 
+- Documentos legales.
+- Caso del negocio completo.
+- Línea de base del producto completa y corregida donde estan los modelos de sistema.
+- Descripción de la arquitectura.
+
+Requisitos para continuar:
+- El usuario esta satisfecho.
+- Los gastos son aceptables según lo planeado.
+** Eje vertical
+Representa los aspectos estáticos del proceso con:
+*** Roles, actividades, artefactos y flujos de trabajo
+Define quién hace qué, cómo y cuándo. Los roles son el quién, las actividades son el cómo, los productos son el qué y los flujos de trabajo de las disciplinas son el cuándo.
+**** Roles
+Define el comportamiento y responsabilidades de uno o varios individuos, así como uno puede desempeñar varios roles, un rol puede ser desempeñado por varias personas.
+
+Las responsabilidades son el llevar a cabo un conjunto de actividades como el ser dueño de artefactos.
